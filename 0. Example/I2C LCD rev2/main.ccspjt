@@ -1,0 +1,121 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC18F46K22
+CCSVerions=5.044
+Compiler=PCH
+CCSVersion=5.044
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\System Administrator\Desktop\CCS C Projects\PIC18F46K22\LCD 4 Bit\main]
+Type=4
+[mru-list]
+1=main.c
+[CompilerVersion]
+Fixed=5.044	
+
+[ProjectLog]
+Days=2
+D1=03-05-2015
+D1_L=33
+D1_L1=[67392]Project Opened.
+D1_L2=[67447]Started Editing.
+D1_L3=[68349]Stopped Editing.
+D1_L4=[68367]Started Editing.
+D1_L5=[69446]Stopped Editing.
+TotalEdit=62
+TotalDebug=0
+D1_E=53
+D1_D=0
+D1_L6=[69446]Project Closed.
+D1_L7=[69770]Project Opened.
+D1_L8=[69839]Project Closed.
+D1_L9=[69920]Project Opened.
+D1_L10=[69932]Project Closed.
+D1_L11=[69948]Project Opened.
+D1_L12=[69958]Project Closed.
+D1_L13=[71170]Project Opened.
+D1_L14=[71594]Started Editing.
+D1_L15=[72839]Stopped Editing.
+D1_L16=[73788]Started Editing.
+D1_L17=[74121]Stopped Editing.
+D1_L18=[75258]Started Editing.
+D1_L19=[75549]Stopped Editing.
+D1_L20=[75549]Project Closed.
+D1_L21=[75639]Project Opened.
+D1_L22=[78059]Project Closed.
+D1_L23=[80754]Project Opened.
+D1_L24=[80779]Started Editing.
+D1_L25=[80839]Stopped Editing.
+D1_L26=[80839]Project Closed.
+D1_L27=[81232]Project Opened.
+D1_L28=[81241]Started Editing.
+D1_L29=[81265]Stopped Editing.
+D1_L30=[81265]Project Closed.
+D1_L31=[84658]Project Opened.
+D1_L32=[84685]Started Editing.
+D1_L33=[85186]Stopped Editing.
+D2=04-05-2015
+D2_E=9
+D2_D=0
+D2_L=19
+D2_L1=[7117]Project Closed.
+D2_L2=[8902]Project Opened.
+D2_L3=[9179]Started Editing.
+D2_L4=[10256]Project Closed.
+D2_L5=[10269]Project Opened.
+D2_L6=[10297]Started Editing.
+D2_L7=[10519]Stopped Editing.
+D2_L8=[10519]Project Closed.
+D2_L9=[10740]Project Opened.
+D2_L10=[10836]Project Closed.
+D2_L11=[17125]Project Opened.
+D2_L12=[17132]Started Editing.
+D2_L13=[17187]Stopped Editing.
+D2_L14=[17187]Project Closed.
+D2_L15=[22338]Project Opened.
+D2_L16=[22372]Project Closed.
+D2_L17=[22404]Project Opened.
+D2_L18=[22414]Started Editing.
+D2_L19=[23917]Stopped Editing.
+
+[Opened Files]
+1=main.c
+t1=214
+Count=2
+2=main.h
+t2=1
+3=main.h
+t3=1
+4=main.h
+t4=181
+5=main.sym
+t5=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=23
+[trace]
+top=156
+left=156
+height=548
+width=587
+p2showall=0
+p2showmsg=0
+p3showall=0
+p3highlight=1
+p1msgs=0
+p1scroll=1
+p1trigger=0
+p3format=0
+p3seconds=3
+triggertype=0
+triggername=triggername
+screen=8
+[tracetimers]
+count=0
+[Units]
+Count=1
+1=main (main)

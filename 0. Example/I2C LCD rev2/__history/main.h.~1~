@@ -1,0 +1,9 @@
+#include <18F46K22.h>
+#device ADC=10
+
+#FUSES WDT                   	//Watch Dog Timer
+#FUSES WDT512                	//Watch Dog Timer uses 1:512 Postscale
+
+#use delay(crystal=8000000,restart_wdt)
+#use FIXED_IO( B_outputs=PIN_B5,PIN_B4,PIN_B3,PIN_B2,PIN_B1,PIN_B0 )
+

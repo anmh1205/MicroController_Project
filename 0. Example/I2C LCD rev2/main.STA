@@ -1,0 +1,57 @@
+
+ROM used:   1718/65536 (3%)
+            1718/65536 (3%) including unused fragments
+
+            1.3 Average locations per line
+            16.2 Average locations per statement
+
+RAM used:   112/3896 (3%) at main() level
+            132/3896 (3%) worst case
+
+Stack used: 4 worst case (4 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  249   106 100  main.c
+   10     0   0  main.h
+ 1019     0   0  ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F46K22.h
+----- -----
+ 1278   106 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     46   1    1             @delay_ms1
+0     28   1    1             @I2C_WRITEU_1
+0     32   1    0             @const736
+0     24   1    0    608  5.1  @const739
+0    138   4    6    608  5.1  I2C_LCD_Cmd
+0    212   6    8   1089  7.3  I2C_LCD_Chr
+0     34   1    0    541  4.1  @goto10665
+0    132   4    6    541  4.1  I2C_LCD_Chr_Cp
+0    224   7    3    929  3.0  I2C_LCD_Init
+0     62   2    7    132  4.1  I2C_LCD_Out
+0     72   2    5    310  4.7  CustomChar
+0    674  20   24   1383  3.0  MAIN
+0     36   1    0             @const757
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               9
+    Statements              106
+    Comments                189
+    Volume (V)              9189
+    Difficulty (D)          39.3
+    Effort to implement (E) 361342
+    Time to implement (T)   5 hours, 35 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   7
+    Maintainability (MI)    131
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-0FFFE  1714  63818  
+
+
+

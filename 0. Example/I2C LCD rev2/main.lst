@@ -1,0 +1,1126 @@
+CCS PCH C Compiler, Version 5.044, 5967               04-May-15 06:33
+
+               Filename:   C:\Users\System Administrator\Desktop\CCS C Projects\PIC18F46K22\I2C LCD rev2\main.lst
+
+               ROM used:   1718 bytes (3%)
+                           Largest free fragment is 63818
+               RAM used:   112 (3%) at main() level
+                           132 (3%) worst case
+               Stack used: 4 locations
+               Stack size: 31
+
+*
+00000:  GOTO   0414
+.................... #include <main.h> 
+.................... #include <18F46K22.h> 
+.................... //////////// Standard Header file for the PIC18F46K22 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F46K22 
+00004:  CLRF   FF7
+00006:  ADDLW  14
+00008:  MOVWF  FF6
+0000A:  MOVLW  00
+0000C:  ADDWFC FF7,F
+0000E:  TBLRD*+
+00010:  MOVF   FF5,W
+00012:  RETURN 0
+00014:  DATA 43,6F
+00016:  DATA 6E,73
+00018:  DATA 74,20
+0001A:  DATA 54,65
+0001C:  DATA 78,74
+0001E:  DATA 20,54
+00020:  DATA 65,73
+00022:  DATA 74,00
+00024:  CLRF   FF7
+00026:  ADDLW  34
+00028:  MOVWF  FF6
+0002A:  MOVLW  00
+0002C:  ADDWFC FF7,F
+0002E:  TBLRD*+
+00030:  MOVF   FF5,W
+00032:  RETURN 0
+00034:  DATA 0A,15
+00036:  DATA 11,0A
+00038:  DATA 04,00
+0003A:  DATA 00,00
+0003C:  CLRF   FF7
+0003E:  ADDLW  4C
+00040:  MOVWF  FF6
+00042:  MOVLW  00
+00044:  ADDWFC FF7,F
+00046:  TBLRD*+
+00048:  MOVF   FF5,W
+0004A:  RETURN 0
+0004C:  DATA 44,69
+0004E:  DATA 72,65
+00050:  DATA 63,74
+00052:  DATA 20,54
+00054:  DATA 65,78
+00056:  DATA 74,20
+00058:  DATA 50,61
+0005A:  DATA 73,73
+0005C:  DATA 69,6E
+0005E:  DATA 67,00
+*
+002E8:  ADDWF  FE8,W
+002EA:  CLRF   FF7
+002EC:  RLCF   FF7,F
+002EE:  ADDLW  03
+002F0:  MOVWF  FF6
+002F2:  MOVLW  03
+002F4:  ADDWFC FF7,F
+002F6:  TBLRD*-
+002F8:  MOVF   FF5,W
+002FA:  MOVWF  FFA
+002FC:  TBLRD*
+002FE:  MOVF   FF5,W
+00300:  MOVWF  FF9
+00302:  DATA 24,02
+00304:  DATA 36,02
+00306:  DATA 48,02
+00308:  DATA 5A,02
+....................  
+.................... #list 
+....................  
+.................... #device ADC=10 
+....................  
+.................... #FUSES NOWDT,NOPROTECT,NOLVP HSM,NOPLLEN,NOFCMEN,PUT,BROWNOUT_SW,BORV22,CCP2C1,NOPBADEN,CCP3E0,NOHFOFST,TIMER3C0 
+.................... #FUSES CCP2D2,MCLR,STVREN,NOXINST,NODEBUG,NOCPB,NOCPD,NOWRT,NOWRTC,NOWRTB,NOWRTD,NOEBTR,NOEBTRB                   
+....................  
+.................... #use delay(crystal=8000000,restart_wdt) 
+*
+0007C:  CLRF   FEA
+0007E:  MOVLW  82
+00080:  MOVWF  FE9
+00082:  MOVF   FEF,W
+00084:  BZ    00A8
+00086:  MOVLW  02
+00088:  MOVWF  01
+0008A:  MOVLW  BF
+0008C:  MOVWF  00
+0008E:  CLRWDT
+00090:  DECFSZ 00,F
+00092:  BRA    008E
+00094:  DECFSZ 01,F
+00096:  BRA    008A
+00098:  MOVLW  96
+0009A:  MOVWF  00
+0009C:  DECFSZ 00,F
+0009E:  BRA    009C
+000A0:  BRA    00A2
+000A2:  CLRWDT
+000A4:  DECFSZ FEF,F
+000A6:  BRA    0086
+000A8:  RETURN 0
+.................... #use I2C(master, sda=PIN_C4, scl=PIN_C3, FORCE_HW)   
+*
+00060:  BCF    FC6.7
+00062:  BCF    F9E.3
+00064:  MOVFF  83,FC9
+00068:  MOVLW  02
+0006A:  BTFSC  FC6.7
+0006C:  BRA    0078
+0006E:  BTFSS  F9E.3
+00070:  BRA    006E
+00072:  MOVLW  00
+00074:  BTFSC  FC5.6
+00076:  MOVLW  01
+00078:  MOVWF  01
+0007A:  RETURN 0
+....................  
+....................  
+....................  
+.................... #define _LCD_FIRST_ROW          0x80     //Move cursor to the 1st row 
+.................... #define _LCD_SECOND_ROW         0xC0     //Move cursor to the 2nd row 
+.................... #define _LCD_THIRD_ROW          0x94     //Move cursor to the 3rd row 
+.................... #define _LCD_FOURTH_ROW         0xD4     //Move cursor to the 4th row 
+.................... #define _LCD_CLEAR              0x01     //Clear display 
+.................... #define _LCD_RETURN_HOME        0x02     //Return cursor to home position, returns a  
+....................                                          //shifted display to its original position. 
+....................                                          //Display data RAM is unaffected. 
+.................... #define _LCD_CURSOR_OFF         0x0C     //Turn off cursor 
+.................... #define _LCD_UNDERLINE_ON       0x0E     //Underline cursor on 
+.................... #define _LCD_BLINK_CURSOR_ON    0x0F     //Blink cursor on 
+.................... #define _LCD_MOVE_CURSOR_LEFT   0x10     //Move cursor left without changing  
+....................                                          //display data RAM 
+.................... #define _LCD_MOVE_CURSOR_RIGHT  0x14     //Move cursor right without changing  
+....................                                          //display data RAM 
+.................... #define _LCD_TURN_ON            0x0C     //Turn Lcd display on 
+.................... #define _LCD_TURN_OFF           0x08     //Turn Lcd display off 
+.................... #define _LCD_SHIFT_LEFT         0x18     //Shift display left without changing  
+....................                                          //display data RAM 
+.................... #define _LCD_SHIFT_RIGHT        0x1E     //Shift display right without changing  
+....................  
+....................                                           
+.................... #define LCD_RS PIN_B4 
+.................... #define LCD_EN PIN_B5 
+.................... #define LCD_D4 PIN_B0        
+.................... #define LCD_D5 PIN_B1   
+.................... #define LCD_D6 PIN_B2    
+.................... #define LCD_D7 PIN_B3 
+....................  
+.................... #define EN_DELAY 100 
+.................... #define LCD_STROBE {output_high(LCD_EN); delay_us(EN_DELAY); output_low(LCD_EN); delay_us(EN_DELAY);};  
+....................  
+.................... #define  Waddr1 0x4E 
+.................... #define  Waddr2 0x4C    
+....................   
+.................... void I2C_LCD_Cmd(char address, char out_char); 
+.................... void I2C_LCD_Chr(char address, char row, char column, char out_char); 
+.................... void I2C_LCD_Chr_Cp(char address, char out_char); 
+.................... void I2C_LCD_Init(char address); 
+.................... void I2C_LCD_Out(char address, char row, char col, char *text); 
+.................... void I2C_LCD_Out_Cp(char address, char *text); 
+.................... void CustomChar(char address, char pos_row, char pos_char); 
+....................                                                             
+.................... char msg1[] = "I2C LCD 4 Bit";           
+.................... char msg2[] = "PIC18F46K22 8 MHz";                     
+.................... char msg3[] = "CCS C, EasyPIC v7"; 
+.................... char msg4[] = "LCD address 0x07"; 
+.................... char msg5[] = "LCD address 0x06";    
+....................                       
+.................... char const msg6[] = "Const Text Test";       
+....................            
+.................... char const character[] = {10,21,17,10,4,0,0,0}; 
+....................  
+....................  
+.................... /*   LCD_I2C found with PCF8574 
+....................          P7,P6,P5,P4 of PCF8574 = MSbits DB7,DB6,DB5,DB4 of LCD Display. 
+....................          P3 is hardware display bit (BackLight : 1 = on / 0 = off) 
+....................          P2 is hardware E display bit clock : E = 1 -> E = 0 active 
+....................          P1 is R/W hardware Read/Write bit hardware : Read = 1 / Write = 0 
+....................          P0 is RS hardware Register Select : CmdReg = 0 / DataReg = 1 
+.................... */ 
+....................  
+.................... void I2C_LCD_Cmd(char address, char out_char) { 
+*
+000AA:  CLRF   x81
+....................  
+....................     char hi_n, lo_n; 
+....................     char rs = 0x00; 
+....................  
+....................     hi_n = out_char & 0xF0; 
+000AC:  MOVF   x7E,W
+000AE:  ANDLW  F0
+000B0:  MOVWF  x7F
+....................     lo_n = (out_char << 4) & 0xF0; 
+000B2:  SWAPF  x7E,W
+000B4:  MOVWF  00
+000B6:  MOVLW  F0
+000B8:  ANDWF  00,F
+000BA:  MOVF   00,W
+000BC:  ANDLW  F0
+000BE:  MOVWF  x80
+....................  
+....................     I2C_Start(); 
+000C0:  BSF    FC5.0
+000C2:  BTFSC  FC5.0
+000C4:  BRA    00C2
+....................     I2C_Write(address); 
+000C6:  MOVFF  7D,83
+000CA:  RCALL  0060
+....................     I2C_Write(hi_n | rs | 0x04 | 0x08); 
+000CC:  MOVF   x7F,W
+000CE:  IORWF  x81,W
+000D0:  IORLW  04
+000D2:  IORLW  08
+000D4:  MOVWF  x82
+000D6:  MOVWF  x83
+000D8:  RCALL  0060
+....................     delay_us(50); 
+000DA:  CLRWDT
+000DC:  MOVLW  20
+000DE:  MOVWF  00
+000E0:  DECFSZ 00,F
+000E2:  BRA    00E0
+000E4:  BRA    00E6
+....................     I2C_Write(hi_n | rs | 0x00 | 0x08); 
+000E6:  MOVF   x7F,W
+000E8:  IORWF  x81,W
+000EA:  IORLW  08
+000EC:  MOVWF  x82
+000EE:  MOVWF  x83
+000F0:  RCALL  0060
+....................     delay_us(100); 
+000F2:  CLRWDT
+000F4:  MOVLW  42
+000F6:  MOVWF  00
+000F8:  DECFSZ 00,F
+000FA:  BRA    00F8
+....................     I2C_Write(lo_n | rs | 0x04 | 0x08); 
+000FC:  MOVF   x80,W
+000FE:  IORWF  x81,W
+00100:  IORLW  04
+00102:  IORLW  08
+00104:  MOVWF  x82
+00106:  MOVWF  x83
+00108:  RCALL  0060
+....................     delay_us(50); 
+0010A:  CLRWDT
+0010C:  MOVLW  20
+0010E:  MOVWF  00
+00110:  DECFSZ 00,F
+00112:  BRA    0110
+00114:  BRA    0116
+....................     I2C_Write(lo_n | rs | 0x00 | 0x08); 
+00116:  MOVF   x80,W
+00118:  IORWF  x81,W
+0011A:  IORLW  08
+0011C:  MOVWF  x82
+0011E:  MOVWF  x83
+00120:  RCALL  0060
+....................     I2C_stop(); 
+00122:  BSF    FC5.2
+00124:  BTFSC  FC5.2
+00126:  BRA    0124
+....................  
+....................     if(out_char == 0x01)Delay_ms(2); 
+00128:  DECFSZ x7E,W
+0012A:  BRA    0132
+0012C:  MOVLW  02
+0012E:  MOVWF  x82
+00130:  RCALL  007C
+00132:  RETURN 0
+.................... } 
+....................  
+.................... void I2C_LCD_Chr(char address, char row, char column, char out_char) { 
+*
+00214:  MOVLW  01
+00216:  MOVWF  x7B
+....................  
+....................     char hi_n, lo_n; 
+....................     char rs = 0x01; 
+....................  
+....................     switch(row){ 
+00218:  SUBWF  x76,W
+0021A:  ADDLW  FC
+0021C:  BC    026A
+0021E:  ADDLW  04
+00220:  GOTO   02E8
+....................  
+....................         case 1: 
+....................         I2C_LCD_Cmd(address, 0x80 + (column - 1)); 
+00224:  MOVLW  01
+00226:  SUBWF  x77,W
+00228:  ADDLW  80
+0022A:  MOVWF  x7C
+0022C:  MOVFF  75,7D
+00230:  MOVWF  x7E
+00232:  RCALL  00AA
+....................         break; 
+00234:  BRA    026A
+....................         case 2: 
+....................         I2C_LCD_Cmd(address, 0xC0 + (column - 1));                       
+00236:  MOVLW  01
+00238:  SUBWF  x77,W
+0023A:  ADDLW  C0
+0023C:  MOVWF  x7C
+0023E:  MOVFF  75,7D
+00242:  MOVWF  x7E
+00244:  RCALL  00AA
+....................         break; 
+00246:  BRA    026A
+....................         case 3: 
+....................         #ifdef LCD16X4  
+....................          I2C_LCD_Cmd(address, 0x90 + (column - 1)); 
+....................         #else 
+....................          I2C_LCD_Cmd(address, 0x94 + (column - 1)); 
+00248:  MOVLW  01
+0024A:  SUBWF  x77,W
+0024C:  ADDLW  94
+0024E:  MOVWF  x7C
+00250:  MOVFF  75,7D
+00254:  MOVWF  x7E
+00256:  RCALL  00AA
+....................         #endif                                    
+....................         break;                                               
+00258:  BRA    026A
+....................         case 4: 
+....................         #ifdef LCD16X4  
+....................          I2C_LCD_Cmd(address, 0xD0 + (column - 1));  
+....................         #else 
+....................          I2C_LCD_Cmd(address, 0xD4 + (column - 1)); 
+0025A:  MOVLW  01
+0025C:  SUBWF  x77,W
+0025E:  ADDLW  D4
+00260:  MOVWF  x7C
+00262:  MOVFF  75,7D
+00266:  MOVWF  x7E
+00268:  RCALL  00AA
+....................         break; 
+....................     };                                                     
+....................  
+....................     hi_n = out_char & 0xF0; 
+0026A:  MOVF   x78,W
+0026C:  ANDLW  F0
+0026E:  MOVWF  x79
+....................     lo_n = (out_char << 4) & 0xF0; 
+00270:  SWAPF  x78,W
+00272:  MOVWF  00
+00274:  MOVLW  F0
+00276:  ANDWF  00,F
+00278:  MOVF   00,W
+0027A:  ANDLW  F0
+0027C:  MOVWF  x7A
+....................  
+....................     I2C_Start(); 
+0027E:  BSF    FC5.0
+00280:  BTFSC  FC5.0
+00282:  BRA    0280
+....................     I2C_Write(address); 
+00284:  MOVFF  75,83
+00288:  RCALL  0060
+....................     I2C_Write(hi_n | rs | 0x04 | 0x08); 
+0028A:  MOVF   x79,W
+0028C:  IORWF  x7B,W
+0028E:  IORLW  04
+00290:  IORLW  08
+00292:  MOVWF  x7C
+00294:  MOVWF  x83
+00296:  RCALL  0060
+....................     delay_us(50); 
+00298:  CLRWDT
+0029A:  MOVLW  20
+0029C:  MOVWF  00
+0029E:  DECFSZ 00,F
+002A0:  BRA    029E
+002A2:  BRA    02A4
+....................     I2C_Write(hi_n | rs | 0x00 | 0x08); 
+002A4:  MOVF   x79,W
+002A6:  IORWF  x7B,W
+002A8:  IORLW  08
+002AA:  MOVWF  x7C
+002AC:  MOVWF  x83
+002AE:  RCALL  0060
+....................     delay_us(100); 
+002B0:  CLRWDT
+002B2:  MOVLW  42
+002B4:  MOVWF  00
+002B6:  DECFSZ 00,F
+002B8:  BRA    02B6
+....................     I2C_Write(lo_n | rs | 0x04 | 0x08); 
+002BA:  MOVF   x7A,W
+002BC:  IORWF  x7B,W
+002BE:  IORLW  04
+002C0:  IORLW  08
+002C2:  MOVWF  x7C
+002C4:  MOVWF  x83
+002C6:  RCALL  0060
+....................     delay_us(50); 
+002C8:  CLRWDT
+002CA:  MOVLW  20
+002CC:  MOVWF  00
+002CE:  DECFSZ 00,F
+002D0:  BRA    02CE
+002D2:  BRA    02D4
+....................     I2C_Write(lo_n | rs | 0x00 | 0x08); 
+002D4:  MOVF   x7A,W
+002D6:  IORWF  x7B,W
+002D8:  IORLW  08
+002DA:  MOVWF  x7C
+002DC:  MOVWF  x83
+002DE:  RCALL  0060
+....................     I2C_stop(); 
+002E0:  BSF    FC5.2
+002E2:  BTFSC  FC5.2
+002E4:  BRA    02E2
+002E6:  RETURN 0
+.................... } 
+....................  
+.................... void I2C_LCD_Chr_Cp(char address, char out_char) {   
+*
+00348:  MOVLW  01
+0034A:  MOVWF  x75
+....................  
+....................     char hi_n, lo_n; 
+....................     char rs = 0x01; 
+....................  
+....................     hi_n = out_char & 0xF0; 
+0034C:  MOVF   x72,W
+0034E:  ANDLW  F0
+00350:  MOVWF  x73
+....................     lo_n = (out_char << 4) & 0xF0; 
+00352:  SWAPF  x72,W
+00354:  MOVWF  00
+00356:  MOVLW  F0
+00358:  ANDWF  00,F
+0035A:  MOVF   00,W
+0035C:  ANDLW  F0
+0035E:  MOVWF  x74
+....................  
+....................     I2C_Start(); 
+00360:  BSF    FC5.0
+00362:  BTFSC  FC5.0
+00364:  BRA    0362
+....................     I2C_Write(address); 
+00366:  MOVFF  71,83
+0036A:  RCALL  0060
+....................     I2C_Write(hi_n | rs | 0x04 | 0x08); 
+0036C:  MOVF   x73,W
+0036E:  IORWF  x75,W
+00370:  IORLW  04
+00372:  IORLW  08
+00374:  MOVWF  x76
+00376:  MOVWF  x83
+00378:  RCALL  0060
+....................     delay_us(50); 
+0037A:  CLRWDT
+0037C:  MOVLW  20
+0037E:  MOVWF  00
+00380:  DECFSZ 00,F
+00382:  BRA    0380
+00384:  BRA    0386
+....................     I2C_Write(hi_n | rs | 0x00 | 0x08); 
+00386:  MOVF   x73,W
+00388:  IORWF  x75,W
+0038A:  IORLW  08
+0038C:  MOVWF  x76
+0038E:  MOVWF  x83
+00390:  RCALL  0060
+....................     delay_us(100); 
+00392:  CLRWDT
+00394:  MOVLW  42
+00396:  MOVWF  00
+00398:  DECFSZ 00,F
+0039A:  BRA    0398
+....................     I2C_Write(lo_n | rs | 0x04 | 0x08); 
+0039C:  MOVF   x74,W
+0039E:  IORWF  x75,W
+003A0:  IORLW  04
+003A2:  IORLW  08
+003A4:  MOVWF  x76
+003A6:  MOVWF  x83
+003A8:  RCALL  0060
+....................     delay_us(50); 
+003AA:  CLRWDT
+003AC:  MOVLW  20
+003AE:  MOVWF  00
+003B0:  DECFSZ 00,F
+003B2:  BRA    03B0
+003B4:  BRA    03B6
+....................     I2C_Write(lo_n | rs | 0x00 | 0x08); 
+003B6:  MOVF   x74,W
+003B8:  IORWF  x75,W
+003BA:  IORLW  08
+003BC:  MOVWF  x76
+003BE:  MOVWF  x83
+003C0:  RCALL  0060
+....................     I2C_stop(); 
+003C2:  BSF    FC5.2
+003C4:  BTFSC  FC5.2
+003C6:  BRA    03C4
+003C8:  GOTO   03EE (RETURN)
+.................... } 
+....................  
+....................  
+.................... void I2C_LCD_Init(char address) { 
+*
+00134:  CLRF   x6D
+....................  
+....................      char rs = 0x00; 
+....................       
+....................      I2C_Start(); 
+00136:  BSF    FC5.0
+00138:  BTFSC  FC5.0
+0013A:  BRA    0138
+....................      I2C_Write(address);   
+0013C:  MOVFF  6C,83
+00140:  RCALL  0060
+....................       
+....................      delay_ms(30); 
+00142:  MOVLW  1E
+00144:  MOVWF  x82
+00146:  RCALL  007C
+....................  
+....................      I2C_Write(0x30 | rs | 0x04 | 0x08); 
+00148:  MOVF   x6D,W
+0014A:  IORLW  30
+0014C:  IORLW  04
+0014E:  IORLW  08
+00150:  MOVWF  x6E
+00152:  MOVWF  x83
+00154:  RCALL  0060
+....................      delay_us(50); 
+00156:  CLRWDT
+00158:  MOVLW  20
+0015A:  MOVWF  00
+0015C:  DECFSZ 00,F
+0015E:  BRA    015C
+00160:  BRA    0162
+....................      I2C_Write(0x30 | rs | 0x00 | 0x08); 
+00162:  MOVF   x6D,W
+00164:  IORLW  30
+00166:  IORLW  08
+00168:  MOVWF  x6E
+0016A:  MOVWF  x83
+0016C:  RCALL  0060
+....................       
+....................      delay_ms(10); 
+0016E:  MOVLW  0A
+00170:  MOVWF  x82
+00172:  RCALL  007C
+....................  
+....................      I2C_Write(0x30 | rs | 0x04 | 0x08); 
+00174:  MOVF   x6D,W
+00176:  IORLW  30
+00178:  IORLW  04
+0017A:  IORLW  08
+0017C:  MOVWF  x6E
+0017E:  MOVWF  x83
+00180:  RCALL  0060
+....................      delay_us(50); 
+00182:  CLRWDT
+00184:  MOVLW  20
+00186:  MOVWF  00
+00188:  DECFSZ 00,F
+0018A:  BRA    0188
+0018C:  BRA    018E
+....................      I2C_Write(0x30 | rs | 0x00 | 0x08); 
+0018E:  MOVF   x6D,W
+00190:  IORLW  30
+00192:  IORLW  08
+00194:  MOVWF  x6E
+00196:  MOVWF  x83
+00198:  RCALL  0060
+....................       
+....................      delay_ms(10); 
+0019A:  MOVLW  0A
+0019C:  MOVWF  x82
+0019E:  RCALL  007C
+....................  
+....................      I2C_Write(0x30 | rs | 0x04 | 0x08); 
+001A0:  MOVF   x6D,W
+001A2:  IORLW  30
+001A4:  IORLW  04
+001A6:  IORLW  08
+001A8:  MOVWF  x6E
+001AA:  MOVWF  x83
+001AC:  RCALL  0060
+....................      delay_us(50); 
+001AE:  CLRWDT
+001B0:  MOVLW  20
+001B2:  MOVWF  00
+001B4:  DECFSZ 00,F
+001B6:  BRA    01B4
+001B8:  BRA    01BA
+....................      I2C_Write(0x30 | rs | 0x00 | 0x08); 
+001BA:  MOVF   x6D,W
+001BC:  IORLW  30
+001BE:  IORLW  08
+001C0:  MOVWF  x6E
+001C2:  MOVWF  x83
+001C4:  RCALL  0060
+....................       
+....................      delay_ms(10); 
+001C6:  MOVLW  0A
+001C8:  MOVWF  x82
+001CA:  RCALL  007C
+....................  
+....................      I2C_Write(0x20 | rs | 0x04 | 0x08); 
+001CC:  MOVF   x6D,W
+001CE:  IORLW  20
+001D0:  IORLW  04
+001D2:  IORLW  08
+001D4:  MOVWF  x6E
+001D6:  MOVWF  x83
+001D8:  RCALL  0060
+....................      delay_us(50); 
+001DA:  CLRWDT
+001DC:  MOVLW  20
+001DE:  MOVWF  00
+001E0:  DECFSZ 00,F
+001E2:  BRA    01E0
+001E4:  BRA    01E6
+....................      I2C_Write(0x20 | rs | 0x00 | 0x08); 
+001E6:  MOVF   x6D,W
+001E8:  IORLW  20
+001EA:  IORLW  08
+001EC:  MOVWF  x6E
+001EE:  MOVWF  x83
+001F0:  RCALL  0060
+....................      I2C_Stop(); 
+001F2:  BSF    FC5.2
+001F4:  BTFSC  FC5.2
+001F6:  BRA    01F4
+....................  
+....................      delay_ms(10);                                              
+001F8:  MOVLW  0A
+001FA:  MOVWF  x82
+001FC:  RCALL  007C
+....................  
+....................      I2C_LCD_Cmd(address, 0x28); 
+001FE:  MOVFF  6C,7D
+00202:  MOVLW  28
+00204:  MOVWF  x7E
+00206:  RCALL  00AA
+....................      I2C_LCD_Cmd(address, 0x06); 
+00208:  MOVFF  6C,7D
+0020C:  MOVLW  06
+0020E:  MOVWF  x7E
+00210:  RCALL  00AA
+00212:  RETURN 0
+.................... }                        
+....................  
+.................... void I2C_LCD_Out(char address, char row, char col, char *text) { 
+....................     while(*text) 
+*
+0030A:  MOVFF  72,03
+0030E:  MOVFF  71,FE9
+00312:  MOVFF  72,FEA
+00316:  MOVF   FEF,F
+00318:  BZ    0346
+....................          I2C_LCD_Chr(address, row, col++, *text++); 
+0031A:  MOVF   x70,W
+0031C:  INCF   x70,F
+0031E:  MOVWF  x73
+00320:  MOVFF  72,03
+00324:  MOVF   x71,W
+00326:  INCF   x71,F
+00328:  BTFSC  FD8.2
+0032A:  INCF   x72,F
+0032C:  MOVWF  FE9
+0032E:  MOVFF  03,FEA
+00332:  MOVFF  FEF,78
+00336:  MOVFF  6E,75
+0033A:  MOVFF  6F,76
+0033E:  MOVFF  73,77
+00342:  RCALL  0214
+00344:  BRA    030A
+00346:  RETURN 0
+.................... } 
+....................  
+.................... void I2C_LCD_Out_Cp(char address, char *text) {     
+....................     while(*text) 
+....................          I2C_LCD_Chr_Cp(address, *text++);          
+.................... }  
+....................  
+.................... void CustomChar(char address,char pos_row, char pos_char) { 
+....................   char i; 
+....................     I2C_Lcd_Cmd(address, 64); 
+*
+003CC:  MOVFF  6C,7D
+003D0:  MOVLW  40
+003D2:  MOVWF  x7E
+003D4:  RCALL  00AA
+....................     for (i = 0; i<=7; i++) I2C_Lcd_Chr_Cp(address, character[i]); 
+003D6:  CLRF   x6F
+003D8:  MOVF   x6F,W
+003DA:  SUBLW  07
+003DC:  BNC   03F2
+003DE:  CLRF   03
+003E0:  MOVF   x6F,W
+003E2:  RCALL  0024
+003E4:  MOVWF  x70
+003E6:  MOVFF  6C,71
+003EA:  MOVWF  x72
+003EC:  BRA    0348
+003EE:  INCF   x6F,F
+003F0:  BRA    03D8
+....................     I2C_Lcd_Cmd(address, _LCD_RETURN_HOME); 
+003F2:  MOVFF  6C,7D
+003F6:  MOVLW  02
+003F8:  MOVWF  x7E
+003FA:  RCALL  00AA
+....................     delay_ms(2); 
+003FC:  MOVLW  02
+003FE:  MOVWF  x82
+00400:  RCALL  007C
+....................     I2C_Lcd_Chr(address, pos_row, pos_char, 0); 
+00402:  MOVFF  6C,75
+00406:  MOVFF  6D,76
+0040A:  MOVFF  6E,77
+0040E:  CLRF   x78
+00410:  RCALL  0214
+00412:  RETURN 0
+.................... }  
+....................                                                              
+.................... void main() {                         
+00414:  CLRF   FF8
+00416:  BCF    FD0.7
+00418:  BSF    F94.3
+0041A:  BSF    F94.4
+0041C:  BCF    FCB.0
+0041E:  BCF    FCB.1
+00420:  BCF    FCB.3
+00422:  MOVLW  13
+00424:  MOVWF  FC8
+00426:  MOVLW  28
+00428:  MOVWF  FC6
+0042A:  BSF    FC7.7
+0042C:  BCF    FC7.6
+0042E:  MOVLB  F
+00430:  CLRF   x38
+00432:  CLRF   x39
+00434:  CLRF   x3A
+00436:  CLRF   x3B
+00438:  CLRF   x3C
+0043A:  MOVLB  1
+0043C:  CLRF   x88
+0043E:  CLRF   F77
+00440:  CLRF   F78
+00442:  CLRF   F79
+00444:  BRA    049E
+00446:  DATA 54,00
+00448:  DATA 04,49
+0044A:  DATA 32,43
+0044C:  DATA 20,4C
+0044E:  DATA 43,44
+00450:  DATA 20,34
+00452:  DATA 20,42
+00454:  DATA 69,74
+00456:  DATA 00,50
+00458:  DATA 49,43
+0045A:  DATA 31,38
+0045C:  DATA 46,34
+0045E:  DATA 36,4B
+00460:  DATA 32,32
+00462:  DATA 20,38
+00464:  DATA 20,4D
+00466:  DATA 48,7A
+00468:  DATA 00,43
+0046A:  DATA 43,53
+0046C:  DATA 20,43
+0046E:  DATA 2C,20
+00470:  DATA 45,61
+00472:  DATA 73,79
+00474:  DATA 50,49
+00476:  DATA 43,20
+00478:  DATA 76,37
+0047A:  DATA 00,4C
+0047C:  DATA 43,44
+0047E:  DATA 20,61
+00480:  DATA 64,64
+00482:  DATA 72,65
+00484:  DATA 73,73
+00486:  DATA 20,30
+00488:  DATA 78,30
+0048A:  DATA 37,00
+0048C:  DATA 4C,43
+0048E:  DATA 44,20
+00490:  DATA 61,64
+00492:  DATA 64,72
+00494:  DATA 65,73
+00496:  DATA 73,20
+00498:  DATA 30,78
+0049A:  DATA 30,36
+0049C:  DATA 00,00
+0049E:  MOVLW  00
+004A0:  MOVWF  FF8
+004A2:  MOVLW  04
+004A4:  MOVWF  FF7
+004A6:  MOVLW  46
+004A8:  MOVWF  FF6
+004AA:  TBLRD*+
+004AC:  MOVF   FF5,W
+004AE:  MOVWF  00
+004B0:  XORLW  00
+004B2:  BZ    04DA
+004B4:  TBLRD*+
+004B6:  MOVF   FF5,W
+004B8:  MOVWF  01
+004BA:  BTFSC  FE8.7
+004BC:  BRA    04C8
+004BE:  ANDLW  0F
+004C0:  MOVWF  FEA
+004C2:  TBLRD*+
+004C4:  MOVFF  FF5,FE9
+004C8:  BTFSC  01.6
+004CA:  TBLRD*+
+004CC:  BTFSS  01.6
+004CE:  TBLRD*+
+004D0:  MOVFF  FF5,FEE
+004D4:  DCFSNZ 00,F
+004D6:  BRA    04AA
+004D8:  BRA    04CC
+004DA:  CLRF   FF8
+....................                                                   
+....................    I2C_Speed(100000); 
+004DC:  MOVLW  13
+004DE:  MOVWF  FC8
+004E0:  MOVLW  28
+004E2:  MOVWF  FC6
+004E4:  BSF    FC7.7
+....................        
+....................    I2C_LCD_Init(Waddr1);  
+004E6:  MOVLW  4E
+004E8:  MOVLB  0
+004EA:  MOVWF  x6C
+004EC:  RCALL  0134
+....................    I2C_LCD_Cmd(Waddr1,_LCD_CURSOR_OFF);                 
+004EE:  MOVLW  4E
+004F0:  MOVWF  x7D
+004F2:  MOVLW  0C
+004F4:  MOVWF  x7E
+004F6:  RCALL  00AA
+....................    I2C_LCD_Cmd(Waddr1,_LCD_CLEAR);                           
+004F8:  MOVLW  4E
+004FA:  MOVWF  x7D
+004FC:  MOVLW  01
+004FE:  MOVWF  x7E
+00500:  RCALL  00AA
+....................     
+....................    I2C_LCD_Init(Waddr2);  
+00502:  MOVLW  4C
+00504:  MOVWF  x6C
+00506:  RCALL  0134
+....................    I2C_LCD_Cmd(Waddr2,_LCD_CURSOR_OFF);                 
+00508:  MOVLW  4C
+0050A:  MOVWF  x7D
+0050C:  MOVLW  0C
+0050E:  MOVWF  x7E
+00510:  RCALL  00AA
+....................    I2C_LCD_Cmd(Waddr2,_LCD_CLEAR); 
+00512:  MOVLW  4C
+00514:  MOVWF  x7D
+00516:  MOVLW  01
+00518:  MOVWF  x7E
+0051A:  RCALL  00AA
+....................                     
+....................    I2C_LCD_Out(Waddr1,1,1,msg1);      
+0051C:  MOVLW  4E
+0051E:  MOVWF  x6E
+00520:  MOVLW  01
+00522:  MOVWF  x6F
+00524:  MOVWF  x70
+00526:  CLRF   x72
+00528:  MOVLW  04
+0052A:  MOVWF  x71
+0052C:  RCALL  030A
+....................    I2C_LCD_Out(Waddr1,2,1,msg2);                   
+0052E:  MOVLW  4E
+00530:  MOVWF  x6E
+00532:  MOVLW  02
+00534:  MOVWF  x6F
+00536:  MOVLW  01
+00538:  MOVWF  x70
+0053A:  CLRF   x72
+0053C:  MOVLW  12
+0053E:  MOVWF  x71
+00540:  RCALL  030A
+....................    I2C_LCD_Out(Waddr1,3,1,msg3); 
+00542:  MOVLW  4E
+00544:  MOVWF  x6E
+00546:  MOVLW  03
+00548:  MOVWF  x6F
+0054A:  MOVLW  01
+0054C:  MOVWF  x70
+0054E:  CLRF   x72
+00550:  MOVLW  24
+00552:  MOVWF  x71
+00554:  RCALL  030A
+....................    I2C_LCD_Out(Waddr1,4,1,msg4);               
+00556:  MOVLW  4E
+00558:  MOVWF  x6E
+0055A:  MOVLW  04
+0055C:  MOVWF  x6F
+0055E:  MOVLW  01
+00560:  MOVWF  x70
+00562:  CLRF   x72
+00564:  MOVLW  36
+00566:  MOVWF  x71
+00568:  RCALL  030A
+....................                                 
+....................    I2C_LCD_Out(Waddr2,1,1,msg1);        
+0056A:  MOVLW  4C
+0056C:  MOVWF  x6E
+0056E:  MOVLW  01
+00570:  MOVWF  x6F
+00572:  MOVWF  x70
+00574:  CLRF   x72
+00576:  MOVLW  04
+00578:  MOVWF  x71
+0057A:  RCALL  030A
+....................    I2C_LCD_Out(Waddr2,2,1,msg2);                   
+0057C:  MOVLW  4C
+0057E:  MOVWF  x6E
+00580:  MOVLW  02
+00582:  MOVWF  x6F
+00584:  MOVLW  01
+00586:  MOVWF  x70
+00588:  CLRF   x72
+0058A:  MOVLW  12
+0058C:  MOVWF  x71
+0058E:  RCALL  030A
+....................    I2C_LCD_Out(Waddr2,3,1,msg3); 
+00590:  MOVLW  4C
+00592:  MOVWF  x6E
+00594:  MOVLW  03
+00596:  MOVWF  x6F
+00598:  MOVLW  01
+0059A:  MOVWF  x70
+0059C:  CLRF   x72
+0059E:  MOVLW  24
+005A0:  MOVWF  x71
+005A2:  RCALL  030A
+....................    I2C_LCD_Out(Waddr2,4,1,msg5); 
+005A4:  MOVLW  4C
+005A6:  MOVWF  x6E
+005A8:  MOVLW  04
+005AA:  MOVWF  x6F
+005AC:  MOVLW  01
+005AE:  MOVWF  x70
+005B0:  CLRF   x72
+005B2:  MOVLW  47
+005B4:  MOVWF  x71
+005B6:  RCALL  030A
+....................     
+....................    delay_ms(5000);                
+005B8:  MOVLW  14
+005BA:  MOVWF  x6C
+005BC:  MOVLW  FA
+005BE:  MOVWF  x82
+005C0:  RCALL  007C
+005C2:  DECFSZ x6C,F
+005C4:  BRA    05BC
+....................                           
+....................    I2C_LCD_Cmd(Waddr1, _LCD_CLEAR);  
+005C6:  MOVLW  4E
+005C8:  MOVWF  x7D
+005CA:  MOVLW  01
+005CC:  MOVWF  x7E
+005CE:  RCALL  00AA
+....................      
+....................    I2C_LCD_Out(Waddr1,1,1,(char*)msg6); 
+005D0:  CLRF   FEA
+005D2:  MOVLW  58
+005D4:  MOVWF  FE9
+005D6:  MOVLW  10
+005D8:  MOVWF  01
+005DA:  CLRF   FF7
+005DC:  MOVLW  00
+005DE:  RCALL  0004
+005E0:  TBLRD*-
+005E2:  TBLRD*+
+005E4:  MOVFF  FF5,FEE
+005E8:  DECFSZ 01,F
+005EA:  BRA    05E2
+005EC:  MOVLW  4E
+005EE:  MOVWF  x6E
+005F0:  MOVLW  01
+005F2:  MOVWF  x6F
+005F4:  MOVWF  x70
+005F6:  CLRF   x72
+005F8:  MOVLW  58
+005FA:  MOVWF  x71
+005FC:  RCALL  030A
+....................    I2C_LCD_Out(Waddr1,2,1,(char*)"Direct Text Passing");             
+005FE:  CLRF   FEA
+00600:  MOVLW  58
+00602:  MOVWF  FE9
+00604:  MOVLW  14
+00606:  MOVWF  01
+00608:  CLRF   FF7
+0060A:  MOVLW  00
+0060C:  RCALL  003C
+0060E:  TBLRD*-
+00610:  TBLRD*+
+00612:  MOVFF  FF5,FEE
+00616:  DECFSZ 01,F
+00618:  BRA    0610
+0061A:  MOVLW  4E
+0061C:  MOVWF  x6E
+0061E:  MOVLW  02
+00620:  MOVWF  x6F
+00622:  MOVLW  01
+00624:  MOVWF  x70
+00626:  CLRF   x72
+00628:  MOVLW  58
+0062A:  MOVWF  x71
+0062C:  RCALL  030A
+....................    CustomChar(Waddr1,3,10); 
+0062E:  MOVLW  4E
+00630:  MOVWF  x6C
+00632:  MOVLW  03
+00634:  MOVWF  x6D
+00636:  MOVLW  0A
+00638:  MOVWF  x6E
+0063A:  RCALL  03CC
+....................                     
+....................    I2C_LCD_Cmd(Waddr2, _LCD_CLEAR);           
+0063C:  MOVLW  4C
+0063E:  MOVWF  x7D
+00640:  MOVLW  01
+00642:  MOVWF  x7E
+00644:  RCALL  00AA
+....................     
+....................    I2C_LCD_Out(Waddr2,1,1,(char*)msg6); 
+00646:  CLRF   FEA
+00648:  MOVLW  58
+0064A:  MOVWF  FE9
+0064C:  MOVLW  10
+0064E:  MOVWF  01
+00650:  CLRF   FF7
+00652:  MOVLW  00
+00654:  RCALL  0004
+00656:  TBLRD*-
+00658:  TBLRD*+
+0065A:  MOVFF  FF5,FEE
+0065E:  DECFSZ 01,F
+00660:  BRA    0658
+00662:  MOVLW  4C
+00664:  MOVWF  x6E
+00666:  MOVLW  01
+00668:  MOVWF  x6F
+0066A:  MOVWF  x70
+0066C:  CLRF   x72
+0066E:  MOVLW  58
+00670:  MOVWF  x71
+00672:  RCALL  030A
+....................    I2C_LCD_Out(Waddr2,2,1,(char*)"Direct Text Passing");             
+00674:  CLRF   FEA
+00676:  MOVLW  58
+00678:  MOVWF  FE9
+0067A:  MOVLW  14
+0067C:  MOVWF  01
+0067E:  CLRF   FF7
+00680:  MOVLW  00
+00682:  RCALL  003C
+00684:  TBLRD*-
+00686:  TBLRD*+
+00688:  MOVFF  FF5,FEE
+0068C:  DECFSZ 01,F
+0068E:  BRA    0686
+00690:  MOVLW  4C
+00692:  MOVWF  x6E
+00694:  MOVLW  02
+00696:  MOVWF  x6F
+00698:  MOVLW  01
+0069A:  MOVWF  x70
+0069C:  CLRF   x72
+0069E:  MOVLW  58
+006A0:  MOVWF  x71
+006A2:  RCALL  030A
+....................    CustomChar(Waddr2,3,10); 
+006A4:  MOVLW  4C
+006A6:  MOVWF  x6C
+006A8:  MOVLW  03
+006AA:  MOVWF  x6D
+006AC:  MOVLW  0A
+006AE:  MOVWF  x6E
+006B0:  RCALL  03CC
+....................                 
+....................    while(TRUE){                 
+006B2:  BRA    06B2
+....................       //TODO: User Code 
+....................    }                                             
+....................                                      
+.................... } 
+006B4:  SLEEP 
+
+Configuration Fuses:
+   Word  1: A300   HSM NOPLLEN PRIMARY_ON NOFCMEN IESO
+   Word  2: 3C12   PUT BROWNOUT_SW BORV22 NOWDT WDT32768
+   Word  3: B100   CCP2C1 NOPBADEN CCP3E0 NOHFOFST TIMER3C0 CCP2D2 MCLR
+   Word  4: 0081   STVREN NOLVP NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

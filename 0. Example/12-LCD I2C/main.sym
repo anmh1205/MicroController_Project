@@ -1,0 +1,127 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     @TRIS_C
+021     lcd_total_rows
+022     lcd_total_columns
+023     new_row_request
+024     BACKLIGHT_LED
+025-026 strtok.save
+027-02A atan2.y
+027     MAIN.Dem
+028-029 MAIN.A
+02A     MAIN.c
+02B     @PSTRINGCN7_653.P1
+02B     lcd_init.i
+02B-02E atan2.x
+02B     @PRINTF_D_653.P1
+02B     @PSTRINGC7_653.@SCRATCH1
+02C     @PRINTF_D_653.P1
+02C     lcd_init.@SCRATCH1
+02C     @PSTRINGC7_653.@SCRATCH2
+02C     @PSTRINGCN7_653.@SCRATCH1
+02D     @PSTRINGC7_653.@SCRATCH3
+02D     @PSTRINGCN7_653.@SCRATCH2
+02D     @PRINTF_D_653.@SCRATCH1
+02E     @PSTRINGC7_653.@SCRATCH4
+02E     @PSTRINGCN7_653.@SCRATCH3
+02E     @PRINTF_D_653.@SCRATCH2
+02F-032 atan2.z
+02F     @PSTRINGCN7_653.@SCRATCH4
+02F     @PRINTF_D_653.@SCRATCH3
+030     @PRINTF_D_653.@SCRATCH4
+031     @DIV88.P1
+031     lcd_putc.in_data
+032     @delay_ms1.P1
+032     lcd_gotoxy.x
+032     @DIV88.P1
+033.0   atan2.sign
+033     lcd_gotoxy.y
+033     @DIV88.@SCRATCH1
+034     atan2.quad
+034     lcd_gotoxy.row
+035     lcd_gotoxy.column
+036     lcd_gotoxy.row_addr
+037     lcd_gotoxy.lcd_address
+038     lcd_gotoxy.@SCRATCH1
+039     lcd_send_byte.data
+03A     lcd_send_byte.type
+03B     lcd_send_byte.@SCRATCH1
+03C     i2c_send_nibble.data
+03D     i2c_send_nibble.type
+03E     i2c_send_nibble.@SCRATCH1
+03F     @I2C_WRITE_1.P1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000008  LCD_INIT_STRING.data
+00000C  @const898.call
+000012  @const900.call
+000016  @delay_ms1
+00002B  @I2C_WRITE_1
+000075  i2c_send_nibble
+0000BF  lcd_send_byte
+000102  lcd_clear
+00010C  lcd_init
+000179  lcd_gotoxy
+0001B0  lcd_putc
+0001D5  @PSTRINGC7_653
+00022D  @PSTRINGCN7_653
+000286  @DIV88
+00029B  @PRINTF_D_653
+0002F2  MAIN
+0002F2  @cinit1
+000306  @cinit2
+
+Project Directory:
+    C:\Users\trung\OneDrive\Desktop\12-LCD I2C\
+
+Project Files:
+    main.c                                                  [11-Mar-23 10:52  CRC=3C1D3FDA]
+    main.h                                                  [11-Mar-23 10:46  CRC=EF59D5CC]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [12-Nov-13 14:35  CRC=81334808]
+    lcd_i2c.c                                               [11-Mar-23 10:36  CRC=CF4F6ADC]
+    ..\..\..\..\..\Program Files (x86)\PICC\Drivers\string.h [14-Jul-11 10:13  CRC=23EDEC8F]
+    ..\..\..\..\..\Program Files (x86)\PICC\Drivers\stddef.h [16-Jul-10 09:27  CRC=897CEC6C]
+    ..\..\..\..\..\Program Files (x86)\PICC\Drivers\ctype.h [03-Jan-08 13:55  CRC=2D1F019F]
+    ..\..\..\..\..\Program Files (x86)\PICC\Drivers\math.h  [28-Sep-12 11:35  CRC=546412C9]
+
+Source signature=FF4BC8B6
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-65535
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

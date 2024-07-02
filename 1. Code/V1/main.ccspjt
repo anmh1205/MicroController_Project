@@ -1,0 +1,53 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F877
+CCSVerions=5.025
+Compiler=PCM
+CCSVersion=5.025
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[E:\1. Phenikaa University\AML\1. Code\VDK (PIC16)\0. BTL\1. Code\V1\main]
+Type=4
+[mru-list]
+1=main.c
+
+[ProjectLog]
+Days=5
+D1=20-06-2024
+D1_L=2
+D1_L1=[83162]Project Opened.
+D1_L2=[85858]Started Editing.
+D2=21-06-2024
+D2_L=1
+D2_L1=[32]Stopped Editing.
+TotalEdit=5
+TotalDebug=0
+D3=22-06-2024
+D3_E=5
+D3_D=0
+D3_L=1
+D3_L1=[63010]Project Closed.
+D4=26-06-2024
+D4_L=5
+D4_L1=[50552]Project Opened.
+D4_L2=[51209]Project Closed.
+D4_L3=[51722]Project Opened.
+D4_L4=[51794]Project Closed.
+D4_L5=[51804]Project Opened.
+D5=28-06-2024
+D5_L=1
+D5_L1=[7067]Project Closed.
+
+[Opened Files]
+1=main.c
+2=D:\Program Files (x86)\PICC\Devices\16F877.h
+3=main.h
+4=lcd_i2c.c
+5=
+[main.c]
+Type=4
+[Units]
+Count=1
+1=main (main)

@@ -1,0 +1,219 @@
+#include <main.h>
+
+#define _LCD_FIRST_ROW          0x80     //Move cursor to the 1st row
+#define _LCD_SECOND_ROW         0xC0     //Move cursor to the 2nd row
+#define _LCD_THIRD_ROW          0x94     //Move cursor to the 3rd row
+#define _LCD_FOURTH_ROW         0xD4     //Move cursor to the 4th row
+#define _LCD_CLEAR              0x01     //Clear display
+#define _LCD_RETURN_HOME        0x02     //Return cursor to home position, returns a 
+                                         //shifted display to its original position.
+                                         //Display data RAM is unaffected.
+#define _LCD_CURSOR_OFF         0x0C     //Turn off cursor
+#define _LCD_UNDERLINE_ON       0x0E     //Underline cursor on
+#define _LCD_BLINK_CURSOR_ON    0x0F     //Blink cursor on
+#define _LCD_MOVE_CURSOR_LEFT   0x10     //Move cursor left without changing 
+                                         //display data RAM
+#define _LCD_MOVE_CURSOR_RIGHT  0x14     //Move cursor right without changing 
+                                         //display data RAM
+#define _LCD_TURN_ON            0x0C     //Turn Lcd display on
+#define _LCD_TURN_OFF           0x08     //Turn Lcd display off
+#define _LCD_SHIFT_LEFT         0x18     //Shift display left without changing 
+                                         //display data RAM
+#define _LCD_SHIFT_RIGHT        0x1E     //Shift display right without changing 
+
+                                         
+#define LCD_RS PIN_B4
+#define LCD_EN PIN_B5
+#define LCD_D4 PIN_B0       
+#define LCD_D5 PIN_B1  
+#define LCD_D6 PIN_B2   
+#define LCD_D7 PIN_B3
+
+#define EN_DELAY 100
+#define LCD_STROBE {output_high(LCD_EN); delay_us(EN_DELAY); output_low(LCD_EN); delay_us(EN_DELAY);}; 
+ 
+void LCD_Cmd(char out_char);
+void LCD_Chr(char row, char column, char out_char);
+void LCD_Chr_Cp(char out_char);
+void LCD_Init();
+void LCD_Out(char row, char col, char *text);
+void LCD_Out_Cp(char *text);
+
+char msg1[] = "LCD 4 bit";
+char msg2[] = "PIC18F46K22";                    
+char msg3[] = "CCS C Compiler";
+char msg4[] = "EasyPIC v7";
+
+char const msg5[] = "Const Text Test";
+                                           
+void LCD_Cmd(char out_char) {
+                      
+    output_low(LCD_RS);
+                                 
+    output_bit(LCD_D4, (out_char & 0x10)?1:0);
+    output_bit(LCD_D5, (out_char & 0x20)?1:0);
+    output_bit(LCD_D6, (out_char & 0x40)?1:0);
+    output_bit(LCD_D7, (out_char & 0x80)?1:0);
+    
+    LCD_STROBE                    
+
+    output_bit(LCD_D4, (out_char & 0x01)?1:0);
+    output_bit(LCD_D5, (out_char & 0x02)?1:0);
+    output_bit(LCD_D6, (out_char & 0x04)?1:0);
+    output_bit(LCD_D7, (out_char & 0x08)?1:0);
+    
+    LCD_STROBE
+
+    if(out_char == 0x01)Delay_ms(2);
+}
+
+void LCD_Chr(char row, char column, char out_char) {
+                                     
+    switch(row){
+
+        case 1:
+        LCD_Cmd(0x80 + (column - 1));
+        break;
+        case 2:
+        LCD_Cmd(0xC0 + (column - 1));
+        break;
+        case 3:
+        LCD_Cmd(0x94 + (column - 1));
+        break;
+        case 4:
+        LCD_Cmd(0xD4 + (column - 1));
+        break;
+    }
+                            
+    output_high(LCD_RS);
+                                 
+    output_bit(LCD_D4, (out_char & 0x10)?1:0);
+    output_bit(LCD_D5, (out_char & 0x20)?1:0);
+    output_bit(LCD_D6, (out_char & 0x40)?1:0);
+    output_bit(LCD_D7, (out_char & 0x80)?1:0);
+    
+    LCD_STROBE                    
+
+    output_bit(LCD_D4, (out_char & 0x01)?1:0);
+    output_bit(LCD_D5, (out_char & 0x02)?1:0);
+    output_bit(LCD_D6, (out_char & 0x04)?1:0);
+    output_bit(LCD_D7, (out_char & 0x08)?1:0);
+       
+    LCD_STROBE
+}
+
+void LCD_Chr_Cp(char out_char) {
+
+    output_high(LCD_RS);
+                                 
+    output_bit(LCD_D4, (out_char & 0x10)?1:0);
+    output_bit(LCD_D5, (out_char & 0x20)?1:0);
+    output_bit(LCD_D6, (out_char & 0x40)?1:0);
+    output_bit(LCD_D7, (out_char & 0x80)?1:0);
+    
+    LCD_STROBE                    
+
+    output_bit(LCD_D4, (out_char & 0x01)?1:0);
+    output_bit(LCD_D5, (out_char & 0x02)?1:0);
+    output_bit(LCD_D6, (out_char & 0x04)?1:0);
+    output_bit(LCD_D7, (out_char & 0x08)?1:0);
+        
+    LCD_STROBE
+}
+
+
+void LCD_Init() {
+
+    output_low(LCD_RS); 
+    output_low(LCD_EN);
+    output_low(LCD_D4);
+    output_low(LCD_D5);
+    output_low(LCD_D6);
+    output_low(LCD_D7);
+                      
+    delay_ms(30);
+
+    output_high(LCD_D4);
+    output_high(LCD_D5);
+    output_low(LCD_D6);
+    output_low(LCD_D7);
+
+    LCD_STROBE              
+
+    Delay_ms(10);
+
+    output_high(LCD_D4);
+    output_high(LCD_D5);
+    output_low(LCD_D6);
+    output_low(LCD_D7);
+
+
+    LCD_STROBE
+    
+    delay_ms(10);
+
+    output_high(LCD_D4);
+    output_high(LCD_D5);
+    output_low(LCD_D6);
+    output_low(LCD_D7);
+
+
+    LCD_STROBE
+
+    delay_ms(10);            
+
+    output_low(LCD_D4);
+    output_high(LCD_D5);
+    output_low(LCD_D6);
+    output_low(LCD_D7);
+
+
+    LCD_STROBE
+
+    delay_ms(10);       
+
+    LCD_Cmd(0x28);
+    LCD_Cmd(0x06);
+}
+
+void LCD_Out(char row, char col, char *text) {
+       while(*text)                      
+         LCD_Chr(row, col++, *text++);
+}
+                               
+void LCD_Out_Cp(char *text) {
+    while(*text)                             
+         LCD_Chr_Cp(*text++);
+}           
+  
+void main() {                        
+   
+   set_tris_b(0x00); 
+   
+   LCD_Init();
+   LCD_Cmd(_LCD_CURSOR_OFF);
+   LCD_Cmd(_LCD_CLEAR);
+   
+   LCD_Out(1,1,msg1);     
+   LCD_Out(2,1,msg2);                  
+   LCD_Out(3,1,msg3);
+   LCD_Out(4,1,msg4);
+                                          
+   delay_ms(5000);             
+   
+   LCD_Cmd(_LCD_CLEAR); 
+   
+   LCD_Out(1,1,(char*)msg5);
+   LCD_Out(2,1,(char*)"Direct Text Passing");            
+                                        
+   while(TRUE){                
+      //TODO: User Code
+   }                 
+                                    
+}
+
+                                     
+
+
+                            
+

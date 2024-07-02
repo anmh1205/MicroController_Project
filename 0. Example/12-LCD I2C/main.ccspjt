@@ -1,0 +1,30 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.015
+Compiler=PCM
+CCSVersion=5.015
+[Target Data]
+FileList=main.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[C:\Users\trung\OneDrive\Desktop\12-LCD I2C\main]
+Type=4
+[mru-list]
+1=main.c
+[Opened Files]
+1=main.c
+2=main.h
+3=
+[main.c]
+Type=4
+[Units]
+Count=1
+1=main (main)
+
+[ProjectLog]
+Days=1
+D1=26-06-2024
+D1_L=2
+D1_L1=[51209]Project Opened.
+D1_L2=[51454]Project Closed.

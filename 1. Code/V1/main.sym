@@ -1,0 +1,104 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     @TRIS_C
+021     lcd_total_rows
+022     lcd_total_columns
+023     new_row_request
+024     BACKLIGHT_LED
+025-029 SW_Pin
+02A     SW0
+02B     SW1
+02C     SW2
+02D     SW3
+02E     SW4
+02F     LED_Pin
+030     Buzzer_Pin
+031     lcd_init.i
+031     MAIN.@SCRATCH1
+031     @PSTRINGC7_647.@SCRATCH1
+032     lcd_init.@SCRATCH1
+032     @PSTRINGC7_647.@SCRATCH2
+033     @PSTRINGC7_647.@SCRATCH3
+034     lcd_putc.in_data
+034     @PSTRINGC7_647.@SCRATCH4
+035     lcd_gotoxy.x
+035     @delay_ms1.P1
+036     lcd_gotoxy.y
+037     lcd_gotoxy.row
+038     lcd_gotoxy.column
+039     lcd_gotoxy.row_addr
+03A     lcd_gotoxy.lcd_address
+03B     lcd_gotoxy.@SCRATCH1
+03C     lcd_send_byte.data
+03D     lcd_send_byte.type
+03E     lcd_send_byte.@SCRATCH1
+03F     i2c_send_nibble.data
+040     i2c_send_nibble.type
+041     i2c_send_nibble.@SCRATCH1
+042     @I2C_WRITE_1.P1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000008  LCD_INIT_STRING.data
+00000C  @const660.call
+000012  @const662.call
+000018  @delay_ms1
+00002C  @I2C_WRITE_1
+000076  i2c_send_nibble
+0000CA  lcd_send_byte
+00010D  lcd_clear
+000117  lcd_init
+000184  lcd_gotoxy
+0001BB  lcd_putc
+0001E0  @PSTRINGC7_647
+000236  @cinit1
+000236  MAIN
+00025E  @cinit2
+
+Project Directory:
+    E:\1. Phenikaa University\AML\1. Code\VDK (PIC16)\0. BTL\1. Code\V1\
+
+Project Files:
+    main.c                                                  [26-Jun-24 15:23  CRC=085EFCAE]
+    main.h                                                  [26-Jun-24 14:52  CRC=01A12EC9]
+    D:\Program Files (x86)\PICC\Devices\16F877.h            [18-Apr-14 16:56  CRC=0C9C6EEB]
+
+Source signature=2339094D
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC16F877
+    Pointer Size:   16
+    ADC Range:      0-65535
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

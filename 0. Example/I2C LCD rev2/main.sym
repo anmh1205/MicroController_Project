@@ -1,0 +1,132 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-011 msg1
+012-023 msg2
+024-035 msg3
+036-046 msg4
+047-057 msg5
+058-06B MAIN.@STRPARAM
+06C     CustomChar.address
+06C     I2C_LCD_Init.address
+06C     MAIN.@SCRATCH1
+06D     CustomChar.pos_row
+06D     I2C_LCD_Init.rs
+06D     MAIN.@SCRATCH2
+06E     I2C_LCD_Out.address
+06E     CustomChar.pos_char
+06E     I2C_LCD_Init.@SCRATCH1
+06E     MAIN.@SCRATCH3
+06F     I2C_LCD_Out.row
+06F     CustomChar.i
+06F     MAIN.@SCRATCH4
+070     I2C_LCD_Out.col
+070     CustomChar.@SCRATCH1
+071-072 I2C_LCD_Out.text
+071     I2C_LCD_Chr_Cp.address
+072     I2C_LCD_Chr_Cp.out_char
+073     I2C_LCD_Chr_Cp.hi_n
+073     I2C_LCD_Out.@SCRATCH1
+074     I2C_LCD_Chr_Cp.lo_n
+074     I2C_LCD_Out.@SCRATCH2
+075     I2C_LCD_Chr.address
+075     I2C_LCD_Chr_Cp.rs
+076     I2C_LCD_Chr.row
+076     I2C_LCD_Chr_Cp.@SCRATCH1
+077     I2C_LCD_Chr.column
+078     I2C_LCD_Chr.out_char
+079     I2C_LCD_Chr.hi_n
+07A     I2C_LCD_Chr.lo_n
+07B     I2C_LCD_Chr.rs
+07C     I2C_LCD_Chr.@SCRATCH1
+07D     I2C_LCD_Cmd.address
+07E     I2C_LCD_Cmd.out_char
+07F     I2C_LCD_Cmd.hi_n
+080     I2C_LCD_Cmd.lo_n
+081     I2C_LCD_Cmd.rs
+082     @delay_ms1.P1
+082     I2C_LCD_Cmd.@SCRATCH1
+083     @I2C_WRITEU_1.P1
+F55     CCP_5_LOW
+F55     CCP_5
+F56     CCP_5_HIGH
+F58     CCP_4
+F58     CCP_4_LOW
+F59     CCP_4_HIGH
+F5E     CCP_3_LOW
+F5E     CCP_3
+F5F     CCP_3_HIGH
+F67     CCP_2_LOW
+F67     CCP_2
+F68     CCP_2_HIGH
+F78.6   C2OUT
+F79.6   C1OUT
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  msg6.call
+000014  msg6.data
+000024  character.call
+000034  character.data
+00003C  @const757.call
+000060  @I2C_WRITEU_1
+00007C  @delay_ms1
+0000AA  I2C_LCD_Cmd
+000134  I2C_LCD_Init
+000214  I2C_LCD_Chr
+0002E8  @goto10665
+00030A  I2C_LCD_Out
+000348  I2C_LCD_Chr_Cp
+0003CC  CustomChar
+000414  MAIN
+000414  @cinit1
+000444  @cinit2
+
+Project Directory:
+    C:\Users\System Administrator\Desktop\CCS C Projects\PIC18F46K22\I2C LCD rev2\
+
+Project Files:
+    main.c                                                  [04-May-15 06:33  CRC=DDA29B38]
+    main.h                                                  [04-May-15 02:49  CRC=B90DAFA4]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F46K22.h [20-Mar-15 14:31  CRC=8FCE6DF1]
+
+Source signature=B64D26BE
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=AF2C
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC18F46K22
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX32:      main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA
