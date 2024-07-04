@@ -1,7 +1,7 @@
-D G "__PCM__" 0 203 ""5.025""
-D G "__DEVICE__" 0 203 "877"
-D G "__DATE__" 0 203 ""26-Jun-24""
-D G "__TIME__" 0 203 ""15:23:56"" "Standard Header file for the PIC16F877 device ////////////////"
+D G "__PCM__" 0 220 ""5.025""
+D G "__DEVICE__" 0 220 "877"
+D G "__DATE__" 0 220 ""04-Jul-24""
+D G "__TIME__" 0 220 ""05:03:14"" "Standard Header file for the PIC16F877 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 37 "int8" `53 
 f B "set_tris_a" 2 37 "void(int8 value)" `52 
@@ -754,9 +754,9 @@ d G "INT_BUSCOL" 2 635 "0x008D08"
 d G "INT_EEPROM" 2 636 "0x008D10"
 d G "INT_TIMER0" 2 637 "0x000B20"
 D G "LCD_ADDR" 0 3 "0x4E		" "0x4E        //I2C slave address for LCD module"
-V G "lcd_total_rows" 0 4 "int8" `620 
+V G "lcd_total_rows" 0 4 "int8" `614 
 C L "jump_to_isr" 0 4 1 "FUNCTION"
-V G "lcd_total_columns" 0 5 "int8" `621 
+V G "lcd_total_columns" 0 5 "int8" `615 
 D G "RS" 0 7 "0b00000001			" "P0 - PCF8574T Pin connected to RS"
 D G "RW" 0 8 "0b00000010			" "P1 - PCF8574T Pin connected to RW"
 D G "ENABLE" 0 9 "0b00000100		" "P2 - PCF8574T Pin connected to EN"
@@ -769,49 +769,21 @@ D G "ON" 0 17 "1"
 D G "OFF" 0 18 "0"
 D G "NOT" 0 19 "~"
 D G "data_shifted" 0 20 "data << 4"
-V G "new_row_request" 0 22 "int8" `622 
-V G "BACKLIGHT_LED" 0 22 "int8" `623 
-V L "bl" 0 26 "int8" `625 
-F G "lcd_backlight_led" 0 27 "void(int8 bl)" `624 
-V L "data" 0 32 "int8" `627 
-V L "type" 0 32 "int8" `628 
-F G "i2c_send_nibble" 0 33 "void(int8 data,int8 type)" `626 
-V L "data" 0 54 "int8" `630 
-V L "type" 0 54 "int8" `631 
-F G "lcd_send_byte" 0 55 "void(int8 data,int8 type)" `629 
-F G "lcd_clear" 0 64 "void()" `632 
-C L "lcd_init" 0 4 1 "FUNCTION"
-F G "lcd_init" 0 71 "void()" `633 
-V L "i" 0 72 "int8" `634 
-V L "lcd_type" 0 73 "int8" `635 
-C L "lcd_init" 0 4 1 "FUNCTION"
-V L "LCD_INIT_STRING" 0 74 "[4]" `637 
-C L "lcd_init" 0 4 1 "FUNCTION"
-C L "lcd_init" 0 4 3 "FUNCTION"
-C L "lcd_init" 0 4 1 "FUNCTION"
-C L "lcd_init" 0 4 1 "FUNCTION"
-V L "x" 0 106 "int8" `641 
-V L "y" 0 106 "int8" `642 
-F G "lcd_gotoxy" 0 107 "void(int8 x,int8 y)" `640 
-V L "row" 0 108 "int8" `643 
-V L "column" 0 108 "int8" `644 
-V L "row_addr" 0 108 "int8" `645 
-V L "lcd_address" 0 108 "int8" `646  "static char data;"
-C L "lcd_putc" 0 4 1 "FUNCTION"
-V L "in_data" 0 144 "int8" `648 
-F G "lcd_putc" 0 145 "void(int8 in_data)" `647 
-V G "SW_Pin" 0 173 "int8[1]" `649 
-V G "SW0" 0 174 "int8" `650 
-V G "SW1" 0 175 "int8" `651 
-V G "SW2" 0 176 "int8" `652 
-V G "SW3" 0 177 "int8" `653 
-V G "SW4" 0 178 "int8" `654 
-V G "LED_Pin" 0 180 "int8" `655 
-V G "Buzzer_Pin" 0 181 "int8" `656 
-F G "MAIN" 0 186 "void()" `657 
-C L "MAIN" 0 4 1 "FUNCTION"
-C L "MAIN" 0 4 1 "FUNCTION"
-C L "MAIN" 0 4 1 "FUNCTION"
+V G "new_row_request" 0 22 "int8" `616 
+V G "BACKLIGHT_LED" 0 22 "int8" `617 
+C L "jump_to_isr" 0 4 102 "FUNCTION"
+V G "SW_Pin" 0 173 "int8[1]" `618 
+V G "SW0" 0 174 "int8" `619 
+V G "SW1" 0 175 "int8" `620 
+V G "SW2" 0 176 "int8" `621 
+V G "SW3" 0 177 "int8" `622 
+V G "SW4" 0 178 "int8" `623 
+V G "LED_Pin" 0 180 "int8" `624 
+V G "Buzzer_Pin" 0 181 "int8" `625 
+F G "main" 0 186 "void()" `626  "lcd_init();	 // khoi dong lcd"
+C L "main" 0 4 4 "FUNCTION"
+C L "main" 0 4 6 "FUNCTION"
+C L "main" 0 4 2 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 0
@@ -941,15 +913,3 @@ F B "spi_write2" 1 0
 F B "spi_data_is_in2" 0 0
 F B "delay_ms" 1 0
 F B "delay_us" 1 0
-F B "putchar" 1 2
-F B "puts" 1 2
-F B "getch" 0 1
-F B "gets" 1 3
-F B "kbhit" 0 1
-F B "set_uart_speed" 1 3
-F B "setup_uart" 1 3
-F B "i2c_read" 0 2
-F B "i2c_write" 1 2
-F B "i2c_start" 0 2
-F B "i2c_stop" 0 1
-F B "i2c_isr_state" 0 1

@@ -1,0 +1,105 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     @TRIS_C
+021     backlight_lcd_i2c
+022     lcd_i2c_line
+023-027 SW_Pin
+028     SW0
+029     SW1
+02A     SW2
+02B     SW3
+02C     SW4
+02D     LED_Pin
+02E     Buzzer_Pin
+02F     MAIN.@SCRATCH1
+02F     @PSTRINGC7_646.@SCRATCH1
+030     @delay_ms1.P1
+030     @PSTRINGC7_646.@SCRATCH2
+031     @PSTRINGC7_646.@SCRATCH3
+032     write_lcd_i2c.character
+032     @PSTRINGC7_646.@SCRATCH4
+033     write_lcd_i2c.cursor_address
+034     read_cursor_address.aux
+034     send_lcd_i2c_character.character
+034     send_lcd_i2c_command.character
+035     send_lcd_i2c_command.ms_nibble_e
+035     read_cursor_address.aux2
+035     send_lcd_i2c_character.ms_nibble_e
+036     send_lcd_i2c_command.ls_nibble_e
+036     send_lcd_i2c_character.ls_nibble_e
+036     read_cursor_address.address
+037     send_lcd_i2c_command.ms_nibble
+037     @I2C_READ_1.P1
+037     send_lcd_i2c_character.ms_nibble
+037     read_cursor_address.@SCRATCH1
+038     send_lcd_i2c_command.ls_nibble
+038     send_lcd_i2c_character.ls_nibble
+038     @I2C_READ_1.@SCRATCH1
+039     @I2C_WRITE_1.P1
+039     @I2C_READ_1.@SCRATCH2
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @const670.call
+000012  @I2C_WRITE_1
+00005C  initialize_lcd_i2c
+0000CC  send_lcd_i2c_command
+000121  @I2C_READ_1
+000166  write_lcd_i2c
+00017E  read_cursor_address
+00025D  send_lcd_i2c_character
+0002CF  @PSTRINGC7_646
+000327  @delay_ms1
+00033C  clear_lcd_i2c
+000345  @cinit1
+000345  MAIN
+000376  @cinit2
+
+Project Directory:
+    E:\1. Phenikaa University\AML\1. Code\VDK (PIC16)\0. BTL\1. Code\V1.1\
+
+Project Files:
+    main.c                                                  [04-Jul-24 10:13  CRC=3A607CDA]
+    main.h                                                  [04-Jul-24 10:11  CRC=A86E74D7]
+    D:\Program Files (x86)\PICC\Devices\16F887.h            [18-Apr-14 16:56  CRC=42D047B0]
+    lcd_i2c.c                                               [04-Jul-24 09:54  CRC=8CCB2A24]
+
+Source signature=3F358DA9
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-65535
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

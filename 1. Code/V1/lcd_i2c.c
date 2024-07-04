@@ -19,8 +19,7 @@ byte lcd_total_columns =20 ;//    16          //Number of columns: 1...20
 #define ON                    1 
 #define OFF                   0 
 #define NOT                   ~ 
-#define data_shifted          data<<4
- 
+#define data_shifted          data<<4 
 int8 new_row_request=1, BACKLIGHT_LED=LCD_BACKLIGHT; 
 
 void lcd_backlight_led(byte bl) 

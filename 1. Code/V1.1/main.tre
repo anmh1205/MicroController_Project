@@ -1,0 +1,61 @@
+ÀÄ1
+   ÀÄMAIN  0/101  Ram=1
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄinitialize_lcd_i2c  0/112  Ram=0
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÀÄ@I2C_WRITE_1  0/74  Ram=1
+      ÃÄ@PSTRINGC7_646  0/88  Ram=4
+      ³  ÃÄwrite_lcd_i2c  0/361  Ram=2
+      ³  ³  ÃÄsend_lcd_i2c_command  0/85  Ram=5
+      ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ³  ÀÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ÃÄsend_lcd_i2c_command  0/85  Ram=5
+      ³  ³  ³  ÀÄ*
+      ³  ³  ÃÄread_cursor_address  (Inline)  Ram=4
+      ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ³  ÃÄ@I2C_READ_1  0/69  Ram=3
+      ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ³  ÃÄ@I2C_READ_1  0/69  Ram=3
+      ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ³  ÀÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ÃÄsend_lcd_i2c_character  (Inline)  Ram=5
+      ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ³  ÀÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ³  ÃÄsend_lcd_i2c_command  0/85  Ram=5
+      ³  ³  ³  ÀÄ*
+      ³  ³  ÀÄsend_lcd_i2c_command  0/85  Ram=5
+      ³  ³     ÀÄ*
+      ³  ÀÄwrite_lcd_i2c  0/361  Ram=2
+      ³     ÀÄ*
+      ÃÄ@delay_ms1  0/21  Ram=1
+      ÃÄclear_lcd_i2c  0/9  Ram=0
+      ³  ÃÄsend_lcd_i2c_command  0/85  Ram=5
+      ³  ³  ÀÄ*
+      ³  ÀÄ@delay_ms1  0/21  Ram=1
+      ÀÄ@delay_ms1  0/21  Ram=1

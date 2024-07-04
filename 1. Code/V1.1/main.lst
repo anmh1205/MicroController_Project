@@ -1,0 +1,1342 @@
+CCS PCM C Compiler, Version 5.025, 26966               04-Jul-24 10:13
+
+               Filename:   E:\1. Phenikaa University\AML\1. Code\VDK (PIC16)\0. BTL\1. Code\V1.1\main.lst
+
+               ROM used:   938 words (11%)
+                           Largest free fragment is 2048
+               RAM used:   21 (6%) at main() level
+                           31 (8%) worst case
+               Stack used: 3 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  03
+0001:  MOVWF  0A
+0002:  GOTO   345
+0003:  NOP
+.................... #include <main.h> 
+.................... #include <16F887.h> 
+.................... //////////// Standard Header file for the PIC16F887 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F887 
+0004:  DATA C6,34
+0005:  DATA F2,39
+0006:  DATA 74,10
+0007:  DATA EC,34
+0008:  DATA EE,32
+0009:  DATA 2E,05
+000A:  DATA D3,32
+000B:  DATA E3,37
+000C:  DATA 6E,32
+000D:  DATA 20,36
+000E:  DATA 69,37
+000F:  DATA 65,17
+0010:  DATA 20,05
+0011:  DATA 00,00
+*
+02CF:  MOVF   0B,W
+02D0:  MOVWF  2F
+02D1:  BCF    0B.7
+02D2:  BSF    03.5
+02D3:  BSF    03.6
+02D4:  BSF    0C.7
+02D5:  BSF    0C.0
+02D6:  NOP
+02D7:  NOP
+02D8:  BCF    03.5
+02D9:  BCF    03.6
+02DA:  BTFSC  2F.7
+02DB:  BSF    0B.7
+02DC:  BSF    03.6
+02DD:  MOVF   0C,W
+02DE:  ANDLW  7F
+02DF:  BTFSC  03.2
+02E0:  GOTO   323
+02E1:  BCF    03.6
+02E2:  MOVWF  2F
+02E3:  BSF    03.6
+02E4:  MOVF   0D,W
+02E5:  BCF    03.6
+02E6:  MOVWF  30
+02E7:  BSF    03.6
+02E8:  MOVF   0F,W
+02E9:  BCF    03.6
+02EA:  MOVWF  31
+02EB:  MOVF   2F,W
+02EC:  MOVWF  32
+02ED:  CALL   166
+02EE:  MOVF   30,W
+02EF:  BSF    03.6
+02F0:  MOVWF  0D
+02F1:  BCF    03.6
+02F2:  MOVF   31,W
+02F3:  BSF    03.6
+02F4:  MOVWF  0F
+02F5:  BCF    03.6
+02F6:  MOVF   0B,W
+02F7:  MOVWF  32
+02F8:  BCF    0B.7
+02F9:  BSF    03.5
+02FA:  BSF    03.6
+02FB:  BSF    0C.7
+02FC:  BSF    0C.0
+02FD:  NOP
+02FE:  NOP
+02FF:  BCF    03.5
+0300:  BCF    03.6
+0301:  BTFSC  32.7
+0302:  BSF    0B.7
+0303:  BSF    03.6
+0304:  RLF    0C,W
+0305:  RLF    0E,W
+0306:  ANDLW  7F
+0307:  BTFSC  03.2
+0308:  GOTO   323
+0309:  BCF    03.6
+030A:  MOVWF  2F
+030B:  BSF    03.6
+030C:  MOVF   0D,W
+030D:  BCF    03.6
+030E:  MOVWF  30
+030F:  BSF    03.6
+0310:  MOVF   0F,W
+0311:  BCF    03.6
+0312:  MOVWF  31
+0313:  MOVF   2F,W
+0314:  MOVWF  32
+0315:  CALL   166
+0316:  MOVF   30,W
+0317:  BSF    03.6
+0318:  MOVWF  0D
+0319:  BCF    03.6
+031A:  MOVF   31,W
+031B:  BSF    03.6
+031C:  MOVWF  0F
+031D:  INCF   0D,F
+031E:  BTFSC  03.2
+031F:  INCF   0F,F
+0320:  BCF    03.6
+0321:  GOTO   2CF
+0322:  BSF    03.6
+0323:  BCF    03.6
+0324:  BCF    0A.3
+0325:  BCF    0A.4
+0326:  GOTO   38E (RETURN)
+....................  
+.................... #list 
+....................  
+.................... #device ADC = 16 
+....................  
+.................... #FUSES NOWDT      // No Watch Dog Timer 
+.................... #FUSES PUT        // Power Up Timer 
+.................... #FUSES NOBROWNOUT // No brownout reset 
+.................... #FUSES NOLVP      // No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+....................  
+.................... #use delay(crystal = 12000000) 
+0327:  MOVLW  30
+0328:  MOVWF  04
+0329:  BCF    03.7
+032A:  MOVF   00,W
+032B:  BTFSC  03.2
+032C:  GOTO   33B
+032D:  MOVLW  03
+032E:  MOVWF  78
+032F:  CLRF   77
+0330:  DECFSZ 77,F
+0331:  GOTO   330
+0332:  DECFSZ 78,F
+0333:  GOTO   32F
+0334:  MOVLW  E3
+0335:  MOVWF  77
+0336:  DECFSZ 77,F
+0337:  GOTO   336
+0338:  NOP
+0339:  DECFSZ 00,F
+033A:  GOTO   32D
+033B:  RETURN
+.................... #use rs232(baud = 9600, parity = N, xmit = PIN_C6, rcv = PIN_C7, bits = 8, stream = PORT1) 
+.................... #use i2c(Master, Fast = 400000, sda = PIN_C4, scl = PIN_C3, force_sw) 
+*
+0012:  MOVLW  08
+0013:  MOVWF  78
+0014:  NOP
+0015:  BCF    07.3
+0016:  BCF    20.3
+0017:  MOVF   20,W
+0018:  BSF    03.5
+0019:  MOVWF  07
+001A:  NOP
+001B:  BCF    03.5
+001C:  RLF    39,F
+001D:  BCF    07.4
+001E:  BTFSS  03.0
+001F:  GOTO   026
+0020:  BSF    20.4
+0021:  MOVF   20,W
+0022:  BSF    03.5
+0023:  MOVWF  07
+0024:  GOTO   02A
+0025:  BCF    03.5
+0026:  BCF    20.4
+0027:  MOVF   20,W
+0028:  BSF    03.5
+0029:  MOVWF  07
+002A:  NOP
+002B:  BCF    03.5
+002C:  BSF    20.3
+002D:  MOVF   20,W
+002E:  BSF    03.5
+002F:  MOVWF  07
+0030:  BCF    03.5
+0031:  BTFSS  07.3
+0032:  GOTO   031
+0033:  DECFSZ 78,F
+0034:  GOTO   014
+0035:  NOP
+0036:  BCF    07.3
+0037:  BCF    20.3
+0038:  MOVF   20,W
+0039:  BSF    03.5
+003A:  MOVWF  07
+003B:  NOP
+003C:  BCF    03.5
+003D:  BSF    20.4
+003E:  MOVF   20,W
+003F:  BSF    03.5
+0040:  MOVWF  07
+0041:  NOP
+0042:  NOP
+0043:  BCF    03.5
+0044:  BSF    20.3
+0045:  MOVF   20,W
+0046:  BSF    03.5
+0047:  MOVWF  07
+0048:  BCF    03.5
+0049:  BTFSS  07.3
+004A:  GOTO   049
+004B:  CLRF   78
+004C:  NOP
+004D:  BTFSC  07.4
+004E:  BSF    78.0
+004F:  BCF    07.3
+0050:  BCF    20.3
+0051:  MOVF   20,W
+0052:  BSF    03.5
+0053:  MOVWF  07
+0054:  BCF    03.5
+0055:  BCF    07.4
+0056:  BCF    20.4
+0057:  MOVF   20,W
+0058:  BSF    03.5
+0059:  MOVWF  07
+005A:  BCF    03.5
+005B:  RETURN
+*
+0121:  MOVLW  08
+0122:  MOVWF  38
+0123:  MOVF   77,W
+0124:  MOVWF  39
+0125:  BSF    20.4
+0126:  MOVF   20,W
+0127:  BSF    03.5
+0128:  MOVWF  07
+0129:  NOP
+012A:  BCF    03.5
+012B:  BSF    20.3
+012C:  MOVF   20,W
+012D:  BSF    03.5
+012E:  MOVWF  07
+012F:  BCF    03.5
+0130:  BTFSS  07.3
+0131:  GOTO   130
+0132:  BTFSC  07.4
+0133:  BSF    03.0
+0134:  BTFSS  07.4
+0135:  BCF    03.0
+0136:  RLF    78,F
+0137:  NOP
+0138:  BCF    20.3
+0139:  MOVF   20,W
+013A:  BSF    03.5
+013B:  MOVWF  07
+013C:  BCF    03.5
+013D:  BCF    07.3
+013E:  DECFSZ 38,F
+013F:  GOTO   125
+0140:  BSF    20.4
+0141:  MOVF   20,W
+0142:  BSF    03.5
+0143:  MOVWF  07
+0144:  NOP
+0145:  BCF    03.5
+0146:  BCF    07.4
+0147:  MOVF   39,W
+0148:  BTFSC  03.2
+0149:  GOTO   14F
+014A:  BCF    20.4
+014B:  MOVF   20,W
+014C:  BSF    03.5
+014D:  MOVWF  07
+014E:  BCF    03.5
+014F:  NOP
+0150:  BSF    20.3
+0151:  MOVF   20,W
+0152:  BSF    03.5
+0153:  MOVWF  07
+0154:  BCF    03.5
+0155:  BTFSS  07.3
+0156:  GOTO   155
+0157:  NOP
+0158:  BCF    07.3
+0159:  BCF    20.3
+015A:  MOVF   20,W
+015B:  BSF    03.5
+015C:  MOVWF  07
+015D:  NOP
+015E:  BCF    03.5
+015F:  BCF    07.4
+0160:  BCF    20.4
+0161:  MOVF   20,W
+0162:  BSF    03.5
+0163:  MOVWF  07
+0164:  BCF    03.5
+0165:  RETURN
+....................  
+.................... #define PCF8574A       // Comment for modules using PCF8574 
+.................... #define A2_A1_A0 0B111 // Address pin states (A2 A1 A0) of PCF8574A/PCF8574. 
+.................... #define LCD16X2        // Comment this line to use 16x2 LCD 
+.................... #include <lcd_i2c.c> 
+.................... #define RIGHT 0x1C 
+.................... #define LEFT 0x18 
+....................  
+.................... #define CURSOR_ON 2 
+.................... #define CURSOR_OFF 0 
+....................  
+.................... #define BLINK_ON 1 
+.................... #define BLINK_OFF 0 
+....................  
+.................... #define BL_ON 0x08 
+.................... #define BL_OFF 0x00 
+....................  
+.................... #ifdef PCF8574A 
+.................... #define pcf_address_write 0x70 | (A2_A1_A0 << 1) 
+.................... #define pcf_address_read 0x71 | (A2_A1_A0 << 1) 
+.................... #else // PCF8574 
+.................... #define pcf_address_write 0x40 | (A2_A1_A0 << 1) 
+.................... #define pcf_address_read 0x41 | (A2_A1_A0 << 1) 
+.................... #endif 
+....................  
+.................... #ifdef LCD20X4 
+.................... #define line1_start 0x00 
+.................... #define line1_end 0x13 
+....................  
+.................... #define line2_start 0x40 
+.................... #define line2_end 0x53 
+....................  
+.................... #define line3_start 0x14 
+.................... #define line3_end 0x27 
+....................  
+.................... #define line4_start 0x54 
+.................... #define line4_end 0x67 
+....................  
+.................... #define line1_start_command 0x80 
+.................... #define line2_start_command 0xC0 
+.................... #define line3_start_command 0x94 
+.................... #define line4_start_command 0xD4 
+.................... #else LCD16X2 
+.................... #define line1_start 0x00 
+.................... #define line1_end 0x27 
+....................  
+.................... #define line2_start 0x40 
+.................... #define line2_end 0x67 
+....................  
+.................... #define line1_start_command 0x80 
+.................... #define line2_start_command 0xC0 
+.................... #endif 
+....................  
+.................... int backlight_lcd_i2c = 0x08, lcd_i2c_line = 1; 
+....................  
+.................... void initialize_lcd_i2c() 
+.................... { 
+....................     i2c_start();                  // Start communication 
+*
+005C:  BSF    20.4
+005D:  MOVF   20,W
+005E:  BSF    03.5
+005F:  MOVWF  07
+0060:  NOP
+0061:  BCF    03.5
+0062:  BSF    20.3
+0063:  MOVF   20,W
+0064:  BSF    03.5
+0065:  MOVWF  07
+0066:  NOP
+0067:  BCF    03.5
+0068:  BCF    07.4
+0069:  BCF    20.4
+006A:  MOVF   20,W
+006B:  BSF    03.5
+006C:  MOVWF  07
+006D:  NOP
+006E:  BCF    03.5
+006F:  BCF    07.3
+0070:  BCF    20.3
+0071:  MOVF   20,W
+0072:  BSF    03.5
+0073:  MOVWF  07
+....................     i2c_write(pcf_address_write); // Send PCF address + WRITE bit 
+0074:  MOVLW  7E
+0075:  BCF    03.5
+0076:  MOVWF  39
+0077:  CALL   012
+....................     i2c_write(0x2C);              // Configure LCD for 4 bits/BL ON/En 1 
+0078:  MOVLW  2C
+0079:  MOVWF  39
+007A:  CALL   012
+....................     i2c_write(0x28);              // En 0 to execute instruction 
+007B:  MOVLW  28
+007C:  MOVWF  39
+007D:  CALL   012
+....................  
+....................     delay_us(40);    // Verify the delay for bits to be sent 
+007E:  MOVLW  27
+007F:  MOVWF  77
+0080:  DECFSZ 77,F
+0081:  GOTO   080
+0082:  GOTO   083
+....................     i2c_write(0x2C); // Send first nibble of 
+0083:  MOVLW  2C
+0084:  MOVWF  39
+0085:  CALL   012
+....................     i2c_write(0x28); // the "Function Set" instruction. 
+0086:  MOVLW  28
+0087:  MOVWF  39
+0088:  CALL   012
+....................     i2c_write(0x8C); // Send second nibble of the instruction. 
+0089:  MOVLW  8C
+008A:  MOVWF  39
+008B:  CALL   012
+....................     i2c_write(0x88); // 4 bits, 2 lines, font 5*8. 
+008C:  MOVLW  88
+008D:  MOVWF  39
+008E:  CALL   012
+....................  
+....................     delay_us(40); 
+008F:  MOVLW  27
+0090:  MOVWF  77
+0091:  DECFSZ 77,F
+0092:  GOTO   091
+0093:  GOTO   094
+....................  
+....................     i2c_write(0x0C); // Send first nibble of 
+0094:  MOVLW  0C
+0095:  MOVWF  39
+0096:  CALL   012
+....................     i2c_write(0x08); // "Display ON/OFF control" instruction. 
+0097:  MOVLW  08
+0098:  MOVWF  39
+0099:  CALL   012
+....................     i2c_write(0xCC); // Send second nibble of the instruction. 
+009A:  MOVLW  CC
+009B:  MOVWF  39
+009C:  CALL   012
+....................     i2c_write(0xC8); // Display on, cursor off, blink off. 
+009D:  MOVLW  C8
+009E:  MOVWF  39
+009F:  CALL   012
+....................     delay_us(1); 
+00A0:  GOTO   0A1
+00A1:  NOP
+....................  
+....................     i2c_write(0x0C); // Send first nibble of 
+00A2:  MOVLW  0C
+00A3:  MOVWF  39
+00A4:  CALL   012
+....................     i2c_write(0x08); // "Entry Mode Set" instruction. 
+00A5:  MOVLW  08
+00A6:  MOVWF  39
+00A7:  CALL   012
+....................     i2c_write(0x6C); // Send second nibble of the instruction. 
+00A8:  MOVLW  6C
+00A9:  MOVWF  39
+00AA:  CALL   012
+....................     i2c_write(0x68); // Increment cursor with each write 
+00AB:  MOVLW  68
+00AC:  MOVWF  39
+00AD:  CALL   012
+....................                      // (position+=1), LCD scroll disabled; 
+....................                      // if enabled, display scrolls with each character. 
+....................     delay_us(40); 
+00AE:  MOVLW  27
+00AF:  MOVWF  77
+00B0:  DECFSZ 77,F
+00B1:  GOTO   0B0
+00B2:  GOTO   0B3
+....................  
+....................     i2c_stop(); 
+00B3:  BCF    20.4
+00B4:  MOVF   20,W
+00B5:  BSF    03.5
+00B6:  MOVWF  07
+00B7:  NOP
+00B8:  BCF    03.5
+00B9:  BSF    20.3
+00BA:  MOVF   20,W
+00BB:  BSF    03.5
+00BC:  MOVWF  07
+00BD:  BCF    03.5
+00BE:  BTFSS  07.3
+00BF:  GOTO   0BE
+00C0:  NOP
+00C1:  GOTO   0C2
+00C2:  NOP
+00C3:  BSF    20.4
+00C4:  MOVF   20,W
+00C5:  BSF    03.5
+00C6:  MOVWF  07
+00C7:  NOP
+00C8:  BCF    03.5
+00C9:  BCF    0A.3
+00CA:  BCF    0A.4
+00CB:  GOTO   383 (RETURN)
+.................... } 
+.................... void send_lcd_i2c_command(char character) 
+.................... { 
+....................     int ms_nibble_e, ls_nibble_e, ms_nibble, ls_nibble; 
+....................  
+....................     ms_nibble = character & 0xF0;   // Most significant nibble of the character. 
+00CC:  MOVF   34,W
+00CD:  ANDLW  F0
+00CE:  MOVWF  37
+....................     ls_nibble = character & 0x0F;   // Least significant nibble of the character. 
+00CF:  MOVF   34,W
+00D0:  ANDLW  0F
+00D1:  MOVWF  38
+....................     swap(ls_nibble);                // Swap as the most significant bits are used (D7: D4). 
+00D2:  SWAPF  38,F
+....................     ms_nibble |= backlight_lcd_i2c; // Add BL to the most significant nibble 
+00D3:  MOVF   21,W
+00D4:  IORWF  37,F
+....................     ls_nibble |= backlight_lcd_i2c; // Add BL to the least significant nibble 
+00D5:  MOVF   21,W
+00D6:  IORWF  38,F
+....................  
+....................     ms_nibble_e = ms_nibble | 0x04; // Most significant nibble En 1 
+00D7:  MOVF   37,W
+00D8:  IORLW  04
+00D9:  MOVWF  35
+....................     ls_nibble_e = ls_nibble | 0x04; // Least significant nibble En 1 
+00DA:  MOVF   38,W
+00DB:  IORLW  04
+00DC:  MOVWF  36
+....................  
+....................     i2c_start(); 
+00DD:  BSF    20.4
+00DE:  MOVF   20,W
+00DF:  BSF    03.5
+00E0:  MOVWF  07
+00E1:  NOP
+00E2:  BCF    03.5
+00E3:  BSF    20.3
+00E4:  MOVF   20,W
+00E5:  BSF    03.5
+00E6:  MOVWF  07
+00E7:  NOP
+00E8:  BCF    03.5
+00E9:  BCF    07.4
+00EA:  BCF    20.4
+00EB:  MOVF   20,W
+00EC:  BSF    03.5
+00ED:  MOVWF  07
+00EE:  NOP
+00EF:  BCF    03.5
+00F0:  BCF    07.3
+00F1:  BCF    20.3
+00F2:  MOVF   20,W
+00F3:  BSF    03.5
+00F4:  MOVWF  07
+....................     i2c_write(pcf_address_write); 
+00F5:  MOVLW  7E
+00F6:  BCF    03.5
+00F7:  MOVWF  39
+00F8:  CALL   012
+....................  
+....................     i2c_write(ms_nibble_e); // Send 1st nibble with "E" set 
+00F9:  MOVF   35,W
+00FA:  MOVWF  39
+00FB:  CALL   012
+....................     i2c_write(ms_nibble);   // Send 1st nibble with "E" cleared 
+00FC:  MOVF   37,W
+00FD:  MOVWF  39
+00FE:  CALL   012
+....................  
+....................     i2c_write(ls_nibble_e); // Send 2nd nibble with "E" set 
+00FF:  MOVF   36,W
+0100:  MOVWF  39
+0101:  CALL   012
+....................     i2c_write(ls_nibble);   // Send 2nd nibble with "E" cleared 
+0102:  MOVF   38,W
+0103:  MOVWF  39
+0104:  CALL   012
+....................  
+....................     i2c_stop(); 
+0105:  BCF    20.4
+0106:  MOVF   20,W
+0107:  BSF    03.5
+0108:  MOVWF  07
+0109:  NOP
+010A:  BCF    03.5
+010B:  BSF    20.3
+010C:  MOVF   20,W
+010D:  BSF    03.5
+010E:  MOVWF  07
+010F:  BCF    03.5
+0110:  BTFSS  07.3
+0111:  GOTO   110
+0112:  NOP
+0113:  GOTO   114
+0114:  NOP
+0115:  BSF    20.4
+0116:  MOVF   20,W
+0117:  BSF    03.5
+0118:  MOVWF  07
+0119:  NOP
+....................     delay_us(44); 
+011A:  MOVLW  2B
+011B:  MOVWF  77
+011C:  DECFSZ 77,F
+011D:  GOTO   11C
+011E:  GOTO   11F
+011F:  BCF    03.5
+0120:  RETURN
+.................... } 
+.................... void send_lcd_i2c_character(int character) 
+.................... { 
+....................     int ms_nibble_e, ls_nibble_e, ms_nibble, ls_nibble; 
+....................  
+....................     ms_nibble = character & 0xF0; // Most significant nibble of the character. 
+*
+025D:  MOVF   34,W
+025E:  ANDLW  F0
+025F:  MOVWF  37
+....................     ls_nibble = character & 0x0F; // Least significant nibble of the character. 
+0260:  MOVF   34,W
+0261:  ANDLW  0F
+0262:  MOVWF  38
+....................     swap(ls_nibble);              // Swap as the most significant bits are used (D7: D4). 
+0263:  SWAPF  38,F
+....................  
+....................     ms_nibble |= backlight_lcd_i2c; // Add BL to the most significant nibble 
+0264:  MOVF   21,W
+0265:  IORWF  37,F
+....................     ls_nibble |= backlight_lcd_i2c; // Add BL to the least significant nibble 
+0266:  MOVF   21,W
+0267:  IORWF  38,F
+....................     ms_nibble++;                    // Set RS bit 
+0268:  INCF   37,F
+....................     ls_nibble++;                    // Set RS bit 
+0269:  INCF   38,F
+....................  
+....................     ms_nibble_e = ms_nibble | 0x05; // Most significant nibble En and RS = 1 
+026A:  MOVF   37,W
+026B:  IORLW  05
+026C:  MOVWF  35
+....................     ls_nibble_e = ls_nibble | 0x05; // Least significant nibble En and RS = 1 
+026D:  MOVF   38,W
+026E:  IORLW  05
+026F:  MOVWF  36
+....................  
+....................     i2c_start(); 
+0270:  BSF    20.4
+0271:  MOVF   20,W
+0272:  BSF    03.5
+0273:  MOVWF  07
+0274:  NOP
+0275:  BCF    03.5
+0276:  BSF    20.3
+0277:  MOVF   20,W
+0278:  BSF    03.5
+0279:  MOVWF  07
+027A:  NOP
+027B:  BCF    03.5
+027C:  BCF    07.4
+027D:  BCF    20.4
+027E:  MOVF   20,W
+027F:  BSF    03.5
+0280:  MOVWF  07
+0281:  NOP
+0282:  BCF    03.5
+0283:  BCF    07.3
+0284:  BCF    20.3
+0285:  MOVF   20,W
+0286:  BSF    03.5
+0287:  MOVWF  07
+....................     i2c_write(pcf_address_write); 
+0288:  MOVLW  7E
+0289:  BCF    03.5
+028A:  MOVWF  39
+028B:  CALL   012
+....................  
+....................     i2c_write(ms_nibble_e); // Send 1st nibble with RS and En 1 
+028C:  MOVF   35,W
+028D:  MOVWF  39
+028E:  CALL   012
+....................     i2c_write(ms_nibble);   // Send 1st nibble with RS 1 and E 0 
+028F:  MOVF   37,W
+0290:  MOVWF  39
+0291:  CALL   012
+....................  
+....................     i2c_write(ls_nibble_e); // Send 2nd nibble with RS and E 1 
+0292:  MOVF   36,W
+0293:  MOVWF  39
+0294:  CALL   012
+....................     i2c_write(ls_nibble);   // Send 2nd nibble with RS 0 and E 0 
+0295:  MOVF   38,W
+0296:  MOVWF  39
+0297:  CALL   012
+....................  
+....................     i2c_stop(); 
+0298:  BCF    20.4
+0299:  MOVF   20,W
+029A:  BSF    03.5
+029B:  MOVWF  07
+029C:  NOP
+029D:  BCF    03.5
+029E:  BSF    20.3
+029F:  MOVF   20,W
+02A0:  BSF    03.5
+02A1:  MOVWF  07
+02A2:  BCF    03.5
+02A3:  BTFSS  07.3
+02A4:  GOTO   2A3
+02A5:  NOP
+02A6:  GOTO   2A7
+02A7:  NOP
+02A8:  BSF    20.4
+02A9:  MOVF   20,W
+02AA:  BSF    03.5
+02AB:  MOVWF  07
+02AC:  NOP
+....................     delay_us(44); 
+02AD:  MOVLW  2B
+02AE:  MOVWF  77
+02AF:  DECFSZ 77,F
+02B0:  GOTO   2AF
+02B1:  GOTO   2B2
+.................... } 
+.................... void clear_lcd_i2c() 
+.................... { 
+....................     send_lcd_i2c_command(0x01); 
+*
+033C:  MOVLW  01
+033D:  MOVWF  34
+033E:  CALL   0CC
+....................     delay_ms(2); 
+033F:  MOVLW  02
+0340:  MOVWF  30
+0341:  CALL   327
+0342:  BCF    0A.3
+0343:  BCF    0A.4
+0344:  GOTO   39B (RETURN)
+.................... } 
+.................... int read_cursor_address() 
+.................... { 
+....................     int aux, aux2, address; 
+....................  
+....................     aux = 0xF2 | backlight_lcd_i2c; // Set PCF pins for D7:D4 of LCD E=0 | RW=1 | RS=0. 
+*
+017E:  MOVF   21,W
+017F:  IORLW  F2
+0180:  MOVWF  34
+....................     aux2 = aux;                     // Copy aux value 
+0181:  MOVF   34,W
+0182:  MOVWF  35
+....................  
+....................     i2c_start(); 
+0183:  BSF    20.4
+0184:  MOVF   20,W
+0185:  BSF    03.5
+0186:  MOVWF  07
+0187:  NOP
+0188:  BCF    03.5
+0189:  BSF    20.3
+018A:  MOVF   20,W
+018B:  BSF    03.5
+018C:  MOVWF  07
+018D:  NOP
+018E:  BCF    03.5
+018F:  BCF    07.4
+0190:  BCF    20.4
+0191:  MOVF   20,W
+0192:  BSF    03.5
+0193:  MOVWF  07
+0194:  NOP
+0195:  BCF    03.5
+0196:  BCF    07.3
+0197:  BCF    20.3
+0198:  MOVF   20,W
+0199:  BSF    03.5
+019A:  MOVWF  07
+....................     i2c_write(pcf_address_write); 
+019B:  MOVLW  7E
+019C:  BCF    03.5
+019D:  MOVWF  39
+019E:  CALL   012
+....................     i2c_write(aux);        // Set PCF pins for D7:D4 of LCD E=0 | RW=1 | RS=0. 
+019F:  MOVF   34,W
+01A0:  MOVWF  39
+01A1:  CALL   012
+....................     i2c_write(aux | 0x04); // En=1 for LCD to provide most significant nibble. 
+01A2:  MOVF   34,W
+01A3:  IORLW  04
+01A4:  MOVWF  37
+01A5:  MOVWF  39
+01A6:  CALL   012
+....................     i2c_start(); 
+01A7:  BSF    20.4
+01A8:  MOVF   20,W
+01A9:  BSF    03.5
+01AA:  MOVWF  07
+01AB:  NOP
+01AC:  BCF    03.5
+01AD:  BSF    20.3
+01AE:  MOVF   20,W
+01AF:  BSF    03.5
+01B0:  MOVWF  07
+01B1:  NOP
+01B2:  BCF    03.5
+01B3:  BTFSS  07.3
+01B4:  GOTO   1B3
+01B5:  BCF    07.4
+01B6:  BCF    20.4
+01B7:  MOVF   20,W
+01B8:  BSF    03.5
+01B9:  MOVWF  07
+01BA:  NOP
+01BB:  BCF    03.5
+01BC:  BCF    07.3
+01BD:  BCF    20.3
+01BE:  MOVF   20,W
+01BF:  BSF    03.5
+01C0:  MOVWF  07
+....................     i2c_write(pcf_address_read); 
+01C1:  MOVLW  7F
+01C2:  BCF    03.5
+01C3:  MOVWF  39
+01C4:  CALL   012
+....................     address = 0x70 & i2c_read(0); // Read most significant nibble with mask 0x70. 
+01C5:  CLRF   77
+01C6:  CALL   121
+01C7:  MOVF   78,W
+01C8:  ANDLW  70
+01C9:  MOVWF  36
+....................     i2c_start(); 
+01CA:  BSF    20.4
+01CB:  MOVF   20,W
+01CC:  BSF    03.5
+01CD:  MOVWF  07
+01CE:  NOP
+01CF:  BCF    03.5
+01D0:  BSF    20.3
+01D1:  MOVF   20,W
+01D2:  BSF    03.5
+01D3:  MOVWF  07
+01D4:  NOP
+01D5:  BCF    03.5
+01D6:  BTFSS  07.3
+01D7:  GOTO   1D6
+01D8:  BCF    07.4
+01D9:  BCF    20.4
+01DA:  MOVF   20,W
+01DB:  BSF    03.5
+01DC:  MOVWF  07
+01DD:  NOP
+01DE:  BCF    03.5
+01DF:  BCF    07.3
+01E0:  BCF    20.3
+01E1:  MOVF   20,W
+01E2:  BSF    03.5
+01E3:  MOVWF  07
+....................     i2c_write(pcf_address_write); 
+01E4:  MOVLW  7E
+01E5:  BCF    03.5
+01E6:  MOVWF  39
+01E7:  CALL   012
+....................     i2c_write(aux);        // Clear Enable pin of LCD 
+01E8:  MOVF   34,W
+01E9:  MOVWF  39
+01EA:  CALL   012
+....................     i2c_write(aux | 0x04); // Set Enable pin of LCD to provide least significant nibble. 
+01EB:  MOVF   34,W
+01EC:  IORLW  04
+01ED:  MOVWF  37
+01EE:  MOVWF  39
+01EF:  CALL   012
+....................     i2c_start(); 
+01F0:  BSF    20.4
+01F1:  MOVF   20,W
+01F2:  BSF    03.5
+01F3:  MOVWF  07
+01F4:  NOP
+01F5:  BCF    03.5
+01F6:  BSF    20.3
+01F7:  MOVF   20,W
+01F8:  BSF    03.5
+01F9:  MOVWF  07
+01FA:  NOP
+01FB:  BCF    03.5
+01FC:  BTFSS  07.3
+01FD:  GOTO   1FC
+01FE:  BCF    07.4
+01FF:  BCF    20.4
+0200:  MOVF   20,W
+0201:  BSF    03.5
+0202:  MOVWF  07
+0203:  NOP
+0204:  BCF    03.5
+0205:  BCF    07.3
+0206:  BCF    20.3
+0207:  MOVF   20,W
+0208:  BSF    03.5
+0209:  MOVWF  07
+....................     i2c_write(pcf_address_read); 
+020A:  MOVLW  7F
+020B:  BCF    03.5
+020C:  MOVWF  39
+020D:  CALL   012
+....................     aux = 0xF0 & i2c_read(0); // Read least significant nibble with mask 0xF0. 
+020E:  CLRF   77
+020F:  CALL   121
+0210:  MOVF   78,W
+0211:  ANDLW  F0
+0212:  MOVWF  34
+....................     i2c_start(); 
+0213:  BSF    20.4
+0214:  MOVF   20,W
+0215:  BSF    03.5
+0216:  MOVWF  07
+0217:  NOP
+0218:  BCF    03.5
+0219:  BSF    20.3
+021A:  MOVF   20,W
+021B:  BSF    03.5
+021C:  MOVWF  07
+021D:  NOP
+021E:  BCF    03.5
+021F:  BTFSS  07.3
+0220:  GOTO   21F
+0221:  BCF    07.4
+0222:  BCF    20.4
+0223:  MOVF   20,W
+0224:  BSF    03.5
+0225:  MOVWF  07
+0226:  NOP
+0227:  BCF    03.5
+0228:  BCF    07.3
+0229:  BCF    20.3
+022A:  MOVF   20,W
+022B:  BSF    03.5
+022C:  MOVWF  07
+....................     i2c_write(pcf_address_write); 
+022D:  MOVLW  7E
+022E:  BCF    03.5
+022F:  MOVWF  39
+0230:  CALL   012
+....................     i2c_write(aux2); // Clear Enable pin first 
+0231:  MOVF   35,W
+0232:  MOVWF  39
+0233:  CALL   012
+....................     aux2 &= 0xF8; 
+0234:  MOVLW  F8
+0235:  ANDWF  35,F
+....................     i2c_write(aux2); // Clear RW pin to exit read mode. 
+0236:  MOVF   35,W
+0237:  MOVWF  39
+0238:  CALL   012
+....................     i2c_stop(); 
+0239:  BCF    20.4
+023A:  MOVF   20,W
+023B:  BSF    03.5
+023C:  MOVWF  07
+023D:  NOP
+023E:  BCF    03.5
+023F:  BSF    20.3
+0240:  MOVF   20,W
+0241:  BSF    03.5
+0242:  MOVWF  07
+0243:  BCF    03.5
+0244:  BTFSS  07.3
+0245:  GOTO   244
+0246:  NOP
+0247:  GOTO   248
+0248:  NOP
+0249:  BSF    20.4
+024A:  MOVF   20,W
+024B:  BSF    03.5
+024C:  MOVWF  07
+024D:  NOP
+....................  
+....................     swap(aux);      // Position least significant nibble correctly. 
+024E:  BCF    03.5
+024F:  SWAPF  34,F
+....................     address |= aux; // OR operation between least and most significant nibble. 
+0250:  MOVF   34,W
+0251:  IORWF  36,F
+....................     delay_us(45); 
+0252:  MOVLW  2C
+0253:  MOVWF  77
+0254:  DECFSZ 77,F
+0255:  GOTO   254
+0256:  GOTO   257
+....................     return (address); // Return current cursor address. 
+0257:  MOVF   36,W
+0258:  MOVWF  78
+.................... } 
+.................... void write_lcd_i2c(char character) 
+.................... { 
+....................     int cursor_address; 
+....................  
+....................     if (character == '\n') 
+*
+0166:  MOVF   32,W
+0167:  SUBLW  0A
+0168:  BTFSS  03.2
+0169:  GOTO   17E
+....................     {          // Position cursor at the start of the next line. 
+.................... #ifdef LCD20X4 // Using LCD 20 x 4 
+....................         switch (lcd_i2c_line) 
+....................         { 
+....................         case 1: 
+....................             send_lcd_i2c_command(line2_start_command); 
+....................             lcd_i2c_line = 2; 
+....................             break; 
+....................         case 2: 
+....................             send_lcd_i2c_command(line3_start_command); 
+....................             lcd_i2c_line = 3; 
+....................             break; 
+....................         case 3: 
+....................             send_lcd_i2c_command(line4_start_command); 
+....................             lcd_i2c_line = 4; 
+....................             break; 
+....................         case 4: 
+....................             send_lcd_i2c_command(line1_start_command); 
+....................             lcd_i2c_line = 1; 
+....................             break; 
+....................         } 
+.................... #else // Using LCD 16 x 2 
+....................         switch (lcd_i2c_line) 
+016A:  MOVF   22,W
+016B:  XORLW  01
+016C:  BTFSC  03.2
+016D:  GOTO   172
+016E:  XORLW  03
+016F:  BTFSC  03.2
+0170:  GOTO   178
+0171:  GOTO   17D
+....................         { 
+....................         case 1: 
+....................             send_lcd_i2c_command(line2_start_command); 
+0172:  MOVLW  C0
+0173:  MOVWF  34
+0174:  CALL   0CC
+....................             lcd_i2c_line = 2; 
+0175:  MOVLW  02
+0176:  MOVWF  22
+....................             break; 
+0177:  GOTO   17D
+....................         case 2: 
+....................             send_lcd_i2c_command(line1_start_command); 
+0178:  MOVLW  80
+0179:  MOVWF  34
+017A:  CALL   0CC
+....................             lcd_i2c_line = 1; 
+017B:  MOVLW  01
+017C:  MOVWF  22
+....................             break; 
+....................         } 
+.................... #endif 
+....................     } 
+017D:  GOTO   2CE
+....................     else 
+....................     { 
+....................         cursor_address = read_cursor_address(); 
+*
+0259:  MOVF   78,W
+025A:  MOVWF  33
+....................         send_lcd_i2c_character(character); 
+025B:  MOVF   32,W
+025C:  MOVWF  34
+.................... #ifdef LCD20X4 // Using LCD 20 x 4 
+....................         switch (lcd_i2c_line) 
+....................         { 
+....................         case 1: 
+....................             if (cursor_address == line1_end) 
+....................             { 
+....................                 send_lcd_i2c_command(line2_start_command); 
+....................                 lcd_i2c_line = 2; 
+....................             } 
+....................             break; 
+....................         case 2: 
+....................             if (cursor_address == line2_end) 
+....................             { 
+....................                 send_lcd_i2c_command(line3_start_command); 
+....................                 lcd_i2c_line = 3; 
+....................             } 
+....................             break; 
+....................         case 3: 
+....................             if (cursor_address == line3_end) 
+....................             { 
+....................                 send_lcd_i2c_command(line4_start_command); 
+....................                 lcd_i2c_line = 4; 
+....................             } 
+....................             break; 
+....................         case 4: 
+....................             if (cursor_address == line4_end) 
+....................             { 
+....................                 send_lcd_i2c_command(line1_start_command); 
+....................                 lcd_i2c_line = 1; 
+....................             } 
+....................             break; 
+....................         } 
+.................... #else // Using LCD 16 x 2 
+....................         switch (lcd_i2c_line) 
+*
+02B2:  BCF    03.5
+02B3:  MOVF   22,W
+02B4:  XORLW  01
+02B5:  BTFSC  03.2
+02B6:  GOTO   2BB
+02B7:  XORLW  03
+02B8:  BTFSC  03.2
+02B9:  GOTO   2C5
+02BA:  GOTO   2CE
+....................         { 
+....................         case 1: 
+....................             if (cursor_address == line1_end) 
+02BB:  MOVF   33,W
+02BC:  SUBLW  27
+02BD:  BTFSS  03.2
+02BE:  GOTO   2C4
+....................             { 
+....................                 send_lcd_i2c_command(line2_start_command); 
+02BF:  MOVLW  C0
+02C0:  MOVWF  34
+02C1:  CALL   0CC
+....................                 lcd_i2c_line = 2; 
+02C2:  MOVLW  02
+02C3:  MOVWF  22
+....................             } 
+....................             break; 
+02C4:  GOTO   2CE
+....................         case 2: 
+....................             if (cursor_address == line2_end) 
+02C5:  MOVF   33,W
+02C6:  SUBLW  67
+02C7:  BTFSS  03.2
+02C8:  GOTO   2CE
+....................             { 
+....................                 send_lcd_i2c_command(line1_start_command); 
+02C9:  MOVLW  80
+02CA:  MOVWF  34
+02CB:  CALL   0CC
+....................                 lcd_i2c_line = 1; 
+02CC:  MOVLW  01
+02CD:  MOVWF  22
+....................             } 
+....................             break; 
+....................         } 
+.................... #endif 
+....................     } 
+02CE:  RETURN
+.................... } 
+.................... void send_lcd_i2c_string(char *string) 
+.................... { 
+....................     while (*string) 
+....................         write_lcd_i2c(*string++); 
+.................... } 
+.................... void set_lcd_i2c_cursor_position(char x, char y) 
+.................... { 
+....................     switch (x) 
+....................     { 
+....................     case 1:                                    // Line 1 
+....................         send_lcd_i2c_command(line1_start + y); // Position command. 
+....................         lcd_i2c_line = 1;                      // Assign current line for write control. 
+....................         break; 
+....................     case 2:                                    // Line 2 
+....................         send_lcd_i2c_command(line2_start + y); // Position command. 
+....................         lcd_i2c_line = 2;                      // Assign current line for write control. 
+....................         break; 
+.................... #ifdef LCD20X4                                 // Using LCD 20 x 4 
+....................     case 3:                                    // Line 3 
+....................         send_lcd_i2c_command(line3_start + y); // Position command. 
+....................         lcd_i2c_line = 3;                      // Assign current line for write control. 
+....................         break; 
+....................     case 4:                                    // Line 4 
+....................         send_lcd_i2c_command(line4_start + y); // Position command. 
+....................         lcd_i2c_line = 4;                      // Assign current line for write control. 
+....................         break; 
+.................... #endif 
+....................     } 
+.................... } 
+.................... void configure_lcd_i2c(int cursor, int blink, int backlight) 
+.................... { 
+....................     int aux; 
+....................     backlight_lcd_i2c = 0x08 * backlight; // Set backlight status. 
+....................  
+....................     aux = 0x08 | (cursor << 1) | blink; // Combine bits to form the control byte 
+....................     send_lcd_i2c_command(aux);          // Send control command to the LCD 
+.................... } 
+....................  
+....................  
+....................  
+....................  
+.................... #define ON 1 
+.................... #define OFF 0 
+....................  
+.................... int8 SW_Pin[] = {Pin_B0, Pin_B1, Pin_B2, Pin_B3, Pin_B4}; 
+*
+0377:  MOVLW  30
+0378:  BCF    03.6
+0379:  MOVWF  23
+037A:  MOVLW  31
+037B:  MOVWF  24
+037C:  MOVLW  32
+037D:  MOVWF  25
+037E:  MOVLW  33
+037F:  MOVWF  26
+0380:  MOVLW  34
+0381:  MOVWF  27
+.................... int8 SW0 = Pin_B0; 
+.................... int8 SW1 = Pin_B1; 
+.................... int8 SW2 = Pin_B2; 
+.................... int8 SW3 = Pin_B3; 
+.................... int8 SW4 = Pin_B4; 
+....................  
+.................... int8 LED_Pin = Pin_D0; 
+.................... int8 Buzzer_Pin = Pin_D1; 
+....................  
+.................... void main() 
+*
+0345:  MOVF   03,W
+0346:  ANDLW  1F
+0347:  MOVWF  03
+0348:  BSF    03.5
+0349:  BSF    03.6
+034A:  BCF    07.3
+034B:  MOVLW  4D
+034C:  BCF    03.6
+034D:  MOVWF  19
+034E:  MOVLW  A6
+034F:  MOVWF  18
+0350:  MOVLW  90
+0351:  BCF    03.5
+0352:  MOVWF  18
+0353:  MOVLW  FF
+0354:  MOVWF  20
+0355:  MOVLW  08
+0356:  MOVWF  21
+0357:  MOVLW  01
+0358:  MOVWF  22
+0359:  MOVLW  30
+035A:  MOVWF  28
+035B:  MOVLW  31
+035C:  MOVWF  29
+035D:  MOVLW  32
+035E:  MOVWF  2A
+035F:  MOVLW  33
+0360:  MOVWF  2B
+0361:  MOVLW  34
+0362:  MOVWF  2C
+0363:  MOVLW  40
+0364:  MOVWF  2D
+0365:  MOVLW  41
+0366:  MOVWF  2E
+0367:  BSF    03.5
+0368:  BSF    03.6
+0369:  MOVF   09,W
+036A:  ANDLW  C0
+036B:  MOVWF  09
+036C:  BCF    03.6
+036D:  BCF    1F.4
+036E:  BCF    1F.5
+036F:  MOVLW  00
+0370:  BSF    03.6
+0371:  MOVWF  08
+0372:  BCF    03.5
+0373:  CLRF   07
+0374:  CLRF   08
+0375:  CLRF   09
+0376:  BCF    03.7
+.................... { 
+....................     // Turning on the LCD 
+....................     initialize_lcd_i2c(); 
+*
+0382:  GOTO   05C
+....................  
+....................     // led and buzzer pin output 
+....................     set_tris_d(0x00); 
+0383:  MOVLW  00
+0384:  BSF    03.5
+0385:  MOVWF  08
+....................  
+....................     while (TRUE) 
+....................     { 
+....................         printf(write_lcd_i2c, "First line.\nSecond line. \n"); 
+0386:  MOVLW  04
+0387:  BCF    03.5
+0388:  BSF    03.6
+0389:  MOVWF  0D
+038A:  MOVLW  00
+038B:  MOVWF  0F
+038C:  BCF    03.6
+038D:  GOTO   2CF
+....................  
+....................         output_d(0x02); 
+038E:  BSF    03.5
+038F:  CLRF   08
+0390:  MOVLW  02
+0391:  BCF    03.5
+0392:  MOVWF  08
+....................         delay_ms(1000); 
+0393:  MOVLW  04
+0394:  MOVWF  2F
+0395:  MOVLW  FA
+0396:  MOVWF  30
+0397:  CALL   327
+0398:  DECFSZ 2F,F
+0399:  GOTO   395
+....................  
+....................         clear_lcd_i2c(); 
+039A:  GOTO   33C
+....................  
+....................         output_d(0x03); 
+039B:  BSF    03.5
+039C:  CLRF   08
+039D:  MOVLW  03
+039E:  BCF    03.5
+039F:  MOVWF  08
+....................         delay_ms(1000); 
+03A0:  MOVLW  04
+03A1:  MOVWF  2F
+03A2:  MOVLW  FA
+03A3:  MOVWF  30
+03A4:  CALL   327
+03A5:  DECFSZ 2F,F
+03A6:  GOTO   3A2
+03A7:  BSF    03.5
+03A8:  GOTO   386
+....................     } 
+.................... } 
+03A9:  SLEEP
+
+Configuration Fuses:
+   Word  1: 2CE2   HS NOWDT PUT MCLR NOPROTECT NOCPD NOBROWNOUT IESO FCMEN NOLVP NODEBUG
+   Word  2: 3FFF   BORV40 NOWRT

@@ -1,0 +1,60 @@
+
+ROM used:   938/8192 (11%)
+            938/8192 (11%) including unused fragments
+
+            0.8 Average locations per line
+            7.4 Average locations per statement
+
+RAM used:   21/368 (6%) at main() level
+            31/368 (8%) worst case
+
+Stack used: 3 worst case (3 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   37    10   8  main.c
+   18     0   0  main.h
+  769     0   0  D:\Program Files (x86)\PICC\Devices\16F887.h
+  307   116  92  lcd_i2c.c
+----- -----
+ 1131   126 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     21   2    1             @delay_ms1
+0     69   7    3             @I2C_READ_1
+0     74   8    1             @I2C_WRITE_1
+0    112  12    0    500  2.4  initialize_lcd_i2c
+0     85   9    5    479  4.3  send_lcd_i2c_command
+ Inline         5    518  4.9  send_lcd_i2c_character
+0      9   1    0     32  1.0  clear_lcd_i2c
+ Inline         4    920  5.3  read_cursor_address
+0    361  38    2    539  5.2  write_lcd_i2c
+0    101  11    1    174  2.1  MAIN
+0     14   1    0    574  5.9  @const670
+0     88   9    4    149  2.8  @PSTRINGC7_646
+ Inline         0     61  1.9  @cinit1
+
+Program metrics:
+    Functions               10
+    Statements              126
+    Comments                200
+    Volume (V)              6085
+    Difficulty (D)          36.1
+    Effort to implement (E) 219690
+    Time to implement (T)   3 hours, 23 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   9
+    Maintainability (MI)    126
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF   934  1110  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

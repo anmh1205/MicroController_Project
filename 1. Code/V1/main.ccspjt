@@ -14,7 +14,7 @@ Type=4
 1=main.c
 
 [ProjectLog]
-Days=5
+Days=7
 D1=20-06-2024
 D1_L=2
 D1_L1=[83162]Project Opened.
@@ -39,12 +39,22 @@ D4_L5=[51804]Project Opened.
 D5=28-06-2024
 D5_L=1
 D5_L1=[7067]Project Closed.
+D6=02-07-2024
+D6_L=1
+D6_L1=[56450]Project Opened.
+D7=04-07-2024
+D7_L=5
+D7_L1=[5961]Project Closed.
+D7_L2=[5982]Project Opened.
+D7_L3=[16135]Project Closed.
+D7_L4=[16882]Project Opened.
+D7_L5=[18385]Project Closed.
 
 [Opened Files]
 1=main.c
 2=D:\Program Files (x86)\PICC\Devices\16F877.h
 3=main.h
-4=lcd_i2c.c
+4=
 5=
 [main.c]
 Type=4
