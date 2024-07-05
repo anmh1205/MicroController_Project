@@ -1,5 +1,6 @@
 #include <main.h>
 
+
 void appendMorseCode(int1 bit)
 {
     morseCodeBuffer = (morseCodeBuffer << 1) | bit;

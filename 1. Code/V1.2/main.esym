@@ -1,7 +1,8 @@
-D G "__PCM__" 0 26 ""5.025""
-D G "__DEVICE__" 0 26 "887"
-D G "__DATE__" 0 26 ""05-Jul-24""
-D G "__TIME__" 0 26 ""22:29:56"" "Standard Header file for the PIC16F887 device ////////////////"
+C L "MAIN" 0 7 1 "FUNCTION"
+D G "__PCM__" 0 260 ""5.025""
+D G "__DEVICE__" 0 260 "887"
+D G "__DATE__" 0 260 ""06-Jul-24""
+D G "__TIME__" 0 260 ""00:06:36"" "Standard Header file for the PIC16F887 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 39 "int8" `54 
 f B "set_tris_a" 2 39 "void(int8 value)" `53 
@@ -1089,46 +1090,31 @@ V L "aux" 6 301 "int8" `753
 C L "configure_lcd_i2c" 6 53 1 "FUNCTION"
 C L "configure_lcd_i2c" 6 53 1 "FUNCTION"
 C L "configure_lcd_i2c" 6 53 1 "FUNCTION"
-D G "DOT_DURATION" 0 3 "100"
-D G "DASH_DURATION" 0 4 "500"
-V G "SW_Pin" 0 6 "int8[1]" `754 
-V G "LED_Pin" 0 9 "int8" `755 
-V G "Buzzer_Pin" 0 10 "int8" `756 
-V G "elapsedTime" 0 12 "int16" `757 
-V G "morseCodeBuffer" 0 14 "int8" `758 
-V G "morseCodeBufferString" 0 15 "int8[6]" `759 
-V G "morseCodeBufferIndex" 0 16 "int8" `760 
-V G "morseCodeString" 0 18 "int8[16]" `761 
-V G "morseCodeStringIndex" 0 19 "int8" `762 
-T G "MorseCodeMapping" 0 24 "{int8 morseCode,int8 character}" `766  "0 is dot, 1 is dash"
-V G "morseCodeTable" 0 29 "MorseCodeMapping[1]" `767 
-F G "An389_Interrupt" 0 34 "void()" `769 
-F G "startTimer" 0 42 "void()" `770 
+V G "DOT_DURATION" 0 3 "int16" `754 
+V G "DASH_DURATION" 0 4 "int16" `756 
+V G "SW_Pin" 0 6 "[1]" `758 
+V G "LED_Pin" 0 9 "int8" `761 
+V G "Buzzer_Pin" 0 10 "int8" `763 
+V G "elapsedTime" 0 12 "int16" `765 
+V G "morseCodeBufferString" 0 14 "int8[6]" `766 
+V G "morseCodeBufferIndex" 0 15 "int8" `767 
+V G "morseCodeString" 0 17 "int8[16]" `768 
+V G "morseCodeStringIndex" 0 18 "int8" `769 
+T G "morseCode" 0 24 "{int8[6] morseCode,int8 character}" `773 
+V G "morseCodeTable" 0 26 "morseCode[1]" `774 
+F G "An389_Interrupt" 0 31 "void()" `776 
+F G "startTimer" 0 38 "void()" `777 
 C L "startTimer" 0 7 6 "FUNCTION"
-F G "stopAndReadTimer" 0 58 "int16(int8 bit)" `771 
-V L "bit" 0 65 "int8" `773 
-F G "appendMorseCode" 0 66 "void(int8 bit)" `772 
-F G "clearMorseCodeBuffer" 0 71 "void(int16 ,int8 ,int8 )" `774 
-F G "clearMorseCodeString" 0 78 "void()" `779 
-F G "translateMorseCode" 0 84 "void()" `780 
-V L "i" 0 85 "int8" `781 
-F G "handleButtonPress" 0 100 "void(int8 ,int8 ,int16 )" `782 
-C L "handleButtonPress" 0 7 1 "FUNCTION"
-C L "handleButtonPress" 0 7 1 "FUNCTION"
-C L "handleButtonPress" 0 7 1 "FUNCTION"
-C L "handleButtonPress" 0 7 1 "FUNCTION"
-C L "handleButtonPress" 0 7 1 "FUNCTION"
-V L "duration" 0 119 "int16" `790 
-C L "handleButtonPress" 0 7 1 "FUNCTION"
-C L "handleButtonPress" 0 7 1 "FUNCTION"
-C L "handleButtonPress" 0 7 1 "FUNCTION"
-C L "handleButtonPress" 0 7 1 "FUNCTION"
-C L "handleButtonPress" 0 7 1 "FUNCTION"
-V L "i" 0 148 "int8" `792 
-V L "c" 0 150 "int8" `793 
-V L "j" 0 151 "int8" `794 
-V L "morseCode" 0 155 "int8" `795 
-V L "k" 0 156 "int8" `796 
+F G "stopAndReadTimer" 0 54 "int16()" `778 
+V L "morseChar" 0 60 "int8" `780 
+F G "appendMorseCode" 0 61 "void(int8 morseChar)" `779 
+C L "appendMorseCode" 0 7 1 "FUNCTION"
+F G "clearMorseCodeBuffer" 0 67 "void()" `781 
+F G "clearMorseCodeString" 0 73 "void()" `786 
+F G "translateMorseCode" 0 79 "void()" `787 
+V L "i" 0 80 "int8" `788 
+V L "temp" 0 82 "int8[6]" `789 
+F G "handleButtonPress" 0 97 "void()" `793 
 C L "handleButtonPress" 0 7 1 "FUNCTION"
 C L "handleButtonPress" 0 7 1 "FUNCTION"
 C L "handleButtonPress" 0 7 1 "FUNCTION"
@@ -1136,7 +1122,31 @@ C L "handleButtonPress" 0 7 1 "FUNCTION"
 C L "handleButtonPress" 0 7 1 "FUNCTION"
 C L "handleButtonPress" 0 7 1 "FUNCTION"
 C L "handleButtonPress" 0 7 1 "FUNCTION"
-F G "MAIN" 0 205 "void()" `797 
+C L "handleButtonPress" 0 7 1 "FUNCTION"
+V L "duration" 0 117 "int16" `794 
+C L "handleButtonPress" 0 7 1 "FUNCTION"
+C L "handleButtonPress" 0 7 1 "FUNCTION"
+C L "handleButtonPress" 0 7 1 "FUNCTION"
+C L "handleButtonPress" 0 7 1 "FUNCTION"
+C L "handleButtonPress" 0 7 1 "FUNCTION"
+V L "i" 0 142 "int8" `798 
+V L "c" 0 144 "int8" `799 
+V L "j" 0 145 "int8" `800 
+V L "k" 0 152 "int8" `803 
+V L "duration" 0 156 "int16" `804 
+C L "handleButtonPress" 0 7 1 "FUNCTION"
+C L "handleButtonPress" 0 7 1 "FUNCTION"
+C L "handleButtonPress" 0 7 1 "FUNCTION"
+V L "i" 0 183 "int8" `807 
+V L "c" 0 185 "int8" `808 
+V L "j" 0 186 "int8" `809 
+V L "k" 0 193 "int8" `811 
+V L "duration" 0 197 "int16" `812 
+C L "handleButtonPress" 0 7 1 "FUNCTION"
+C L "handleButtonPress" 0 7 1 "FUNCTION"
+C L "handleButtonPress" 0 7 1 "FUNCTION"
+C L "handleButtonPress" 0 7 1 "FUNCTION"
+F G "MAIN" 0 235 "void()" `814 
 C L "MAIN" 0 7 1 "FUNCTION"
 C L "MAIN" 0 7 1 "FUNCTION"
 C L "MAIN" 0 7 1 "FUNCTION"

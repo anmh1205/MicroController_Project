@@ -1,73 +1,76 @@
 
-ROM used:   1771/8192 (22%)
-            1771/8192 (22%) including unused fragments
+ROM used:   1682/8192 (21%)
+            1682/8192 (21%) including unused fragments
 
-            1.0 Average locations per line
-            5.9 Average locations per statement
+            0.9 Average locations per line
+            4.9 Average locations per statement
 
-RAM used:   121/368 (33%) at main() level
-            133/368 (36%) worst case
+RAM used:   56/368 (15%) at main() level
+            72/368 (20%) worst case
 
-Stack used: 4 worst case (3 in main + 1 for interrupts)
+Stack used: 5 worst case (4 in main + 1 for interrupts)
 Stack size: 8
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  161    60  20  main.c
-   20     0   0  main.h
+  233   102  30  main.c
+   21     0   0  main.h
   769     0   0  D:\Program Files (x86)\PICC\Devices\16F887.h
-  307   116  39  lcd_i2c.c
-  423   125  42  D:\Program Files (x86)\PICC\Drivers\string.h
+  423   125  36  D:\Program Files (x86)\PICC\Drivers\string.h
    32     0   0  D:\Program Files (x86)\PICC\Drivers\stddef.h
    28     0   0  D:\Program Files (x86)\PICC\Drivers\ctype.h
+  307   116  34  lcd_i2c.c
 ----- -----
- 1740   301 Total
+ 1813   343 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
 0     21   1    1             @delay_ms1
-0     77   4    3             @I2C_READ_1
-0     76   4    1             @I2C_WRITE_1
-0    142   8    0    500  2.4  initialize_lcd_i2c
-0    107   6    5    479  4.3  send_lcd_i2c_command
+0     69   4    3             @I2C_READ_1
+0     74   4    1             @I2C_WRITE_1
+0    112   7    0    500  2.4  initialize_lcd_i2c
+0     85   5    5    479  4.3  send_lcd_i2c_command
  Inline         5    518  4.9  send_lcd_i2c_character
-0     11   1    0     32  1.0  clear_lcd_i2c
+0      7   0    0     32  1.0  clear_lcd_i2c
  Inline         4    920  5.3  read_cursor_address
-0    439  25    2    539  5.2  write_lcd_i2c
- Inline         3     54  2.5  send_lcd_i2c_string
-0     28   2    3    197  4.7  set_lcd_i2c_cursor_position
+0    361  21    2    539  5.2  write_lcd_i2c
+0     24   1    3    197  4.7  set_lcd_i2c_cursor_position
+0     76   5    0     45  1.4  @const767
 0     13   1    0     45  1.4  An389_Interrupt
  Inline         0    100  2.1  startTimer
  Inline         0     45  1.4  stopAndReadTimer
  Inline         2     49  2.3  appendMorseCode
-0      2   0    0     18  1.0  clearMorseCodeBuffer
-0     11   1    0    253  6.4  @MEMSET
- Inline         3    424  6.8  translateMorseCode
-0    322  18    1    577  6.2  handleButtonPress
-0     34   2    6    243  2.6  @WRITEBITA
-0     25   1    5    607  5.1  @READBITA
-0    254  14    1    280  2.7  MAIN
-0     10   1    0    145  2.0  @const793
-0    118   7    4    436  5.9  @PSTRINGC7_646
- Inline         0    179  2.1  @cinit1
+0     10   1    0     80  2.4  clearMorseCodeBuffer
+0      9   1    0     61  2.3  @MEMSET
+0      9   1    0     61  2.3  clearMorseCodeString
+ Inline         3    302  6.4  translateMorseCode
+0    439  26    2   2437 10.6  handleButtonPress
+0     32   2    6             @WRITEBITA
+0     23   1    5             @READBITA
+0     22   1    2    421  2.8  @PSTRINGR_741
+0    116   7    1    421  2.8  MAIN
+0      6   0    0             @const800
+0     86   5    4             @PSTRINGC7_741
+0      7   0    0             @const802
+ Inline         0             @cinit1
 
 Program metrics:
-    Functions               22
-    Statements              301
-    Comments                364
-    Volume (V)              11688
-    Difficulty (D)          80.5
-    Effort to implement (E) 940333
-    Time to implement (T)   14 hours, 31 minutes
+    Functions               19
+    Statements              343
+    Comments                370
+    Volume (V)              11677
+    Difficulty (D)          68.0
+    Effort to implement (E) 793995
+    Time to implement (T)   12 hours, 15 minutes
     Est Delivered Bugs (B)  3
-    Cyclomatic Complexity   20
-    Maintainability (MI)    97
+    Cyclomatic Complexity   21
+    Maintainability (MI)    117
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00003     4  0  
 00004-00050    77  0  
-00051-007FF  1690  277  
+00051-007FF  1601  366  
 00800-00FFF     0  2048  
 01000-017FF     0  2048  
 01800-01FFF     0  2048  

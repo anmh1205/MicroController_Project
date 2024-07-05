@@ -277,11 +277,11 @@ void set_lcd_i2c_cursor_position(char x, char y)
     switch (x)
     {
     case 1:                                    // Line 1
-        send_lcd_i2c_command(line1_start + y); // Position command.
+        send_lcd_i2c_command(line1_start_command + y); // Position command.
         lcd_i2c_line = 1;                      // Assign current line for write control.
         break;
     case 2:                                    // Line 2
-        send_lcd_i2c_command(line2_start + y); // Position command.
+        send_lcd_i2c_command(line2_start_command + y); // Position command.
         lcd_i2c_line = 2;                      // Assign current line for write control.
         break;
 #ifdef LCD20X4                                 // Using LCD 20 x 4

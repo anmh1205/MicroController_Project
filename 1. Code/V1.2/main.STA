@@ -1,0 +1,82 @@
+
+ROM used:   2085/8192 (25%)
+            2171/8192 (27%) including unused fragments
+
+            1.1 Average locations per line
+            5.7 Average locations per statement
+
+RAM used:   48/368 (13%) at main() level
+            73/368 (20%) worst case
+
+Stack used: 5 worst case (4 in main + 1 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  259   128  35  main.c
+   21     0   0  main.h
+  769     0   0  D:\Program Files (x86)\PICC\Devices\16F887.h
+  423   125  34  D:\Program Files (x86)\PICC\Drivers\string.h
+   32     0   0  D:\Program Files (x86)\PICC\Drivers\stddef.h
+   28     0   0  D:\Program Files (x86)\PICC\Drivers\ctype.h
+  307   116  31  lcd_i2c.c
+----- -----
+ 1839   369 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     21   1    1             @delay_ms1
+0     69   3    3             @I2C_READ_1
+0     74   4    1             @I2C_WRITE_1
+ Inline         5    243  7.0  strcmp
+0    112   5    0    500  2.4  initialize_lcd_i2c
+0     85   4    5    479  4.3  send_lcd_i2c_command
+ Inline         5    518  4.9  send_lcd_i2c_character
+0      7   0    0     32  1.0  clear_lcd_i2c
+ Inline         4    920  5.3  read_cursor_address
+0    361  17    2    539  5.2  write_lcd_i2c
+0     24   1    3    197  4.7  set_lcd_i2c_cursor_position
+0    259  12    0     61  2.3  @const774
+0     13   1    0     45  1.4  An389_Interrupt
+ Inline         0    100  2.1  startTimer
+ Inline         0     45  1.4  stopAndReadTimer
+ Inline         3     68  2.4  appendMorseCode
+0      9   0    0     61  2.3  clearMorseCodeBuffer
+0      9   0    0   2324  9.4  @MEMSET
+ Inline         0     61  2.3  clearMorseCodeString
+ Inline         3    403  7.0  translateMorseCode
+0     37   2    2    421  2.8  @MUL88
+0    615  29    1   3971 10.4  handleButtonPress
+0     22   1    2    421  2.8  @PSTRINGR_741
+0     44   2    2             @PSTRINGC_741
+0      9   0    0    421  2.8  @const805
+0     86   4    4    421  2.8  @PSTRINGC7_741
+0      9   0    0             @const813
+1    123   6    1    421  2.8  MAIN
+0      8   0    0             @const817
+0      8   0    0             @const818
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               23
+    Statements              369
+    Comments                373
+    Volume (V)              20275
+    Difficulty (D)          92.4
+    Effort to implement (E) 1874090
+    Time to implement (T)   28 hours, 55 minutes
+    Est Delivered Bugs (B)  5
+    Cyclomatic Complexity   35
+    Maintainability (MI)    88
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-00050    77  0  
+00051-007FF  1881  86  
+00800-00FFF   123  1925  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

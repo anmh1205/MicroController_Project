@@ -55,11 +55,5 @@
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
-  "C_Cpp_Runner.msvcSecureNoWarnings": false,
-  "files.associations": {
-    "*.embeddedhtml": "html",
-    "lcd_i2c.c": "cpp",
-    "morse_code_repeater.c": "cpp",
-    "morse_code_reader.c": "cpp"
-  }
+  "C_Cpp_Runner.msvcSecureNoWarnings": false
 }

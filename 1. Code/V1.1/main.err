@@ -1,4 +1,3 @@
->>> Warning 202 "main.c" Line 6(6,13): Variable never used:   LED_Pin
-      Memory usage:   ROM=22%      RAM=33% - 36%
-      0 Errors,  1 Warnings.
+      Memory usage:   ROM=21%      RAM=15% - 20%
+      0 Errors,  0 Warnings.
 Build Successful.
