@@ -13,4 +13,6 @@
 #define PCF8574A       // Comment for modules using PCF8574
 #define A2_A1_A0 0B111 // Address pin states (A2 A1 A0) of PCF8574A/PCF8574.
 #define LCD16X2        // Comment this line to use 16x2 LCD
+
 #include <lcd_i2c.c>
+#include <string.h>

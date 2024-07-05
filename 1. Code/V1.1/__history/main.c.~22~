@@ -13,8 +13,6 @@ int8 Buzzer_Pin = Pin_D1;
 unsigned int16 elapsedTime = 0;
 
 unsigned int8 morseCodeBuffer = 0b0;
-unsigned int8 morseCodeString[16] = "aaaaaaa";
-unsigned int8 morseCodeIndex = 0;
 typedef struct
 {
     unsigned int8 morseCode;
@@ -62,68 +60,81 @@ void appendMorseCode(int1 bit)
     morseCodeBuffer = (morseCodeBuffer << 1) | bit;
 }
 
+char morseCodeToCharacter(unsigned int8 code)
+{
+    for (int i = 0; i < sizeof(morseCodeTable) / sizeof(MorseCodeMapping); ++i)
+    {
+        if (morseCodeTable[i].morseCode == code)
+        {
+            return morseCodeTable[i].character;
+        }
+    }
+    return '\0'; // Return null character if not found
+}
+
 void clearMorseCodeBuffer()
 {
     morseCodeBuffer = 0b0;
 }
 
-void clearMorseCodeString()
-{
-    memset(morseCodeString, 0, sizeof(morseCodeString));
-    morseCodeIndex = 0;
-}
-
 void translateMorseCode()
 {
+    clear_lcd_i2c();
+
     for (int i = 0; i < sizeof(morseCodeTable) / sizeof(MorseCodeMapping); ++i)
     {
-        if (morseCodeBuffer == morseCodeTable[i].morseCode)
+        if (morseCodeTable[i].morseCode == morseCodeBuffer)
         {
-            printf(write_lcd_i2c, "%c", morseCodeTable[i].character);
-            morseCodeString[morseCodeIndex++] = morseCodeTable[i].character;
-
-            clearMorseCodeBuffer();
-            return;
+            morseCodeTable[i].character;
         }
     }
-
-    printf(write_lcd_i2c, "?");
-    morseCodeString[morseCodeIndex++] = '?';
+    return '\0'; // Return null character if not found
     clearMorseCodeBuffer();
 }
 
 void handleButtonPress()
 {
-    if (input(SW_Pin[0]) == 0)  // create morse code character
+    if (input(SW_Pin[0]) == 0)
     {
         startTimer();
         output_low(Buzzer_Pin); // Turn on buzzer
 
-        while (input(SW_Pin[0]) == 0)
+        clear_lcd_i2c();
+
+        while (input(SW_Pin) == 0)
         {
-            if (elapsedTime > 400)
-            {
-                output_high(Buzzer_Pin); // Turn off buzzer
-                delay_ms(1000);
-                break;
-            }
+            clear_lcd_i2c();
+            printf(write_lcd_i2c, "%ld", elapsedTime);
+            delay_ms(5);
         }
 
         output_high(Buzzer_Pin); // Turn off buzzer
 
         unsigned int16 duration = stopAndReadTimer();
 
-        appendMorseCode(duration > 400 ? 0b1 : 0b0);
 
-        set_lcd_i2c_cursor_position(2, 1);
-        send_lcd_i2c_string(morseCodeString);
+        if (duration < 400)
+        {
+            // clear_lcd_i2c();
+            // printf(write_lcd_i2c, ".");
+            appendMorseCode(0b0);
+        }
+        else
+        {
+            // clear_lcd_i2c();
+            // printf(write_lcd_i2c, "-");
+            appendMorseCode(0b1);
+        }
+
+        clear_lcd_i2c();
+        printf(write_lcd_i2c, "%d", morseCodeBuffer);
     }
 
-    if (input(SW_Pin[1]) == 0) // append character to string and lcd
+    if (input(SW_Pin[1]) == 0)
     {
         translateMorseCode();
 
-        while (input(SW_Pin[1]) == 0)
+        while (input(SW_Pin) == 0)
         {
             // Wait for button release
         }
@@ -136,20 +147,17 @@ void main()
     set_tris_d(0x00);     // Set LED and buzzer pins as output
     set_tris_b(0x1F);     // Set SW pins as input
 
-    output_d(0x02); // Turn off LED and Buzzer
+    output_d(0x02);
 
-    memset(morseCodeString, 0, sizeof(morseCodeString));
+    for (int i = 0; i < sizeof(morseCodeTable) / sizeof(MorseCodeMapping); ++i)
+    {
+        printf(write_lcd_i2c, "%d: %c", morseCodeTable[i].morseCode, morseCodeTable[i].character);
+        delay_ms(1000);
+        clear_lcd_i2c();
+    }
 
     clear_lcd_i2c();
-
-    set_lcd_i2c_cursor_position(1, 1);
-    printf(write_lcd_i2c, "Press SW1 to create");
-
-    set_lcd_i2c_cursor_position(2, 1);
-    printf(write_lcd_i2c, "Press SW1 to start");
-
-    delay_ms(1500);
-    clear_lcd_i2c();
+    printf(write_lcd_i2c, "Morse Code Reader");
 
     while (TRUE)
     {

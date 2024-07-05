@@ -1,7 +1,8 @@
-D G "__PCM__" 0 38 ""5.025""
-D G "__DEVICE__" 0 38 "887"
-D G "__DATE__" 0 38 ""04-Jul-24""
-D G "__TIME__" 0 38 ""13:52:50"" "Standard Header file for the PIC16F887 device ////////////////"
+C L "MAIN" 0 4 1 "FUNCTION"
+D G "__PCM__" 0 162 ""5.025""
+D G "__DEVICE__" 0 162 "887"
+D G "__DATE__" 0 162 ""05-Jul-24""
+D G "__TIME__" 0 162 ""16:21:36"" "Standard Header file for the PIC16F887 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 39 "int8" `54 
 f B "set_tris_a" 2 39 "void(int8 value)" `53 
@@ -966,48 +967,162 @@ V L "aux" 3 301 "int8" `658
 C L "configure_lcd_i2c" 3 53 1 "FUNCTION"
 C L "configure_lcd_i2c" 3 53 1 "FUNCTION"
 C L "configure_lcd_i2c" 3 53 1 "FUNCTION"
-D G "ON" 0 3 "1"
-D G "OFF" 0 4 "0"
-V G "SW_Pin" 0 6 "int8[1]" `659 
-V G "SW0" 0 7 "int8" `660 
-V G "SW1" 0 8 "int8" `661 
-V G "SW2" 0 9 "int8" `662 
-V G "SW3" 0 10 "int8" `663 
-V G "SW4" 0 11 "int8" `664 
-V G "LED_Pin" 0 13 "int8" `665 
-V G "Buzzer_Pin" 0 14 "int8" `666 
-D G "DOT_DURATION" 0 16 "250"
-D G "DASH_DURATION" 0 17 " (3 * DOT_DURATION)"
-D G "MAX_MORSE_CODE_LENGTH" 0 18 "6"
-V G "morseCodeBuffer" 0 20 "int8[7]" `667 
-V G "morseCodeIndex" 0 21 "int8" `668 
-T G "morseCode" 0 27 "{*int8 morseCode,int8 character}" `672 
-V G "morseCodeTable" 0 29 "morseCode[1]" `673 
-F G "initTimer0" 0 38 "void()" `674 
-F G "startTimer" 0 45 "void()" `675 
-F G "stopAndReadTimer" 0 50 "int8()" `676 
-V L "count" 0 51 "int8" `677 
-V L "symbol" 0 55 "int8" `679 
-F G "appendMorseCode" 0 56 "void(int8 symbol)" `678 
-F G "handleButtonPress" 0 65 "void()" `680 
-V L "buttonState" 0 66 "int8" `681 
-V L "currentState" 0 67 "int8" `682 
-f G "startTimer" 0 71 "int8()" `683 
-V G "duration" 0 75 "int8" `684 
-f G "appendMorseCode" 0 78 "int8()" `685 
-f G "appendMorseCode" 0 78 "int8()" `685 
-f G "appendMorseCode" 0 82 "int8()" `686 
-f G "appendMorseCode" 0 82 "int8()" `686 
-F G "translateMorseCode" 0 90 "void()" `687 
-V L "character" 0 91 "int8" `688 
-V L "character" 0 94 "int8" `690 
-f G "lcd_putc" 0 94 "int8(int8 character)" `689 
-f G "clearMorseCodeBuffer" 0 96 "int8(int8 )" `691 
-V L "code" 0 99 "*int8" `693 
-F G "morseCodeToCharacter" 0 100 "int8(*int8 code)" `692 
-V G "i" 0 101 "int8" `694 
-V L "morseCodeTable" 0 103 "*" `696 
-f G "strcmp" 0 103 "int8(* morseCodeTable)" `695 
+D G "_STRING" 4 12 ""
+D G "_STDDEF" 5 13 ""
+D G "ptrdiff_t" 5 18 "unsigned int16"
+D G "size_t" 5 24 "unsigned int16"
+D G "wchar_t" 5 26 "char"
+D G "NULL" 5 27 "0"
+D G "offsetof" 5 29 "(s,f) (offsetofbit(s,f)/8)"
+D G "_CTYPE" 6 12 ""
+D G "islower" 6 14 "(x)  isamong(x,"abcdefghijklmnopqrstuvwxyz")"
+D G "isupper" 6 15 "(x)  isamong(x,"ABCDEFGHIJKLMNOPQRSTUVWXYZ")"
+D G "isalnum" 6 16 "(x)  isamong(x,"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")"
+D G "isalpha" 6 17 "(x)  isamong(x,"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")"
+D G "isdigit" 6 18 "(x)  isamong(x,"0123456789")"
+D G "isspace" 6 19 "(x)  ((x)==' ')"
+D G "isxdigit" 6 20 "(x) isamong(x,"0123456789ABCDEFabcdef")"
+D G "iscntrl" 6 21 "(x)  ((x)<' ')"
+D G "isprint" 6 22 "(x)  ((x)>=' ')"
+D G "isgraph" 6 23 "(x)  ((x)>' ')"
+D G "ispunct" 6 24 "(x)  (((x)>' ')&&!isalnum(x))"
+V L "s1" 4 34 "*int8" `660 
+V L "s2" 4 34 "*int8" `661 
+V L "n" 4 34 "int16" `662 
+F G "memmove" 4 35 "*int8(*int8 s1,*int8 s2,int16 n)" `659 
+V L "sc1" 4 36 "*int8" `663 
+V L "sc2" 4 37 "*int8" `664 
+D G "strcopy" 4 54 "strcpy"
+V L "s1" 4 61 "*int8" `666 
+V L "s2" 4 61 "*int8" `667 
+V L "n" 4 61 "int16" `668 
+F G "strncpy" 4 62 "*int8(*int8 s1,*int8 s2,int16 n)" `665 
+V L "s" 4 63 "*int8" `669 
+V L "s1" 4 78 "*int8" `671 
+V L "s2" 4 78 "*int8" `672 
+F G "strcat" 4 79 "*int8(*int8 s1,*int8 s2)" `670 
+V L "s" 4 80 "*int8" `673 
+V L "s1" 4 96 "*int8" `675 
+V L "s2" 4 96 "*int8" `676 
+V L "n" 4 96 "int16" `677 
+F G "strncat" 4 97 "*int8(*int8 s1,*int8 s2,int16 n)" `674 
+V L "s" 4 98 "*int8" `678 
+C L "memcmp" 4 19 3 "FUNCTION"
+V L "s1" 4 120 "*int8" `680 
+V L "s2" 4 120 "*int8" `681 
+V L "n" 4 120 "int16" `682 
+F G "memcmp" 4 121 "sint8(*int8 s1,*int8 s2,int16 n)" `679 
+V L "su1" 4 122 "*int8" `683 
+V L "su2" 4 122 "*int8" `684 
+C L "strcmp" 4 19 2 "FUNCTION"
+V L "s1" 4 134 "*int8" `686 
+V L "s2" 4 134 "*int8" `687 
+F G "strcmp" 4 135 "sint8(*int8 s1,*int8 s2)" `685 
+C L "strcoll" 4 19 2 "FUNCTION"
+V L "s1" 4 144 "*int8" `689 
+V L "s2" 4 144 "*int8" `690 
+F G "strcoll" 4 145 "sint8(*int8 s1,*int8 s2)" `688 
+C L "strncmp" 4 19 4 "FUNCTION"
+V L "s1" 4 157 "*int8" `692 
+V L "s2" 4 157 "*int8" `693 
+V L "n" 4 157 "int16" `694 
+F G "strncmp" 4 158 "sint8(*int8 s1,*int8 s2,int16 n)" `691 
+C L "strxfrm" 4 19 3 "FUNCTION"
+V L "s1" 4 169 "*int8" `696 
+V L "s2" 4 169 "*int8" `697 
+V L "n" 4 169 "int16" `698 
+F G "strxfrm" 4 170 "int16(*int8 s1,*int8 s2,int16 n)" `695 
+V L "s" 4 171 "*int8" `699 
+V L "n1" 4 172 "int8" `700 
+V L "s" 4 191 "*int8" `702 
+V L "c" 4 191 "int8" `703 
+V L "n" 4 191 "int16" `704 
+F G "memchr" 4 192 "*int8(*int8 s,int8 c,int16 n)" `701 
+V L "uc" 4 193 "int8" `705 
+V L "su" 4 194 "*int8" `706 
+V L "s" 4 205 "*int8" `708 
+V L "c" 4 205 "int8" `709 
+F G "strchr" 4 206 "*int8(*int8 s,int8 c)" `707 
+C L "strcspn" 4 19 4 "FUNCTION"
+V L "s1" 4 217 "*int8" `711 
+V L "s2" 4 217 "*int8" `712 
+F G "strcspn" 4 218 "int8(*int8 s1,*int8 s2)" `710 
+V L "sc1" 4 219 "*int8" `713 
+V L "sc2" 4 219 "*int8" `714 
+V L "s1" 4 232 "*int8" `716 
+V L "s2" 4 232 "*int8" `717 
+F G "strpbrk" 4 233 "*int8(*int8 s1,*int8 s2)" `715 
+V L "sc1" 4 234 "*int8" `718 
+V L "sc2" 4 234 "*int8" `719 
+V L "s" 4 247 "*int8" `721 
+V L "c" 4 247 "int8" `722 
+F G "strrchr" 4 248 "*int8(*int8 s,int8 c)" `720 
+V L "p" 4 249 "*int8" `723 
+C L "strspn" 4 19 2 "FUNCTION"
+V L "s1" 4 262 "*int8" `725 
+V L "s2" 4 262 "*int8" `726 
+F G "strspn" 4 263 "int8(*int8 s1,*int8 s2)" `724 
+V L "sc1" 4 264 "*int8" `727 
+V L "sc2" 4 264 "*int8" `728 
+V L "s1" 4 281 "*int8" `730 
+V L "s2" 4 281 "*int8" `731 
+F G "strstr" 4 282 "*int8(*int8 s1,*int8 s2)" `729 
+V L "s" 4 283 "*int8" `732 
+V L "t" 4 283 "*int8" `733 
+V L "s1" 4 320 "*int8" `735 
+V L "s2" 4 320 "*int8" `736 
+F G "strtok" 4 321 "*int8(*int8 s1,*int8 s2)" `734 
+V L "beg" 4 322 "*int8" `737 
+V L "end" 4 322 "*int8" `738 
+V L "save" 4 323 "*int8" `739 
+C L "strlen" 4 19 6 "FUNCTION"
+V L "s" 4 369 "*int8" `741 
+F G "strlen" 4 370 "int8(*int8 s)" `740 
+V L "sc" 4 371 "*int8" `742 
+C L "stricmp" 4 19 2 "FUNCTION"
+V L "s1" 4 380 "*int8" `744 
+V L "s2" 4 380 "*int8" `745 
+F G "stricmp" 4 381 "sint8(*int8 s1,*int8 s2)" `743 
+V L "s" 4 394 "*int8" `749 
+F G "strlwr" 4 395 "*int8(*int8 s)" `748 
+V L "p" 4 396 "*int8" `750 
+V L "s" 4 408 "*int8" `752 
+F G "strupr" 4 409 "*int8(*int8 s)" `751 
+V L "p" 4 410 "*int8" `753 
+V G "SW_Pin" 0 3 "int8[1]" `754 
+V G "LED_Pin" 0 6 "int8" `755 
+V G "Buzzer_Pin" 0 7 "int8" `756 
+V G "elapsedTime" 0 13 "int16" `757 
+V G "morseCodeBuffer" 0 15 "int8" `758 
+V G "morseCodeString" 0 16 "int8[16]" `759 
+V G "morseCodeIndex" 0 17 "int8" `760 
+T G "MorseCodeMapping" 0 22 "{int8 morseCode,int8 character}" `764 
+V G "morseCodeTable" 0 24 "MorseCodeMapping[1]" `765 
+F G "An389_Interrupt" 0 29 "void()" `766 
+F G "startTimer" 0 37 "void()" `767 
+C L "startTimer" 0 4 6 "FUNCTION"
+F G "stopAndReadTimer" 0 53 "int16()" `768 
+V L "bit" 0 60 "int8" `770 
+F G "appendMorseCode" 0 61 "void(int8 bit)" `769 
+F G "clearMorseCodeBuffer" 0 66 "void()" `771 
+F G "clearMorseCodeString" 0 71 "void()" `772 
+F G "translateMorseCode" 0 77 "void()" `777 
+V L "i" 0 78 "int8" `778 
+F G "handleButtonPress" 0 96 "void()" `781 
+C L "handleButtonPress" 0 4 1 "FUNCTION"
+C L "handleButtonPress" 0 4 1 "FUNCTION"
+C L "handleButtonPress" 0 4 1 "FUNCTION"
+C L "handleButtonPress" 0 4 1 "FUNCTION"
+V L "duration" 0 114 "int16" `789 
+C L "handleButtonPress" 0 4 1 "FUNCTION"
+C L "handleButtonPress" 0 4 1 "FUNCTION"
+F G "MAIN" 0 134 "void()" `790 
+C L "MAIN" 0 4 1 "FUNCTION"
+C L "MAIN" 0 4 1 "FUNCTION"
+C L "MAIN" 0 4 1 "FUNCTION"
+C L "MAIN" 0 4 1 "FUNCTION"
+C L "MAIN" 0 4 1 "FUNCTION"
+C L "MAIN" 0 4 2 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep_ulpwu" 1 0
