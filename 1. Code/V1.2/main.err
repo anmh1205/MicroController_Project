@@ -1,3 +1,10 @@
-      Memory usage:   ROM=29%      RAM=13% - 20%
-      0 Errors,  0 Warnings.
+>>> Warning 216 "main.c" Line 144(1,2): Interrupts disabled during call to prevent re-entrancy:  (@I2C_WRITE_1)
+>>> Warning 216 "main.c" Line 144(1,2): Interrupts disabled during call to prevent re-entrancy:  (clear_lcd_i2c)
+>>> Warning 216 "main.c" Line 144(1,2): Interrupts disabled during call to prevent re-entrancy:  (set_lcd_i2c_cursor_position)
+>>> Warning 216 "main.c" Line 144(1,2): Interrupts disabled during call to prevent re-entrancy:  (@PSTRINGC7_646)
+>>> Warning 216 "main.c" Line 144(1,2): Interrupts disabled during call to prevent re-entrancy:  (@delay_ms1)
+>>> Warning 216 "main.c" Line 144(1,2): Interrupts disabled during call to prevent re-entrancy:  (write_lcd_i2c)
+>>> Warning 216 "main.c" Line 144(1,2): Interrupts disabled during call to prevent re-entrancy:  (@MUL88)
+      Memory usage:   ROM=39%      RAM=14% - 23%
+      0 Errors,  7 Warnings.
 Build Successful.

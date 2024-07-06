@@ -1,8 +1,7 @@
-C L "MAIN" 0 18 1 "FUNCTION"
-D G "__PCM__" 0 103 ""5.025""
-D G "__DEVICE__" 0 103 "887"
-D G "__DATE__" 0 103 ""06-Jul-24""
-D G "__TIME__" 0 103 ""22:50:16"" "Standard Header file for the PIC16F887 device ////////////////"
+D G "__PCM__" 0 144 ""5.025""
+D G "__DEVICE__" 0 144 "887"
+D G "__DATE__" 0 144 ""07-Jul-24""
+D G "__TIME__" 0 144 ""03:39:23"" "Standard Header file for the PIC16F887 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 39 "int8" `54 
 f B "set_tris_a" 2 39 "void(int8 value)" `53 
@@ -850,9 +849,9 @@ d G "INT_RB4" 2 763 "0x1100B08"
 d G "INT_RB5" 2 764 "0x1200B08"
 d G "INT_RB6" 2 765 "0x1400B08"
 d G "INT_RB7" 2 766 "0x1800B08"
-D G "PCF8574A" 1 15 "" "Comment for modules using PCF8574"
-D G "A2_A1_A0" 1 16 "0B111" "Address pin states (A2 A1 A0) of PCF8574A/PCF8574."
-D G "LCD16X2" 1 17 "" "Comment this line to use 16x2 LCD"
+D G "PCF8574A" 1 13 "" "Comment for modules using PCF8574"
+D G "A2_A1_A0" 1 14 "0B111" "Address pin states (A2 A1 A0) of PCF8574A/PCF8574."
+D G "LCD16X2" 1 15 "" "Comment this line to use 16x2 LCD"
 D G "VAR_H" 3 2 ""
 D G "RIGHT" 4 1 "0x1C"
 D G "LEFT" 4 2 "0x18"
@@ -1144,27 +1143,30 @@ V L "c" 9 42 "int8" `818
 V L "j" 9 43 "int8" `819 
 V L "k" 9 50 "int8" `821 
 V L "duration" 9 54 "int16" `822 
-F G "switchMode" 0 4 "void()" `824 
-F G "handleButtonPress" 0 19 "void()" `831 
-C L "handleButtonPress" 0 20 1 "FUNCTION"
-C L "handleButtonPress" 0 20 1 "FUNCTION"
-C L "handleButtonPress" 0 20 1 "FUNCTION"
-C L "handleButtonPress" 0 20 1 "FUNCTION"
-C L "handleButtonPress" 0 20 1 "FUNCTION"
-C L "handleButtonPress" 0 20 1 "FUNCTION"
-C L "handleButtonPress" 0 20 1 "FUNCTION"
-C L "handleButtonPress" 0 20 1 "FUNCTION"
-C L "handleButtonPress" 0 20 1 "FUNCTION"
-C L "handleButtonPress" 0 20 1 "FUNCTION"
-C L "handleButtonPress" 0 20 1 "FUNCTION"
-C L "handleButtonPress" 0 20 1 "FUNCTION"
-C L "handleButtonPress" 0 20 1 "FUNCTION"
-V L "duration" 0 64 "int16" `832 
-F G "MAIN" 0 78 "void()" `833 
-C L "MAIN" 0 20 1 "FUNCTION"
-C L "MAIN" 0 20 1 "FUNCTION"
-C L "MAIN" 0 20 1 "FUNCTION"
-C L "MAIN" 0 20 1 "FUNCTION"
+C L "UartReceive" 0 3 1 "FUNCTION"
+F G "UartReceive" 0 7 "void()" `824 
+V L "c" 0 8 "int8" `825 
+F G "switchMode" 0 33 "void()" `827 
+F G "handleButtonPress" 0 62 "void()" `830 
+C L "handleButtonPress" 0 3 1 "FUNCTION"
+C L "handleButtonPress" 0 3 1 "FUNCTION"
+C L "handleButtonPress" 0 3 1 "FUNCTION"
+C L "handleButtonPress" 0 3 1 "FUNCTION"
+C L "handleButtonPress" 0 3 1 "FUNCTION"
+C L "handleButtonPress" 0 3 1 "FUNCTION"
+C L "handleButtonPress" 0 3 1 "FUNCTION"
+C L "handleButtonPress" 0 3 1 "FUNCTION"
+C L "handleButtonPress" 0 3 1 "FUNCTION"
+C L "handleButtonPress" 0 3 1 "FUNCTION"
+C L "handleButtonPress" 0 3 1 "FUNCTION"
+C L "handleButtonPress" 0 3 1 "FUNCTION"
+C L "handleButtonPress" 0 3 1 "FUNCTION"
+V L "duration" 0 107 "int16" `831 
+F G "MAIN" 0 121 "void()" `832 
+C L "MAIN" 0 3 1 "FUNCTION"
+C L "MAIN" 0 3 1 "FUNCTION"
+C L "MAIN" 0 3 1 "FUNCTION"
+C L "MAIN" 0 3 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep_ulpwu" 1 0

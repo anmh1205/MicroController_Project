@@ -1,5 +1,34 @@
 #include <main.h>
 
+// interrupt for uart receive
+
+#INT_RDA
+void UartReceive()
+{
+    char c = getc(PORT1);
+
+    switch (c)
+    {
+    case 'c':
+        clearAll();
+        break;
+
+    case 'b':
+        playMorseCodeWithBuzzer();
+        break;
+
+    case 'l':
+        playMorseCodeWithLED();
+        break;
+
+    default:
+        morseCodeString[morseCodeStringIndex++] = c;
+        set_lcd_i2c_cursor_position(1, morseCodeStringIndex - 1);
+        printf(write_lcd_i2c, "%c", c);
+        break;
+    }
+}
+
 void switchMode()
 {
     inputMode = !inputMode;
@@ -7,11 +36,25 @@ void switchMode()
     clearAll();
 
     clear_lcd_i2c();
-    set_lcd_i2c_cursor_position(1, 0);
-    printf(write_lcd_i2c, "Mode: %s", inputMode == BUTTON_MODE ? (char *)"Button" : (char *)"UART");
+
+    if (inputMode == BUTTON_MODE)
+    {
+        set_lcd_i2c_cursor_position(1, 0);
+        printf(write_lcd_i2c, "INPUT: BUTTON");
+
+        disable_interrupts(INT_RDA);
+        disable_interrupts(GLOBAL);
+    }
+    else
+    {
+        set_lcd_i2c_cursor_position(1, 0);
+        printf(write_lcd_i2c, "INPUT: UART");
+
+        enable_interrupts(INT_RDA);
+        enable_interrupts(GLOBAL);
+    }
 
     delay_ms(1500);
-
     clear_lcd_i2c();
 }
 
@@ -77,9 +120,10 @@ void handleButtonPress()
 void main()
 {
     initialize_lcd_i2c(); // Initialize the LCD
-    set_tris_d(0x00);     // Set LED and buzzer pins as output
-    set_tris_b(0x1F);     // Set SW pins as input
-    output_d(0x02);       // Turn off LED and Buzzer
+
+    set_tris_d(0x00); // Set LED and buzzer pins as output
+    set_tris_b(0x1F); // Set SW pins as input
+    output_d(0x02);   // Turn off LED and Buzzer
 
     memset(morseCodeBufferString, 0, sizeof(morseCodeBufferString));
     memset(morseCodeString, 0, sizeof(morseCodeString));
@@ -96,6 +140,5 @@ void main()
     while (TRUE)
     {
         handleButtonPress();
-        // Additional functionality can be added here
     }
 }

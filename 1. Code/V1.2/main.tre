@@ -1,7 +1,7 @@
 ÀÄ1
-   ÃÄMAIN  0/104  Ram=1
+   ÃÄMAIN  1/1293  Ram=1
    ³  ÃÄ@cinit1  (Inline)  Ram=0
-   ³  ÃÄinitialize_lcd_i2c  0/112  Ram=0
+   ³  ÃÄinitialize_lcd_i2c  0/202  Ram=0
    ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
    ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
    ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
@@ -33,7 +33,7 @@
    ³  ³  ÀÄsend_lcd_i2c_command  0/85  Ram=5
    ³  ³     ÀÄ*
    ³  ÃÄ@PSTRINGC7_646  0/86  Ram=4
-   ³  ³  ÃÄwrite_lcd_i2c  0/361  Ram=2
+   ³  ³  ÃÄwrite_lcd_i2c  0/495  Ram=2
    ³  ³  ³  ÃÄsend_lcd_i2c_command  0/85  Ram=5
    ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ÃÄsend_lcd_i2c_command  0/85  Ram=5
@@ -43,12 +43,12 @@
    ³  ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
    ³  ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
    ³  ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
-   ³  ³  ³  ³  ÃÄ@I2C_READ_1  0/69  Ram=3
+   ³  ³  ³  ³  ÃÄ@I2C_READ_1  (Inline)  Ram=3
    ³  ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
    ³  ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
    ³  ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
    ³  ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
-   ³  ³  ³  ³  ÃÄ@I2C_READ_1  0/69  Ram=3
+   ³  ³  ³  ³  ÃÄ@I2C_READ_1  (Inline)  Ram=3
    ³  ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
    ³  ³  ³  ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
    ³  ³  ³  ³  ÀÄ@I2C_WRITE_1  0/74  Ram=1
@@ -62,7 +62,7 @@
    ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ÀÄsend_lcd_i2c_command  0/85  Ram=5
    ³  ³  ³     ÀÄ*
-   ³  ³  ÀÄwrite_lcd_i2c  0/361  Ram=2
+   ³  ³  ÀÄwrite_lcd_i2c  0/495  Ram=2
    ³  ³     ÀÄ*
    ³  ÃÄset_lcd_i2c_cursor_position  0/24  Ram=3
    ³  ³  ÀÄ*
@@ -71,16 +71,16 @@
    ³  ÃÄ@delay_ms1  0/21  Ram=1
    ³  ÃÄclear_lcd_i2c  0/7  Ram=0
    ³  ³  ÀÄ*
-   ³  ÀÄhandleButtonPress  1/903  Ram=3
+   ³  ÀÄhandleButtonPress  (Inline)  Ram=3
    ³     ÃÄrecordMorseCode  (Inline)  Ram=1
-   ³     ³  ÃÄstartTimer  0/15  Ram=0
+   ³     ³  ÃÄstartTimer  (Inline)  Ram=0
    ³     ³  ÃÄ@delay_ms1  0/21  Ram=1
-   ³     ³  ÃÄstopAndReadTimer  0/12  Ram=0
+   ³     ³  ÃÄstopAndReadTimer  (Inline)  Ram=0
    ³     ³  ÃÄappendMorseCode  (Inline)  Ram=3
    ³     ³  ÃÄset_lcd_i2c_cursor_position  0/24  Ram=3
    ³     ³  ³  ÀÄ*
-   ³     ³  ÀÄ@PSTRINGR_646  0/22  Ram=2
-   ³     ³     ÀÄwrite_lcd_i2c  0/361  Ram=2
+   ³     ³  ÀÄ@PSTRINGR_646  (Inline)  Ram=2
+   ³     ³     ÀÄwrite_lcd_i2c  0/495  Ram=2
    ³     ³        ÀÄ*
    ³     ÃÄ@delay_ms1  0/21  Ram=1
    ³     ÃÄcompleteMorseCode  (Inline)  Ram=0
@@ -90,15 +90,15 @@
    ³     ³  ³  ÃÄstrcmp  (Inline)  Ram=5
    ³     ³  ³  ÃÄ@MUL88  0/37  Ram=2
    ³     ³  ³  ÃÄ@const679  0/259  Ram=0
-   ³     ³  ³  ÃÄclearMorseCodeBuffer  0/9  Ram=0
+   ³     ³  ³  ÃÄclearMorseCodeBuffer  (Inline)  Ram=0
    ³     ³  ³  ³  ÀÄ@MEMSET  0/9  Ram=0
-   ³     ³  ³  ÀÄclearMorseCodeBuffer  0/9  Ram=0
+   ³     ³  ³  ÀÄclearMorseCodeBuffer  (Inline)  Ram=0
    ³     ³  ³     ÀÄ*
    ³     ³  ÃÄclear_lcd_i2c  0/7  Ram=0
    ³     ³  ³  ÀÄ*
    ³     ³  ÃÄset_lcd_i2c_cursor_position  0/24  Ram=3
    ³     ³  ³  ÀÄ*
-   ³     ³  ÀÄ@PSTRINGR_646  0/22  Ram=2
+   ³     ³  ÀÄ@PSTRINGR_646  (Inline)  Ram=2
    ³     ³     ÀÄ*
    ³     ÃÄ@delay_ms1  0/21  Ram=1
    ³     ÃÄplayMorseCodeWithBuzzer  (Inline)  Ram=1
@@ -107,14 +107,14 @@
    ³     ³  ÃÄset_lcd_i2c_cursor_position  0/24  Ram=3
    ³     ³  ³  ÀÄ*
    ³     ³  ÃÄ@MUL88  0/37  Ram=2
-   ³     ³  ÃÄwrite_lcd_i2c  0/361  Ram=2
+   ³     ³  ÃÄwrite_lcd_i2c  0/495  Ram=2
    ³     ³  ³  ÀÄ*
-   ³     ³  ÃÄwrite_lcd_i2c  0/361  Ram=2
+   ³     ³  ÃÄwrite_lcd_i2c  0/495  Ram=2
    ³     ³  ³  ÀÄ*
-   ³     ³  ÃÄwrite_lcd_i2c  0/361  Ram=2
+   ³     ³  ÃÄwrite_lcd_i2c  0/495  Ram=2
    ³     ³  ³  ÀÄ*
-   ³     ³  ÃÄ@PSTRINGC_646  0/44  Ram=2
-   ³     ³  ³  ÀÄwrite_lcd_i2c  0/361  Ram=2
+   ³     ³  ÃÄ@PSTRINGC_646  (Inline)  Ram=2
+   ³     ³  ³  ÀÄwrite_lcd_i2c  0/495  Ram=2
    ³     ³  ³     ÀÄ*
    ³     ³  ÃÄ@MUL88  0/37  Ram=2
    ³     ³  ÃÄ@const679  0/259  Ram=0
@@ -135,13 +135,13 @@
    ³     ³  ÃÄset_lcd_i2c_cursor_position  0/24  Ram=3
    ³     ³  ³  ÀÄ*
    ³     ³  ÃÄ@MUL88  0/37  Ram=2
-   ³     ³  ÃÄwrite_lcd_i2c  0/361  Ram=2
+   ³     ³  ÃÄwrite_lcd_i2c  0/495  Ram=2
    ³     ³  ³  ÀÄ*
-   ³     ³  ÃÄwrite_lcd_i2c  0/361  Ram=2
+   ³     ³  ÃÄwrite_lcd_i2c  0/495  Ram=2
    ³     ³  ³  ÀÄ*
-   ³     ³  ÃÄwrite_lcd_i2c  0/361  Ram=2
+   ³     ³  ÃÄwrite_lcd_i2c  0/495  Ram=2
    ³     ³  ³  ÀÄ*
-   ³     ³  ÃÄ@PSTRINGC_646  0/44  Ram=2
+   ³     ³  ÃÄ@PSTRINGC_646  (Inline)  Ram=2
    ³     ³  ³  ÀÄ*
    ³     ³  ÃÄ@MUL88  0/37  Ram=2
    ³     ³  ÃÄ@const679  0/259  Ram=0
@@ -155,33 +155,42 @@
    ³     ³  ÃÄ@PSTRINGC7_646  0/86  Ram=4
    ³     ³  ³  ÀÄ*
    ³     ³  ÀÄ@delay_ms1  0/21  Ram=1
-   ³     ÃÄstartTimer  0/15  Ram=0
+   ³     ÃÄstartTimer  (Inline)  Ram=0
    ³     ÃÄ@delay_ms1  0/21  Ram=1
    ³     ÃÄgetTimerValue  (Inline)  Ram=0
-   ³     ÃÄstopAndReadTimer  0/12  Ram=0
-   ³     ÃÄswitchMode  (Inline)  Ram=7
-   ³     ³  ÃÄclearAll  0/11  Ram=0
-   ³     ³  ³  ÃÄclearMorseCodeBuffer  0/9  Ram=0
+   ³     ÃÄstopAndReadTimer  (Inline)  Ram=0
+   ³     ÃÄswitchMode  (Inline)  Ram=1
+   ³     ³  ÃÄclearAll  (Inline)  Ram=0
+   ³     ³  ³  ÃÄclear_lcd_i2c  0/7  Ram=0
    ³     ³  ³  ³  ÀÄ*
-   ³     ³  ³  ÃÄclearMorseCodeString  (Inline)  Ram=0
-   ³     ³  ³  ³  ÀÄ@MEMSET  0/9  Ram=0
-   ³     ³  ³  ÀÄclear_lcd_i2c  0/7  Ram=0
-   ³     ³  ³     ÀÄ*
+   ³     ³  ³  ÃÄclearMorseCodeBuffer  (Inline)  Ram=0
+   ³     ³  ³  ³  ÀÄ*
+   ³     ³  ³  ÀÄclearMorseCodeString  (Inline)  Ram=0
+   ³     ³  ³     ÀÄ@MEMSET  0/9  Ram=0
    ³     ³  ÃÄclear_lcd_i2c  0/7  Ram=0
    ³     ³  ³  ÀÄ*
    ³     ³  ÃÄset_lcd_i2c_cursor_position  0/24  Ram=3
    ³     ³  ³  ÀÄ*
-   ³     ³  ÃÄ@const826  0/11  Ram=0
-   ³     ³  ÃÄ@PSTRINGCN7_646  (Inline)  Ram=5
-   ³     ³  ³  ÃÄwrite_lcd_i2c  0/361  Ram=2
-   ³     ³  ³  ³  ÀÄ*
-   ³     ³  ³  ÀÄwrite_lcd_i2c  0/361  Ram=2
-   ³     ³  ³     ÀÄ*
-   ³     ³  ÃÄ@PSTRINGR_646  0/22  Ram=2
+   ³     ³  ÃÄ@PSTRINGC7_646  0/86  Ram=4
+   ³     ³  ³  ÀÄ*
+   ³     ³  ÃÄset_lcd_i2c_cursor_position  0/24  Ram=3
+   ³     ³  ³  ÀÄ*
+   ³     ³  ÃÄ@PSTRINGC7_646  0/86  Ram=4
    ³     ³  ³  ÀÄ*
    ³     ³  ÃÄ@delay_ms1  0/21  Ram=1
    ³     ³  ÀÄclear_lcd_i2c  0/7  Ram=0
    ³     ³     ÀÄ*
-   ³     ÀÄclearAll  0/11  Ram=0
+   ³     ÀÄclearAll  (Inline)  Ram=0
    ³        ÀÄ*
-   ÀÄAn389_Interrupt  0/13  Ram=0
+   ÃÄAn389_Interrupt  0/13  Ram=0
+   ÀÄUartReceive  0/427  Ram=3
+      ÃÄclearAll  (Inline)  Ram=0
+      ³  ÀÄ*
+      ÃÄplayMorseCodeWithBuzzer  (Inline)  Ram=1
+      ³  ÀÄ*
+      ÃÄplayMorseCodeWithLED  (Inline)  Ram=1
+      ³  ÀÄ*
+      ÃÄset_lcd_i2c_cursor_position  0/24  Ram=3
+      ³  ÀÄ*
+      ÀÄwrite_lcd_i2c  0/495  Ram=2
+         ÀÄ*
