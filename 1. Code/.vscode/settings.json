@@ -60,6 +60,7 @@
     "*.embeddedhtml": "html",
     "lcd_i2c.c": "cpp",
     "morse_code_repeater.c": "cpp",
-    "morse_code_reader.c": "cpp"
+    "morse_code_reader.c": "cpp",
+    "morsecodereader.c": "cpp"
   }
 }

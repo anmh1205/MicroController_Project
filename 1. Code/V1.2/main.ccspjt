@@ -14,7 +14,7 @@ Type=4
 1=main.c
 
 [ProjectLog]
-Days=2
+Days=3
 D1=04-07-2024
 D1_L=12
 D1_L1=[18686]Project Opened.
@@ -48,14 +48,28 @@ D2_L10=[82247]Started Editing.
 D2_L11=[82547]Stopped Editing.
 D2_L12=[82799]Started Editing.
 D2_L13=[83099]Stopped Editing.
+D3=06-07-2024
+D3_L=10
+D3_L1=[73604]Started Editing.
+D3_L2=[73930]Stopped Editing.
+D3_L3=[74998]Started Editing.
+D3_L4=[75298]Stopped Editing.
+D3_L5=[75474]Started Editing.
+D3_L6=[75774]Stopped Editing.
+D3_L7=[78678]Started Editing.
+D3_L8=[78978]Stopped Editing.
+D3_L9=[81158]Started Editing.
+D3_L10=[81458]Stopped Editing.
 
 [Opened Files]
 1=main.c
 2=lcd_i2c.c
-3=morse_code_reader.c
-4=D:\Program Files (x86)\PICC\Devices\16F887.h
-5=main.h
-6=
+3=main.h
+4=morseCodeReader.c
+5=D:\Program Files (x86)\PICC\Devices\16F887.h
+6=morseCodeSpeaker.c
+7=global_variables.h
+8=
 [main.c]
 Type=4
 

@@ -4,11 +4,9 @@ void switchMode()
 {
     inputMode = !inputMode;
 
-    clearAll();
-
     clear_lcd_i2c();
     set_lcd_i2c_cursor_position(1, 0);
-    printf(write_lcd_i2c, "Mode: %s", inputMode == BUTTON_MODE ? (char *)"Button" : (char *)"UART");
+    printf(write_lcd_i2c, "Mode: %s", char temp[] = inputMode ? "Button" : "UART");
 
     delay_ms(1500);
 
@@ -17,12 +15,12 @@ void switchMode()
 
 void handleButtonPress()
 {
-    if (input(SW_Pin[0]) == 0 && inputMode == BUTTON_MODE) // create morse code character
+    if (input(SW_Pin[0]) == 0) // create morse code character
     {
         recordMorseCode();
     }
 
-    else if (input(SW_Pin[1]) == 0 && inputMode == BUTTON_MODE) // append character to string and lcd
+    else if (input(SW_Pin[1]) == 0) // append character to string and lcd
     {
         delay_ms(100); // Debounce
 
@@ -69,7 +67,9 @@ void handleButtonPress()
         }
         else
         {
-            clearAll();
+            clearMorseCodeBuffer();
+            clearMorseCodeString();
+            clear_lcd_i2c();
         }
     }
 }

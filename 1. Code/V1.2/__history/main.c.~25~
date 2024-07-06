@@ -1,14 +1,21 @@
 #include <main.h>
 
+typedef enum
+{
+    BUTTON_MODE,
+    UART_MODE,
+} Mode;
+
+Mode mode = BUTTON_MODE;
+
+
 void switchMode()
 {
-    inputMode = !inputMode;
-
-    clearAll();
+    mode = !mode;
 
     clear_lcd_i2c();
     set_lcd_i2c_cursor_position(1, 0);
-    printf(write_lcd_i2c, "Mode: %s", inputMode == BUTTON_MODE ? (char *)"Button" : (char *)"UART");
+    printf(write_lcd_i2c, "Mode: %s", mode == BUTTON_MODE ? "Button" : "UART");
 
     delay_ms(1500);
 
@@ -17,12 +24,12 @@ void switchMode()
 
 void handleButtonPress()
 {
-    if (input(SW_Pin[0]) == 0 && inputMode == BUTTON_MODE) // create morse code character
+    if (input(SW_Pin[0]) == 0) // create morse code character
     {
         recordMorseCode();
     }
 
-    else if (input(SW_Pin[1]) == 0 && inputMode == BUTTON_MODE) // append character to string and lcd
+    else if (input(SW_Pin[1]) == 0) // append character to string and lcd
     {
         delay_ms(100); // Debounce
 
@@ -53,12 +60,12 @@ void handleButtonPress()
     }
 
     else if (input(SW_Pin[4]) == 0) // clear all
-    {
-        startTimer();
+    {   
+        startTimer();    
 
         delay_ms(50); // Debounce
 
-        while (input(SW_Pin[4]) == 0 && getTimerValue() < 1000)
+        while (input(SW_Pin[4]) == 0)
             ; // Wait for button release
 
         unsigned int16 duration = stopAndReadTimer();
@@ -69,7 +76,9 @@ void handleButtonPress()
         }
         else
         {
-            clearAll();
+            clearMorseCodeBuffer();
+            clearMorseCodeString();
+            clear_lcd_i2c();
         }
     }
 }
