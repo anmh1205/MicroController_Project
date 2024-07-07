@@ -1,4 +1,4 @@
-#include <global_variables.h>
+#include <globalVariables.h>
 // #include <lcd_i2c.c>
 
 void playMorseCodeWithBuzzer()

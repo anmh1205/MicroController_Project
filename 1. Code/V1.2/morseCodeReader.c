@@ -1,4 +1,4 @@
-#include <global_variables.h>
+#include <globalVariables.h>
 // #include <lcd_i2c.c>
 
 void appendMorseCode(char morseChar)
@@ -21,9 +21,10 @@ void clearMorseCodeString()
 
 void clearAll()
 {
-   clear_lcd_i2c();
    clearMorseCodeBuffer();
    clearMorseCodeString();
+
+   clear_lcd_i2c();
 }
 
 void translateMorseCode()

@@ -63,9 +63,11 @@ D3_L10=[81458]Stopped Editing.
 D4=07-07-2024
 D4_E=1
 D4_D=0
-D4_L=2
+D4_L=4
 D4_L1=[3747]Project Closed.
 D4_L2=[8160]Project Opened.
+D4_L3=[75738]Started Editing.
+D4_L4=[76038]Stopped Editing.
 
 [Opened Files]
 1=main.c

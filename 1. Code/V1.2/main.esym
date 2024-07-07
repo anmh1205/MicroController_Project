@@ -1,7 +1,7 @@
-D G "__PCM__" 0 144 ""5.025""
-D G "__DEVICE__" 0 144 "887"
-D G "__DATE__" 0 144 ""07-Jul-24""
-D G "__TIME__" 0 144 ""03:39:23"" "Standard Header file for the PIC16F887 device ////////////////"
+D G "__PCM__" 0 158 ""5.025""
+D G "__DEVICE__" 0 158 "887"
+D G "__DATE__" 0 158 ""07-Jul-24""
+D G "__TIME__" 0 158 ""22:35:16"" "Standard Header file for the PIC16F887 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 39 "int8" `54 
 f B "set_tris_a" 2 39 "void(int8 value)" `53 
@@ -849,9 +849,9 @@ d G "INT_RB4" 2 763 "0x1100B08"
 d G "INT_RB5" 2 764 "0x1200B08"
 d G "INT_RB6" 2 765 "0x1400B08"
 d G "INT_RB7" 2 766 "0x1800B08"
-D G "PCF8574A" 1 13 "" "Comment for modules using PCF8574"
-D G "A2_A1_A0" 1 14 "0B111" "Address pin states (A2 A1 A0) of PCF8574A/PCF8574."
-D G "LCD16X2" 1 15 "" "Comment this line to use 16x2 LCD"
+D G "PCF8574A" 1 14 "" "Comment for modules using PCF8574"
+D G "A2_A1_A0" 1 15 "0B111" "Address pin states (A2 A1 A0) of PCF8574A/PCF8574."
+D G "LCD16X2" 1 16 "" "Comment this line to use 16x2 LCD"
 D G "VAR_H" 3 2 ""
 D G "RIGHT" 4 1 "0x1C"
 D G "LEFT" 4 2 "0x18"
@@ -869,9 +869,9 @@ D G "line2_start" 4 42 "0x40"
 D G "line2_end" 4 43 "0x67"
 D G "line1_start_command" 4 45 "0x80"
 D G "line2_start_command" 4 46 "0xC0"
-V G "backlight_lcd_i2c" 4 49 "int8" `626 
-V G "lcd_i2c_line" 4 49 "int8" `627 
-F G "initialize_lcd_i2c" 4 52 "void()" `628 
+V G "backlight_lcd_i2c" 4 49 "int8" `628 
+V G "lcd_i2c_line" 4 49 "int8" `629 
+F G "initialize_lcd_i2c" 4 52 "void()" `630 
 C L "initialize_lcd_i2c" 4 53 1 "FUNCTION"
 C L "initialize_lcd_i2c" 4 53 1 "FUNCTION"
 C L "initialize_lcd_i2c" 4 53 1 "FUNCTION"
@@ -889,12 +889,12 @@ C L "initialize_lcd_i2c" 4 53 1 "FUNCTION"
 C L "initialize_lcd_i2c" 4 53 1 "FUNCTION"
 C L "initialize_lcd_i2c" 4 53 1 "FUNCTION"
 C L "initialize_lcd_i2c" 4 53 3 "FUNCTION"
-V L "character" 4 82 "int8" `630 
-F G "send_lcd_i2c_command" 4 83 "void(int8 character)" `629 
-V L "ms_nibble_e" 4 84 "int8" `631 
-V L "ls_nibble_e" 4 84 "int8" `632 
-V L "ms_nibble" 4 84 "int8" `633 
-V L "ls_nibble" 4 84 "int8" `634 
+V L "character" 4 82 "int8" `632 
+F G "send_lcd_i2c_command" 4 83 "void(int8 character)" `631 
+V L "ms_nibble_e" 4 84 "int8" `633 
+V L "ls_nibble_e" 4 84 "int8" `634 
+V L "ms_nibble" 4 84 "int8" `635 
+V L "ls_nibble" 4 84 "int8" `636 
 C L "send_lcd_i2c_command" 4 53 1 "FUNCTION"
 C L "send_lcd_i2c_command" 4 53 1 "FUNCTION"
 C L "send_lcd_i2c_command" 4 53 1 "FUNCTION"
@@ -906,12 +906,12 @@ C L "send_lcd_i2c_command" 4 53 1 "FUNCTION"
 C L "send_lcd_i2c_command" 4 53 1 "FUNCTION"
 C L "send_lcd_i2c_command" 4 53 1 "FUNCTION"
 C L "send_lcd_i2c_command" 4 53 1 "FUNCTION"
-V L "character" 4 107 "int8" `636 
-F G "send_lcd_i2c_character" 4 108 "void(int8 character)" `635 
-V L "ms_nibble_e" 4 109 "int8" `637 
-V L "ls_nibble_e" 4 109 "int8" `638 
-V L "ms_nibble" 4 109 "int8" `639 
-V L "ls_nibble" 4 109 "int8" `640 
+V L "character" 4 107 "int8" `638 
+F G "send_lcd_i2c_character" 4 108 "void(int8 character)" `637 
+V L "ms_nibble_e" 4 109 "int8" `639 
+V L "ls_nibble_e" 4 109 "int8" `640 
+V L "ms_nibble" 4 109 "int8" `641 
+V L "ls_nibble" 4 109 "int8" `642 
 C L "send_lcd_i2c_character" 4 53 1 "FUNCTION"
 C L "send_lcd_i2c_character" 4 53 1 "FUNCTION"
 C L "send_lcd_i2c_character" 4 53 1 "FUNCTION"
@@ -925,11 +925,11 @@ C L "send_lcd_i2c_character" 4 53 1 "FUNCTION"
 C L "send_lcd_i2c_character" 4 53 1 "FUNCTION"
 C L "send_lcd_i2c_character" 4 53 1 "FUNCTION"
 C L "send_lcd_i2c_character" 4 53 1 "FUNCTION"
-F G "clear_lcd_i2c" 4 136 "void()" `641 
-F G "read_cursor_address" 4 141 "int8()" `642 
-V L "aux" 4 142 "int8" `643 
-V L "aux2" 4 142 "int8" `644 
-V L "address" 4 142 "int8" `645 
+F G "clear_lcd_i2c" 4 136 "void()" `643 
+F G "read_cursor_address" 4 141 "int8()" `644 
+V L "aux" 4 142 "int8" `645 
+V L "aux2" 4 142 "int8" `646 
+V L "address" 4 142 "int8" `647 
 C L "read_cursor_address" 4 53 1 "FUNCTION"
 C L "read_cursor_address" 4 53 1 "FUNCTION"
 C L "read_cursor_address" 4 53 1 "FUNCTION"
@@ -943,51 +943,51 @@ C L "read_cursor_address" 4 53 1 "FUNCTION"
 C L "read_cursor_address" 4 53 1 "FUNCTION"
 C L "read_cursor_address" 4 53 1 "FUNCTION"
 C L "read_cursor_address" 4 53 1 "FUNCTION"
-V L "character" 4 173 "int8" `647 
-F G "write_lcd_i2c" 4 174 "void(int8 character)" `646 
-V L "cursor_address" 4 175 "int8" `648 
+V L "character" 4 173 "int8" `649 
+F G "write_lcd_i2c" 4 174 "void(int8 character)" `648 
+V L "cursor_address" 4 175 "int8" `650 
 C L "write_lcd_i2c" 4 53 2 "FUNCTION"
 C L "write_lcd_i2c" 4 53 1 "FUNCTION"
-V L "string" 4 270 "*int8" `650 
-F G "send_lcd_i2c_string" 4 271 "void(*int8 string)" `649 
-V L "x" 4 275 "int8" `652 
-V L "y" 4 275 "int8" `653 
-F G "set_lcd_i2c_cursor_position" 4 276 "void(int8 x,int8 y)" `651 
+V L "string" 4 270 "*int8" `652 
+F G "send_lcd_i2c_string" 4 271 "void(*int8 string)" `651 
+V L "x" 4 275 "int8" `654 
+V L "y" 4 275 "int8" `655 
+F G "set_lcd_i2c_cursor_position" 4 276 "void(int8 x,int8 y)" `653 
 C L "set_lcd_i2c_cursor_position" 4 53 1 "FUNCTION"
 C L "set_lcd_i2c_cursor_position" 4 53 1 "FUNCTION"
 C L "set_lcd_i2c_cursor_position" 4 53 1 "FUNCTION"
 C L "set_lcd_i2c_cursor_position" 4 53 1 "FUNCTION"
 C L "set_lcd_i2c_cursor_position" 4 53 1 "FUNCTION"
 C L "set_lcd_i2c_cursor_position" 4 53 1 "FUNCTION"
-V L "cursor" 4 299 "int8" `655 
-V L "blink" 4 299 "int8" `656 
-V L "backlight" 4 299 "int8" `657 
-F G "configure_lcd_i2c" 4 300 "void(int8 cursor,int8 blink,int8 backlight)" `654 
-V L "aux" 4 301 "int8" `658 
+V L "cursor" 4 299 "int8" `657 
+V L "blink" 4 299 "int8" `658 
+V L "backlight" 4 299 "int8" `659 
+F G "configure_lcd_i2c" 4 300 "void(int8 cursor,int8 blink,int8 backlight)" `656 
+V L "aux" 4 301 "int8" `660 
 C L "configure_lcd_i2c" 4 53 1 "FUNCTION"
 C L "configure_lcd_i2c" 4 53 1 "FUNCTION"
 C L "configure_lcd_i2c" 4 53 1 "FUNCTION"
-V G "DOT_DURATION" 3 6 "int16" `659 
-V G "DASH_DURATION" 3 7 "int16" `661 
-V G "SW_Pin" 3 9 "[1]" `663 
-V G "LED_Pin" 3 12 "int8" `666 
-V G "Buzzer_Pin" 3 13 "int8" `668 
-V G "elapsedTime" 3 15 "int16" `670 
-V G "morseCodeBufferString" 3 17 "int8[6]" `671 
-V G "morseCodeBufferIndex" 3 18 "int8" `672 
-V G "morseCodeString" 3 20 "int8[16]" `673 
-V G "morseCodeStringIndex" 3 21 "int8" `674 
-T G "morseCode" 3 27 "{int8[6] morseCode,int8 character}" `678 
-V G "morseCodeTable" 3 29 "morseCode[1]" `679 
-E G "BUTTON_MODE" 3 70 "0" `682 
-E G "UART_MODE" 3 71 "1" `683 
-T G "mode" 3 71 "" `684 
-V G "inputMode" 3 73 "mode" `685 
-F G "An389_Interrupt" 3 77 "void()" `686 
-F G "startTimer" 3 84 "void()" `687 
+V G "DOT_DURATION" 3 6 "int16" `661 
+V G "DASH_DURATION" 3 7 "int16" `663 
+V G "SW_Pin" 3 9 "[1]" `665 
+V G "LED_Pin" 3 12 "int8" `668 
+V G "Buzzer_Pin" 3 13 "int8" `670 
+V G "elapsedTime" 3 15 "int16" `672 
+V G "morseCodeBufferString" 3 17 "int8[6]" `673 
+V G "morseCodeBufferIndex" 3 18 "int8" `674 
+V G "morseCodeString" 3 20 "int8[16]" `675 
+V G "morseCodeStringIndex" 3 21 "int8" `676 
+T G "morseCode" 3 27 "{int8[6] morseCode,int8 character}" `680 
+V G "morseCodeTable" 3 29 "morseCode[1]" `681 
+E G "BUTTON_MODE" 3 70 "0" `684 
+E G "UART_MODE" 3 71 "1" `685 
+T G "mode" 3 71 "" `686 
+V G "tempMode" 3 73 "mode" `687 
+F G "An389_Interrupt" 3 77 "void()" `688 
+F G "startTimer" 3 84 "void()" `689 
 C L "startTimer" 3 10 6 "FUNCTION"
-F G "getTimerValue" 3 100 "int16()" `688 
-F G "stopAndReadTimer" 3 105 "int16()" `689 
+F G "getTimerValue" 3 100 "int16()" `690 
+F G "stopAndReadTimer" 3 105 "int16()" `691 
 D G "_STRING" 5 12 ""
 D G "_STDDEF" 6 13 ""
 D G "ptrdiff_t" 6 18 "unsigned int16"
@@ -1007,120 +1007,120 @@ D G "iscntrl" 7 21 "(x)  ((x)<' ')"
 D G "isprint" 7 22 "(x)  ((x)>=' ')"
 D G "isgraph" 7 23 "(x)  ((x)>' ')"
 D G "ispunct" 7 24 "(x)  (((x)>' ')&&!isalnum(x))"
-V L "s1" 5 34 "*int8" `691 
-V L "s2" 5 34 "*int8" `692 
-V L "n" 5 34 "int16" `693 
-F G "memmove" 5 35 "*int8(*int8 s1,*int8 s2,int16 n)" `690 
-V L "sc1" 5 36 "*int8" `694 
-V L "sc2" 5 37 "*int8" `695 
+V L "s1" 5 34 "*int8" `693 
+V L "s2" 5 34 "*int8" `694 
+V L "n" 5 34 "int16" `695 
+F G "memmove" 5 35 "*int8(*int8 s1,*int8 s2,int16 n)" `692 
+V L "sc1" 5 36 "*int8" `696 
+V L "sc2" 5 37 "*int8" `697 
 D G "strcopy" 5 54 "strcpy"
-V L "s1" 5 61 "*int8" `697 
-V L "s2" 5 61 "*int8" `698 
-V L "n" 5 61 "int16" `699 
-F G "strncpy" 5 62 "*int8(*int8 s1,*int8 s2,int16 n)" `696 
-V L "s" 5 63 "*int8" `700 
-V L "s1" 5 78 "*int8" `702 
-V L "s2" 5 78 "*int8" `703 
-F G "strcat" 5 79 "*int8(*int8 s1,*int8 s2)" `701 
-V L "s" 5 80 "*int8" `704 
-V L "s1" 5 96 "*int8" `706 
-V L "s2" 5 96 "*int8" `707 
-V L "n" 5 96 "int16" `708 
-F G "strncat" 5 97 "*int8(*int8 s1,*int8 s2,int16 n)" `705 
-V L "s" 5 98 "*int8" `709 
+V L "s1" 5 61 "*int8" `699 
+V L "s2" 5 61 "*int8" `700 
+V L "n" 5 61 "int16" `701 
+F G "strncpy" 5 62 "*int8(*int8 s1,*int8 s2,int16 n)" `698 
+V L "s" 5 63 "*int8" `702 
+V L "s1" 5 78 "*int8" `704 
+V L "s2" 5 78 "*int8" `705 
+F G "strcat" 5 79 "*int8(*int8 s1,*int8 s2)" `703 
+V L "s" 5 80 "*int8" `706 
+V L "s1" 5 96 "*int8" `708 
+V L "s2" 5 96 "*int8" `709 
+V L "n" 5 96 "int16" `710 
+F G "strncat" 5 97 "*int8(*int8 s1,*int8 s2,int16 n)" `707 
+V L "s" 5 98 "*int8" `711 
 C L "memcmp" 5 19 3 "FUNCTION"
-V L "s1" 5 120 "*int8" `711 
-V L "s2" 5 120 "*int8" `712 
-V L "n" 5 120 "int16" `713 
-F G "memcmp" 5 121 "sint8(*int8 s1,*int8 s2,int16 n)" `710 
-V L "su1" 5 122 "*int8" `714 
-V L "su2" 5 122 "*int8" `715 
+V L "s1" 5 120 "*int8" `713 
+V L "s2" 5 120 "*int8" `714 
+V L "n" 5 120 "int16" `715 
+F G "memcmp" 5 121 "sint8(*int8 s1,*int8 s2,int16 n)" `712 
+V L "su1" 5 122 "*int8" `716 
+V L "su2" 5 122 "*int8" `717 
 C L "strcmp" 5 19 2 "FUNCTION"
-V L "s1" 5 134 "*int8" `717 
-V L "s2" 5 134 "*int8" `718 
-F G "strcmp" 5 135 "sint8(*int8 s1,*int8 s2)" `716 
+V L "s1" 5 134 "*int8" `719 
+V L "s2" 5 134 "*int8" `720 
+F G "strcmp" 5 135 "sint8(*int8 s1,*int8 s2)" `718 
 C L "strcoll" 5 19 2 "FUNCTION"
-V L "s1" 5 144 "*int8" `720 
-V L "s2" 5 144 "*int8" `721 
-F G "strcoll" 5 145 "sint8(*int8 s1,*int8 s2)" `719 
+V L "s1" 5 144 "*int8" `722 
+V L "s2" 5 144 "*int8" `723 
+F G "strcoll" 5 145 "sint8(*int8 s1,*int8 s2)" `721 
 C L "strncmp" 5 19 4 "FUNCTION"
-V L "s1" 5 157 "*int8" `723 
-V L "s2" 5 157 "*int8" `724 
-V L "n" 5 157 "int16" `725 
-F G "strncmp" 5 158 "sint8(*int8 s1,*int8 s2,int16 n)" `722 
+V L "s1" 5 157 "*int8" `725 
+V L "s2" 5 157 "*int8" `726 
+V L "n" 5 157 "int16" `727 
+F G "strncmp" 5 158 "sint8(*int8 s1,*int8 s2,int16 n)" `724 
 C L "strxfrm" 5 19 3 "FUNCTION"
-V L "s1" 5 169 "*int8" `727 
-V L "s2" 5 169 "*int8" `728 
-V L "n" 5 169 "int16" `729 
-F G "strxfrm" 5 170 "int16(*int8 s1,*int8 s2,int16 n)" `726 
-V L "s" 5 171 "*int8" `730 
-V L "n1" 5 172 "int8" `731 
-V L "s" 5 191 "*int8" `733 
-V L "c" 5 191 "int8" `734 
-V L "n" 5 191 "int16" `735 
-F G "memchr" 5 192 "*int8(*int8 s,int8 c,int16 n)" `732 
-V L "uc" 5 193 "int8" `736 
-V L "su" 5 194 "*int8" `737 
-V L "s" 5 205 "*int8" `739 
-V L "c" 5 205 "int8" `740 
-F G "strchr" 5 206 "*int8(*int8 s,int8 c)" `738 
+V L "s1" 5 169 "*int8" `729 
+V L "s2" 5 169 "*int8" `730 
+V L "n" 5 169 "int16" `731 
+F G "strxfrm" 5 170 "int16(*int8 s1,*int8 s2,int16 n)" `728 
+V L "s" 5 171 "*int8" `732 
+V L "n1" 5 172 "int8" `733 
+V L "s" 5 191 "*int8" `735 
+V L "c" 5 191 "int8" `736 
+V L "n" 5 191 "int16" `737 
+F G "memchr" 5 192 "*int8(*int8 s,int8 c,int16 n)" `734 
+V L "uc" 5 193 "int8" `738 
+V L "su" 5 194 "*int8" `739 
+V L "s" 5 205 "*int8" `741 
+V L "c" 5 205 "int8" `742 
+F G "strchr" 5 206 "*int8(*int8 s,int8 c)" `740 
 C L "strcspn" 5 19 4 "FUNCTION"
-V L "s1" 5 217 "*int8" `742 
-V L "s2" 5 217 "*int8" `743 
-F G "strcspn" 5 218 "int8(*int8 s1,*int8 s2)" `741 
-V L "sc1" 5 219 "*int8" `744 
-V L "sc2" 5 219 "*int8" `745 
-V L "s1" 5 232 "*int8" `747 
-V L "s2" 5 232 "*int8" `748 
-F G "strpbrk" 5 233 "*int8(*int8 s1,*int8 s2)" `746 
-V L "sc1" 5 234 "*int8" `749 
-V L "sc2" 5 234 "*int8" `750 
-V L "s" 5 247 "*int8" `752 
-V L "c" 5 247 "int8" `753 
-F G "strrchr" 5 248 "*int8(*int8 s,int8 c)" `751 
-V L "p" 5 249 "*int8" `754 
+V L "s1" 5 217 "*int8" `744 
+V L "s2" 5 217 "*int8" `745 
+F G "strcspn" 5 218 "int8(*int8 s1,*int8 s2)" `743 
+V L "sc1" 5 219 "*int8" `746 
+V L "sc2" 5 219 "*int8" `747 
+V L "s1" 5 232 "*int8" `749 
+V L "s2" 5 232 "*int8" `750 
+F G "strpbrk" 5 233 "*int8(*int8 s1,*int8 s2)" `748 
+V L "sc1" 5 234 "*int8" `751 
+V L "sc2" 5 234 "*int8" `752 
+V L "s" 5 247 "*int8" `754 
+V L "c" 5 247 "int8" `755 
+F G "strrchr" 5 248 "*int8(*int8 s,int8 c)" `753 
+V L "p" 5 249 "*int8" `756 
 C L "strspn" 5 19 2 "FUNCTION"
-V L "s1" 5 262 "*int8" `756 
-V L "s2" 5 262 "*int8" `757 
-F G "strspn" 5 263 "int8(*int8 s1,*int8 s2)" `755 
-V L "sc1" 5 264 "*int8" `758 
-V L "sc2" 5 264 "*int8" `759 
-V L "s1" 5 281 "*int8" `761 
-V L "s2" 5 281 "*int8" `762 
-F G "strstr" 5 282 "*int8(*int8 s1,*int8 s2)" `760 
-V L "s" 5 283 "*int8" `763 
-V L "t" 5 283 "*int8" `764 
-V L "s1" 5 320 "*int8" `766 
-V L "s2" 5 320 "*int8" `767 
-F G "strtok" 5 321 "*int8(*int8 s1,*int8 s2)" `765 
-V L "beg" 5 322 "*int8" `768 
-V L "end" 5 322 "*int8" `769 
-V L "save" 5 323 "*int8" `770 
+V L "s1" 5 262 "*int8" `758 
+V L "s2" 5 262 "*int8" `759 
+F G "strspn" 5 263 "int8(*int8 s1,*int8 s2)" `757 
+V L "sc1" 5 264 "*int8" `760 
+V L "sc2" 5 264 "*int8" `761 
+V L "s1" 5 281 "*int8" `763 
+V L "s2" 5 281 "*int8" `764 
+F G "strstr" 5 282 "*int8(*int8 s1,*int8 s2)" `762 
+V L "s" 5 283 "*int8" `765 
+V L "t" 5 283 "*int8" `766 
+V L "s1" 5 320 "*int8" `768 
+V L "s2" 5 320 "*int8" `769 
+F G "strtok" 5 321 "*int8(*int8 s1,*int8 s2)" `767 
+V L "beg" 5 322 "*int8" `770 
+V L "end" 5 322 "*int8" `771 
+V L "save" 5 323 "*int8" `772 
 C L "strlen" 5 19 6 "FUNCTION"
-V L "s" 5 369 "*int8" `772 
-F G "strlen" 5 370 "int8(*int8 s)" `771 
-V L "sc" 5 371 "*int8" `773 
+V L "s" 5 369 "*int8" `774 
+F G "strlen" 5 370 "int8(*int8 s)" `773 
+V L "sc" 5 371 "*int8" `775 
 C L "stricmp" 5 19 2 "FUNCTION"
-V L "s1" 5 380 "*int8" `775 
-V L "s2" 5 380 "*int8" `776 
-F G "stricmp" 5 381 "sint8(*int8 s1,*int8 s2)" `774 
-V L "s" 5 394 "*int8" `780 
-F G "strlwr" 5 395 "*int8(*int8 s)" `779 
-V L "p" 5 396 "*int8" `781 
-V L "s" 5 408 "*int8" `783 
-F G "strupr" 5 409 "*int8(*int8 s)" `782 
-V L "p" 5 410 "*int8" `784 
+V L "s1" 5 380 "*int8" `777 
+V L "s2" 5 380 "*int8" `778 
+F G "stricmp" 5 381 "sint8(*int8 s1,*int8 s2)" `776 
+V L "s" 5 394 "*int8" `782 
+F G "strlwr" 5 395 "*int8(*int8 s)" `781 
+V L "p" 5 396 "*int8" `783 
+V L "s" 5 408 "*int8" `785 
+F G "strupr" 5 409 "*int8(*int8 s)" `784 
+V L "p" 5 410 "*int8" `786 
 C L "appendMorseCode" 8 2 1 "FUNCTION"
-V L "morseChar" 8 5 "int8" `786 
-F G "appendMorseCode" 8 6 "void(int8 morseChar)" `785 
+V L "morseChar" 8 4 "int8" `788 
+F G "appendMorseCode" 8 5 "void(int8 morseChar)" `787 
 C L "appendMorseCode" 8 2 1 "FUNCTION"
-F G "clearMorseCodeBuffer" 8 12 "void()" `787 
-F G "clearMorseCodeString" 8 18 "void()" `792 
-F G "clearAll" 8 24 "void()" `793 
-F G "translateMorseCode" 8 31 "void()" `794 
-V L "i" 8 32 "int8" `795 
-V L "temp" 8 34 "int8[6]" `796 
-F G "recordMorseCode" 8 49 "void()" `800 
+F G "clearMorseCodeBuffer" 8 11 "void()" `789 
+F G "clearMorseCodeString" 8 17 "void()" `794 
+F G "clearAll" 8 23 "void()" `795 
+F G "translateMorseCode" 8 31 "void()" `796 
+V L "i" 8 32 "int8" `797 
+V L "temp" 8 34 "int8[6]" `798 
+F G "recordMorseCode" 8 49 "void()" `802 
 C L "recordMorseCode" 8 2 1 "FUNCTION"
 C L "recordMorseCode" 8 2 1 "FUNCTION"
 C L "recordMorseCode" 8 2 1 "FUNCTION"
@@ -1128,45 +1128,46 @@ C L "recordMorseCode" 8 2 1 "FUNCTION"
 C L "recordMorseCode" 8 2 1 "FUNCTION"
 C L "recordMorseCode" 8 2 1 "FUNCTION"
 C L "recordMorseCode" 8 2 1 "FUNCTION"
-V L "duration" 8 67 "int16" `801 
-F G "completeMorseCode" 8 75 "void()" `804 
+V L "duration" 8 67 "int16" `803 
+F G "completeMorseCode" 8 75 "void()" `806 
 C L "playMorseCodeWithBuzzer" 9 2 1 "FUNCTION"
-F G "playMorseCodeWithBuzzer" 9 5 "void()" `806 
-V L "i" 9 6 "int8" `807 
-V L "c" 9 8 "int8" `808 
-V L "j" 9 9 "int8" `809 
-V L "k" 9 16 "int8" `812 
-V L "duration" 9 20 "int16" `813 
-F G "playMorseCodeWithLED" 9 39 "void()" `816 
-V L "i" 9 40 "int8" `817 
-V L "c" 9 42 "int8" `818 
-V L "j" 9 43 "int8" `819 
-V L "k" 9 50 "int8" `821 
-V L "duration" 9 54 "int16" `822 
-C L "UartReceive" 0 3 1 "FUNCTION"
-F G "UartReceive" 0 7 "void()" `824 
-V L "c" 0 8 "int8" `825 
-F G "switchMode" 0 33 "void()" `827 
-F G "handleButtonPress" 0 62 "void()" `830 
-C L "handleButtonPress" 0 3 1 "FUNCTION"
-C L "handleButtonPress" 0 3 1 "FUNCTION"
-C L "handleButtonPress" 0 3 1 "FUNCTION"
-C L "handleButtonPress" 0 3 1 "FUNCTION"
-C L "handleButtonPress" 0 3 1 "FUNCTION"
-C L "handleButtonPress" 0 3 1 "FUNCTION"
-C L "handleButtonPress" 0 3 1 "FUNCTION"
-C L "handleButtonPress" 0 3 1 "FUNCTION"
-C L "handleButtonPress" 0 3 1 "FUNCTION"
-C L "handleButtonPress" 0 3 1 "FUNCTION"
-C L "handleButtonPress" 0 3 1 "FUNCTION"
-C L "handleButtonPress" 0 3 1 "FUNCTION"
-C L "handleButtonPress" 0 3 1 "FUNCTION"
-V L "duration" 0 107 "int16" `831 
-F G "MAIN" 0 121 "void()" `832 
-C L "MAIN" 0 3 1 "FUNCTION"
-C L "MAIN" 0 3 1 "FUNCTION"
-C L "MAIN" 0 3 1 "FUNCTION"
-C L "MAIN" 0 3 1 "FUNCTION"
+F G "playMorseCodeWithBuzzer" 9 5 "void()" `808 
+V L "i" 9 6 "int8" `809 
+V L "c" 9 8 "int8" `810 
+V L "j" 9 9 "int8" `811 
+V L "k" 9 16 "int8" `814 
+V L "duration" 9 20 "int16" `815 
+F G "playMorseCodeWithLED" 9 39 "void()" `818 
+V L "i" 9 40 "int8" `819 
+V L "c" 9 42 "int8" `820 
+V L "j" 9 43 "int8" `821 
+V L "k" 9 50 "int8" `823 
+V L "duration" 9 54 "int16" `824 
+f G "*inputMode" 0 3 "void()" `826 
+F G "handleUartMode" 0 6 "void()" `828 
+V L "c" 0 9 "int8" `829 
+F G "handleButtonMode" 0 41 "void()" `831 
+C L "handleButtonMode" 0 42 1 "FUNCTION"
+C L "handleButtonMode" 0 42 1 "FUNCTION"
+C L "handleButtonMode" 0 42 1 "FUNCTION"
+C L "handleButtonMode" 0 42 1 "FUNCTION"
+C L "handleButtonMode" 0 42 1 "FUNCTION"
+C L "handleButtonMode" 0 42 1 "FUNCTION"
+C L "handleButtonMode" 0 42 1 "FUNCTION"
+C L "handleButtonMode" 0 42 1 "FUNCTION"
+C L "handleButtonMode" 0 42 1 "FUNCTION"
+C L "handleButtonMode" 0 42 1 "FUNCTION"
+F G "switchMode" 0 79 "void()" `832 
+F G "readModeSelection" 0 106 "void()" `835 
+C L "readModeSelection" 0 42 1 "FUNCTION"
+C L "readModeSelection" 0 42 1 "FUNCTION"
+C L "readModeSelection" 0 42 1 "FUNCTION"
+V L "duration" 0 116 "int16" `836 
+F G "MAIN" 0 130 "void()" `837 
+C L "MAIN" 0 42 1 "FUNCTION"
+C L "MAIN" 0 42 1 "FUNCTION"
+C L "MAIN" 0 42 1 "FUNCTION"
+C L "MAIN" 0 42 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep_ulpwu" 1 0

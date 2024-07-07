@@ -1,71 +1,50 @@
 #include <main.h>
 
-// interrupt for uart receive
+void (*inputMode)(void);
 
-#INT_RDA
-void UartReceive()
+void handleUartMode()
 {
-    char c = getc(PORT1);
-
-    switch (c)
+    if (kbhit())
     {
-    case 'c':
-        clearAll();
-        break;
+        char c = fgetc();
 
-    case 'b':
-        playMorseCodeWithBuzzer();
-        break;
+        switch (c)
+        {
+        case 'c':
+            clearAll();
+            break;
 
-    case 'l':
-        playMorseCodeWithLED();
-        break;
+        case 'b':
+            playMorseCodeWithBuzzer();
+            break;
 
-    default:
-        morseCodeString[morseCodeStringIndex++] = c;
-        set_lcd_i2c_cursor_position(1, morseCodeStringIndex - 1);
-        printf(write_lcd_i2c, "%c", c);
-        break;
+        case 'l':
+            playMorseCodeWithLED();
+            break;
+
+        case '\r':
+            set_lcd_i2c_cursor_position(1, 0);
+            printf(write_lcd_i2c, "%s", morseCodeString);
+            break;
+
+        default:
+            if (morseCodeStringIndex < sizeof(morseCodeString))
+            {
+                morseCodeString[morseCodeStringIndex++] = c;
+            }
+            break;
+        }
     }
 }
 
-void switchMode()
+void handleButtonMode()
 {
-    inputMode = !inputMode;
-
-    clearAll();
-
-    clear_lcd_i2c();
-
-    if (inputMode == BUTTON_MODE)
-    {
-        set_lcd_i2c_cursor_position(1, 0);
-        printf(write_lcd_i2c, "INPUT: BUTTON");
-
-        disable_interrupts(INT_RDA);
-        disable_interrupts(GLOBAL);
-    }
-    else
-    {
-        set_lcd_i2c_cursor_position(1, 0);
-        printf(write_lcd_i2c, "INPUT: UART");
-
-        enable_interrupts(INT_RDA);
-        enable_interrupts(GLOBAL);
-    }
-
-    delay_ms(1500);
-    clear_lcd_i2c();
-}
-
-void handleButtonPress()
-{
-    if (input(SW_Pin[0]) == 0 && inputMode == BUTTON_MODE) // create morse code character
+    if (input(SW_Pin[0]) == 0 && morseCodeStringIndex < sizeof(morseCodeString)) // create morse code character
     {
         recordMorseCode();
     }
 
-    else if (input(SW_Pin[1]) == 0 && inputMode == BUTTON_MODE) // append character to string and lcd
+    else if (input(SW_Pin[1]) == 0) // append character to string and lcd
     {
         delay_ms(100); // Debounce
 
@@ -94,8 +73,38 @@ void handleButtonPress()
         while (input(SW_Pin[3]) == 0)
             ; // Wait for button release
     }
+}
 
-    else if (input(SW_Pin[4]) == 0) // clear all
+void switchMode()
+{
+    clearAll();
+
+    clear_lcd_i2c();
+
+    tempMode = !tempMode;
+
+    if (tempMode == BUTTON_MODE)
+    {
+        set_lcd_i2c_cursor_position(1, 0);
+        printf(write_lcd_i2c, "INPUT: BUTTON");
+
+        inputMode = handleButtonMode;
+    }
+    else
+    {
+        set_lcd_i2c_cursor_position(1, 0);
+        printf(write_lcd_i2c, "INPUT: UART");
+
+        inputMode = handleUartMode;
+    }
+
+    delay_ms(1500);
+    clear_lcd_i2c();
+}
+
+void readModeSelection()
+{
+    if (input(SW_Pin[4]) == 0) // clear all
     {
         startTimer();
 
@@ -137,8 +146,12 @@ void main()
     delay_ms(1500);
     clear_lcd_i2c();
 
+    inputMode = handleButtonMode;
+
     while (TRUE)
     {
-        handleButtonPress();
+        (*inputMode)();
+
+        readModeSelection();
     }
 }

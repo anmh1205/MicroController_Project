@@ -102,7 +102,7 @@ void send_lcd_i2c_command(char character)
     i2c_write(ls_nibble);   // Send 2nd nibble with "E" cleared
 
     i2c_stop();
-    delay_us(44);
+    delay_us(10);
 }
 void send_lcd_i2c_character(int character)
 {
@@ -130,12 +130,12 @@ void send_lcd_i2c_character(int character)
     i2c_write(ls_nibble);   // Send 2nd nibble with RS 0 and E 0
 
     i2c_stop();
-    delay_us(44);
+    delay_us(10);
 }
 void clear_lcd_i2c()
 {
     send_lcd_i2c_command(0x01);
-    delay_ms(2);
+    delay_ms(1);
 }
 int read_cursor_address()
 {

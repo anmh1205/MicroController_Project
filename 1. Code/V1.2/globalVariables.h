@@ -14,10 +14,10 @@ const int8 Buzzer_Pin = Pin_D1;
 
 unsigned int16 elapsedTime = 0;
 
-unsigned int8 morseCodeBufferString[6];
+char morseCodeBufferString[6];
 unsigned int8 morseCodeBufferIndex = 0;
 
-unsigned int8 morseCodeString[16];
+char morseCodeString[16];
 unsigned int8 morseCodeStringIndex = 0;
 
 typedef struct
@@ -70,7 +70,7 @@ typedef enum
     UART_MODE
 } Mode;
 
-Mode inputMode = BUTTON_MODE;
+Mode tempMode = BUTTON_MODE;
 
 #INT_TIMER1
 void An389_Interrupt()
