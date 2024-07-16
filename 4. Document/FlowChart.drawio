@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-07-08T20:46:07.385Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" version="24.6.4" etag="cYMp7Cxnk3yR4FrgPqq6" type="device">
+<mxfile host="app.diagrams.net" modified="2024-07-09T08:47:21.557Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="ce1yoS1Hmxm4dsH_5FO6" version="24.6.4" type="device">
   <diagram id="gGsyFMBHE3zzi9GGf84O" name="Main">
-    <mxGraphModel dx="2494" dy="1638" grid="1" gridSize="7" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="-395" dy="128" grid="0" gridSize="7" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="3300" pageHeight="4681" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -175,7 +175,7 @@
         <mxCell id="UDB40sULyeH_-XUfqxy7-4" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;fontColor=#000000;strokeColor=#000000;" parent="1" source="UDB40sULyeH_-XUfqxy7-3" target="-s264xQ-3EtqASesLYu1-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UDB40sULyeH_-XUfqxy7-3" value="Chế độ đầu vào là nút nhấn" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;strokeColor=#000000;strokeWidth=3;fontColor=#000000;fillColor=none;" parent="1" vertex="1">
+        <mxCell id="UDB40sULyeH_-XUfqxy7-3" value="Chế độ đầu vào là UART" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;strokeColor=#000000;strokeWidth=3;fontColor=#000000;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="3250.01" y="1630" width="185" height="80" as="geometry" />
         </mxCell>
         <mxCell id="F0n1GK_Awo-oAIiUYu9Y-1" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;fontColor=#FFFFFF;labelBackgroundColor=none;" parent="1" source="F0n1GK_Awo-oAIiUYu9Y-5" target="F0n1GK_Awo-oAIiUYu9Y-11" edge="1">
@@ -372,9 +372,13 @@
         <mxCell id="F0n1GK_Awo-oAIiUYu9Y-41" value="Mã buffer tồn tại trong &lt;br&gt;bảng mã morse" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;strokeColor=#000000;strokeWidth=3;fontColor=#000000;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="4101.99" y="3010" width="147" height="137" as="geometry" />
         </mxCell>
-        <mxCell id="F0n1GK_Awo-oAIiUYu9Y-42" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;fontColor=#FFFFFF;labelBackgroundColor=none;" parent="1" source="F0n1GK_Awo-oAIiUYu9Y-43" edge="1">
+        <mxCell id="x10_I7qw07U-FDOcfDz4-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;" edge="1" parent="1" source="F0n1GK_Awo-oAIiUYu9Y-43">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="3773" y="3080.9999999999995" as="targetPoint" />
+            <mxPoint x="3773.4814814814818" y="3078.4938271604938" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="3828" y="3078" />
+              <mxPoint x="3828" y="3078" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="F0n1GK_Awo-oAIiUYu9Y-43" value="Thêm kí tự tương ứng vào xâu kí tự" style="whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=none;strokeWidth=3;" parent="1" vertex="1">
@@ -588,7 +592,7 @@
             <mxPoint y="6" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="F0n1GK_Awo-oAIiUYu9Y-85" value="" style="edgeStyle=none;html=1;strokeWidth=2;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#000000;" parent="1" edge="1">
+        <mxCell id="F0n1GK_Awo-oAIiUYu9Y-85" value="" style="edgeStyle=none;html=1;strokeWidth=3;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#000000;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="4455.548126156907" y="2822.4631127981197" as="sourcePoint" />
             <mxPoint x="4453.696253162456" y="3018.5437827988653" as="targetPoint" />
@@ -602,12 +606,6 @@
         <mxCell id="F0n1GK_Awo-oAIiUYu9Y-166" value="Sai" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#000000;labelBackgroundColor=#FFFFFF;labelBorderColor=#000000;" parent="F0n1GK_Awo-oAIiUYu9Y-85" vertex="1" connectable="0">
           <mxGeometry x="-0.2867" y="1" relative="1" as="geometry">
             <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="F0n1GK_Awo-oAIiUYu9Y-87" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#000000;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="3773" y="3079" as="targetPoint" />
-            <mxPoint x="3887.505" y="3078.5" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="F0n1GK_Awo-oAIiUYu9Y-92" value="C" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=none;strokeColor=#C73500;strokeWidth=3;fontColor=#000000;fillColor=#fa6800;" parent="1" vertex="1">
@@ -746,7 +744,7 @@
         <mxCell id="F0n1GK_Awo-oAIiUYu9Y-112" value="Kí tự tồn tại trong&lt;br&gt;bảng mã Morse" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;labelBorderColor=none;strokeColor=#000000;strokeWidth=3;fontColor=#000000;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="2316.5" y="3483" width="143" height="143" as="geometry" />
         </mxCell>
-        <mxCell id="n6yI3UAqPEfnuCZQ3e1F-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="F0n1GK_Awo-oAIiUYu9Y-114">
+        <mxCell id="n6yI3UAqPEfnuCZQ3e1F-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="F0n1GK_Awo-oAIiUYu9Y-114" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="2009" y="2755.5306122448983" as="targetPoint" />
           </mxGeometry>
@@ -762,7 +760,7 @@
         <mxCell id="F0n1GK_Awo-oAIiUYu9Y-121" value="Phát mã Morse của xâu kí tự&lt;br&gt;bằng LED" style="whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=none;strokeWidth=3;" parent="1" vertex="1">
           <mxGeometry x="2086" y="2923.5" width="163.63" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="n6yI3UAqPEfnuCZQ3e1F-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="F0n1GK_Awo-oAIiUYu9Y-126">
+        <mxCell id="n6yI3UAqPEfnuCZQ3e1F-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="F0n1GK_Awo-oAIiUYu9Y-126" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="2009" y="3152.5374149659865" as="targetPoint" />
           </mxGeometry>
@@ -770,7 +768,7 @@
         <mxCell id="F0n1GK_Awo-oAIiUYu9Y-126" value="Clear hết bộ nhớ kí tự và buffer, clear màn hình" style="whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=none;strokeWidth=3;" parent="1" vertex="1">
           <mxGeometry x="2086" y="3122.5" width="163.63" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="n6yI3UAqPEfnuCZQ3e1F-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="F0n1GK_Awo-oAIiUYu9Y-129">
+        <mxCell id="n6yI3UAqPEfnuCZQ3e1F-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="F0n1GK_Awo-oAIiUYu9Y-129" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="2009" y="3356.482993197279" as="targetPoint" />
           </mxGeometry>
@@ -778,7 +776,7 @@
         <mxCell id="F0n1GK_Awo-oAIiUYu9Y-129" value="Hiện các kí tự đang có trong xâu kí tự lên màn hình LCD" style="whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=none;strokeWidth=3;" parent="1" vertex="1">
           <mxGeometry x="2088" y="3326.5" width="163.63" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="n6yI3UAqPEfnuCZQ3e1F-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="F0n1GK_Awo-oAIiUYu9Y-134">
+        <mxCell id="n6yI3UAqPEfnuCZQ3e1F-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="F0n1GK_Awo-oAIiUYu9Y-134" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="2009" y="3554.4421768707484" as="targetPoint" />
           </mxGeometry>
