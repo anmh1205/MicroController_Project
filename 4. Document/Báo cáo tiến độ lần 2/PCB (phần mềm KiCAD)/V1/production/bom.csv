@@ -1,0 +1,24 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #,,,Mã,Số lượng,Link
+BZ1,Buzzer_12x9.5RM7.6,1,Buzzer,,,,CLA5075,3,https://linhkienchatluong.vn/buzzer---coi-chip---coi-bao/coi-chip-5v-tmb12a05-12x95mm_sp798_ct7427.aspx
+"C1, C2, C6, C7",0603,4,22p,,,,CLA1297,2,https://linhkienchatluong.vn/tu-dan-0603/tu-dan-0603-22pf-50v-5-10c_sp1063_ct14360.aspx
+C3,0603,1,10uF,,,,CLA4107,2,https://linhkienchatluong.vn/tu-dan-0603/tu-dan-0603-106-10uf-10v-10c_sp1063_ct14639.aspx
+C4,0603,1,100nF,,,,CLA4098,2,https://linhkienchatluong.vn/tu-dan-0603/tu-dan-0603-104-100nf-01uf-50v-10-10c_sp1063_ct14618.aspx
+C5,0603,1,100n,,,,,,
+D1,LED_D3.0mm,1,POWER,,,,CLA2038,1,https://linhkienchatluong.vn/led-don-f3-3mm/led-3mm-xanh-la-than-trong-suot-sieu-sang-10c_sp696_ct1884.aspx
+D2,LED_D3.0mm,1,MORSE,,,,CLA2036,1,https://linhkienchatluong.vn/led-don-f3-3mm/led-3mm-trang-than-trong-suot-sieu-sang-10c_sp696_ct1881.aspx
+J1,PinSocket_1x04_P2.54mm_Vertical,1,LCD I2C,,,,CLA1969,2,https://linhkienchatluong.vn/jump-254mm/jump-cai-doi-254mm-2x40p-chan-thang_sp878_ct1720.aspx
+J2,USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal,1,USB_C_Receptacle_USB2.0_16P,,,,CL09182,3,https://linhkienchatluong.vn/day-usb-may-tinh-may-in/cong-usb-type-c-31-chan-dan-16p-smd-4-chot-cam-thang_sp715_ct14999.aspx
+J4,PinSocket_1x05_P2.54mm_Horizontal,1,Conn_01x05_Socket,,,,,,
+Q1,SOT-23,1,S8550,,,,CL00852,1,https://linhkienchatluong.vn/transistor/s8550-2ty-pnp-transistor-05a-25v-sot-23-loai-thuong-day-100c_sp787_ct716.aspx
+"R1, R2",0603,2,5.1K,,,,CLA0753,1,https://linhkienchatluong.vn/dien-tro-dan-0603-116w-1/dien-tro-dan-0603-51k-1-50c_sp836_ct5785.aspx
+"R10, R11, R3, R7, R8, R9",0603,6,10K,,,,CLA0759,1,https://linhkienchatluong.vn/dien-tro-dan-0603-116w-1/dien-tro-dan-0603-10k-1-50c_sp836_ct5792.aspx
+R12,0603,1,1K,,,, CLA0742,1,https://linhkienchatluong.vn/dien-tro-dan-0603-116w-1/dien-tro-dan-0603-1k-1-50c_sp836_ct5772.aspx
+"R13, R4",0603,2,330,,,, CL06621,1,https://linhkienchatluong.vn/dien-tro-dan-0603-116w-1/dien-tro-dan-0603-330r-1-50c_sp836_ct8907.aspx
+"R5, R6",0603,2,4.7k,,,,CL05810,1,https://linhkienchatluong.vn/dien-tro-dan-0603-116w-1/dien-tro-dan-0603-47k-1-50c_sp836_ct5784.aspx
+SW1,SW_Push_1P1T_NO_6x6mm_H9.5mm,1,RESET,,,,CLA1760,2,https://linhkienchatluong.vn/nut-nhan-6x6-4p-smd/nut-nhan-4-chan-6x6x5mm-smd-10c_sp850_ct1818.aspx
+"SW2, SW3, SW4, SW5, SW6",SW_Push_1P1T_NO_6x6mm_H9.5mm,5,SW_Push,,,,,,
+U1,TQFP-44_10x10mm_P0.8mm,1,PIC16F887-I_PT,PIC16F887-I/PT,,,,,
+U2,SOIC-16_3.9x9.9mm_P1.27mm,1,CH340G,,,,CL00461,2,https://linhkienchatluong.vn/ic-giao-tiep--mang/ch340g-sop-16-chinh-hang-wch_sp575_ct423.aspx
+"Y1, Y2",Crystal_SMD_HC49-SD,2,12MHz,,,,CLA1599,3,https://linhkienchatluong.vn/thach-anh-chan-dan-49smd/thach-anh-12mhz-49smd_sp611_ct1185.aspx
+,,,,,,,CLA1603,2,https://linhkienchatluong.vn/thach-anh-chan-dan-49smd/thach-anh-20mhz-49smd_sp611_ct1183.aspx
+,,,,,,,,,

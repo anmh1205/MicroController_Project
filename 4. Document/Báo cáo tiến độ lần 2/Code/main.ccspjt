@@ -1,0 +1,98 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F887
+CCSVerions=5.025
+Compiler=PCM
+CCSVersion=5.025
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[E:\1. Phenikaa University\AML\1. Code\VDK (PIC16)\0. BTL\1. Code\test\main]
+Type=4
+[mru-list]
+1=main.c
+
+[ProjectLog]
+Days=6
+D1=04-07-2024
+D1_L=12
+D1_L1=[18686]Project Opened.
+D1_L2=[18733]Started Editing.
+D1_L3=[19033]Stopped Editing.
+D1_L4=[19313]Project Opened.
+D1_L5=[23426]Started Editing.
+D1_L6=[23815]Stopped Editing.
+D1_L7=[23847]Started Editing.
+D1_L8=[24149]Stopped Editing.
+D1_L9=[32637]Started Editing.
+D1_L10=[33177]Stopped Editing.
+D1_L11=[33585]Started Editing.
+D1_L12=[34081]Stopped Editing.
+TotalEdit=12
+TotalDebug=0
+D2=05-07-2024
+D2_E=10
+D2_D=0
+D2_L=13
+D2_L1=[51443]Project Closed.
+D2_L2=[51654]Project Opened.
+D2_L3=[54430]Started Editing.
+D2_L4=[54763]Stopped Editing.
+D2_L5=[78550]Project Closed.
+D2_L6=[78568]Project Opened.
+D2_L7=[78720]Project Opened.
+D2_L8=[81006]Started Editing.
+D2_L9=[81062]Project Opened.
+D2_L10=[82247]Started Editing.
+D2_L11=[82547]Stopped Editing.
+D2_L12=[82799]Started Editing.
+D2_L13=[83099]Stopped Editing.
+D3=06-07-2024
+D3_L=10
+D3_L1=[73604]Started Editing.
+D3_L2=[73930]Stopped Editing.
+D3_L3=[74998]Started Editing.
+D3_L4=[75298]Stopped Editing.
+D3_L5=[75474]Started Editing.
+D3_L6=[75774]Stopped Editing.
+D3_L7=[78678]Started Editing.
+D3_L8=[78978]Stopped Editing.
+D3_L9=[81158]Started Editing.
+D3_L10=[81458]Stopped Editing.
+D4=07-07-2024
+D4_E=1
+D4_D=0
+D4_L=4
+D4_L1=[3747]Project Closed.
+D4_L2=[8160]Project Opened.
+D4_L3=[75738]Started Editing.
+D4_L4=[76038]Stopped Editing.
+D5=08-07-2024
+D5_E=1
+D5_D=0
+D5_L=1
+D5_L1=[22374]Project Closed.
+D6=10-07-2024
+D6_L=1
+D6_L1=[29709]Project Opened.
+
+[Opened Files]
+1=main.c
+2=lcd_i2c.c
+3=main.h
+4=morseCodeReader.c
+5=D:\Program Files (x86)\PICC\Devices\16F887.h
+6=morseCodeSpeaker.c
+7=globalVariables.h
+8=
+[main.c]
+Type=4
+
+[ExtraIncludes]
+Count=0
+1=main=e:\1. phenikaa university\aml\1. code\vdk (pic16)\0. btl\1. code\v1.1\morse_code_reader.c
+2=main=e:\1. phenikaa university\aml\1. code\vdk (pic16)\0. btl\1. code\v1.1\morse_code_repeater.c
+[Units]
+Count=1
+1=main (main)
