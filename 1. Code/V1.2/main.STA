@@ -16,7 +16,7 @@ Lines Stmts  %   Files
   158    81  20  main.c
    23     0   0  main.h
   769     0   0  D:\Program Files (x86)\PICC\Devices\16F887.h
-  118     0   0  globalVariables.h
+  119     0   0  globalVariables.h
   307   116  29  lcd_i2c.c
   423   125  31  D:\Program Files (x86)\PICC\Drivers\string.h
    32     0   0  D:\Program Files (x86)\PICC\Drivers\stddef.h
@@ -24,7 +24,7 @@ Lines Stmts  %   Files
    83    41  10  morseCodeReader.c
    82    44  11  morseCodeSpeaker.c
 ----- -----
- 2023   407 Total
+ 2024   407 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
@@ -38,7 +38,7 @@ Page ROM  %  RAM    Vol Diff  Functions:
  Inline         4    920  5.3  read_cursor_address
 0    361  16    2    539  5.2  write_lcd_i2c
 0     24   1    3    197  4.7  set_lcd_i2c_cursor_position
-0    259  11    0     45  1.4  @const681
+0    259  11    0             @const681
 0     13   1    0     45  1.4  An389_Interrupt
 0     15   1    0    100  2.1  startTimer
  Inline         0     13  1.0  getTimerValue
@@ -47,25 +47,25 @@ Page ROM  %  RAM    Vol Diff  Functions:
  Inline         5    243  7.0  strcmp
  Inline         3     68  2.4  appendMorseCode
 0      9   0    0     61  2.3  clearMorseCodeBuffer
-0      9   0    0     61  2.3  @MEMSET
+0      9   0    0             @MEMSET
  Inline         0     61  2.3  clearMorseCodeString
 0     11   0    0     31  1.1  clearAll
  Inline         3    403  7.0  translateMorseCode
-0     37   2    2    456  5.5  @MUL88
+0     37   2    2             @MUL88
  Inline         1    456  5.5  recordMorseCode
-0     22   1    2    123  2.2  @PSTRINGR_648
+0     22   1    2             @PSTRINGR_648
  Inline         0    123  2.2  completeMorseCode
 0    145   6    1    979  9.0  playMorseCodeWithBuzzer
-0     44   2    2    923  9.0  @PSTRINGC_648
+0     44   2    2             @PSTRINGC_648
 0      9   0    0             @const817
-0     86   4    4    923  9.0  @PSTRINGC7_648
+0     86   4    4             @PSTRINGC7_648
 0    145   6    1    979  9.0  playMorseCodeWithLED
-0      9   0    0    426  6.7  @const826
+0      9   0    0             @const826
 0     47   2    2    426  6.7  handleUartMode
 0    285  12    1    601  5.2  handleButtonMode
  Inline         1    313  4.0  switchMode
-0      7   0    0    483  3.7  @const834
-0      6   0    0    282  5.5  @const835
+0      7   0    0             @const834
+0      6   0    0             @const835
 1    126   5    3    282  5.5  readModeSelection
 1    134   6    1    483  3.7  MAIN
 0      8   0    0             @const841
@@ -74,16 +74,16 @@ Page ROM  %  RAM    Vol Diff  Functions:
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               36
+    Functions               27
     Statements              407
     Comments                373
-    Volume (V)              23542
-    Difficulty (D)          154.6
-    Effort to implement (E) 3639668
-    Time to implement (T)   56 hours, 10 minutes
-    Est Delivered Bugs (B)  8
-    Cyclomatic Complexity   52
-    Maintainability (MI)    50
+    Volume (V)              16049
+    Difficulty (D)          107.1
+    Effort to implement (E) 1719008
+    Time to implement (T)   26 hours, 32 minutes
+    Est Delivered Bugs (B)  5
+    Cyclomatic Complexity   35
+    Maintainability (MI)    68
 
  Segment     Used  Free
 -----------  ----  ----

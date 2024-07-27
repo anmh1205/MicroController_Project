@@ -91,7 +91,7 @@ void startTimer()
     // 1ms / 2.6666666666666667us = 375
     // 65536 - 375 = 65161
 
-    setup_timer_1(T1_INTERNAL | T1_DIV_BY_8);
+    setup_timer_1(T1_EXTERNAL | T1_DIV_BY_8);
     set_timer1(65161);
     enable_interrupts(INT_TIMER1);
     enable_interrupts(GLOBAL);
