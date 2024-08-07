@@ -73,7 +73,7 @@ typedef enum
 Mode tempMode = BUTTON_MODE;
 
 #INT_TIMER1
-void An389_Interrupt()
+void Interrupt()
 {
     elapsedTime++;
     set_timer1(65161);
@@ -84,7 +84,7 @@ void startTimer()
 {
     elapsedTime = 0;
 
-    // setup timer1, 1ms interrupt, 12MHz external, timer1 16 bit, prescaler 1:8
+    // setup timer1, 1ms interrupt, 12MHz, timer1 16 bit, prescaler 1:8
     // 12MHz / 4 = 3MHz
     // 3Mhz / 8 = 375KHz
     // 1 / 375KHz = 2.6666666666666667us

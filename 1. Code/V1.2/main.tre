@@ -194,5 +194,5 @@
    ³     ³     ÀÄ*
    ³     ÀÄclearAll  0/11  Ram=0
    ³        ÀÄ*
-   ÃÄAn389_Interrupt  0/13  Ram=0
+   ÃÄinterrupt  0/13  Ram=0
    ÀÄ@GOTOPTR  0/7  Ram=0

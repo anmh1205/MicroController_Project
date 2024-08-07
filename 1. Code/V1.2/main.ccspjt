@@ -14,7 +14,7 @@ Type=4
 1=main.c
 
 [ProjectLog]
-Days=9
+Days=11
 D1=04-07-2024
 D1_L=12
 D1_L1=[18686]Project Opened.
@@ -29,7 +29,7 @@ D1_L9=[32637]Started Editing.
 D1_L10=[33177]Stopped Editing.
 D1_L11=[33585]Started Editing.
 D1_L12=[34081]Stopped Editing.
-TotalEdit=13
+TotalEdit=20
 TotalDebug=0
 D2=05-07-2024
 D2_E=10
@@ -90,6 +90,22 @@ D9_L3=[55177]Stopped Editing.
 D9_E=1
 D9_D=0
 D9_L4=[76175]Project Closed.
+D10=28-07-2024
+D10_L=9
+D10_L1=[48992]Project Opened.
+D10_L2=[78506]Started Editing.
+D10_L3=[78861]Stopped Editing.
+D10_L4=[79204]Started Editing.
+D10_L5=[79506]Stopped Editing.
+D10_L6=[81050]Started Editing.
+D10_L7=[81666]Stopped Editing.
+D10_E=7
+D10_D=0
+D10_L8=[82302]Project Closed.
+D10_L9=[82664]Project Opened.
+D11=29-07-2024
+D11_L=1
+D11_L1=[33183]Project Closed.
 
 [Opened Files]
 1=main.c

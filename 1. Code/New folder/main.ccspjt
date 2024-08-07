@@ -1,0 +1,29 @@
+[PROJECT]
+Target=E:\1. Phenikaa University\AML\1. Code\VDK (PIC16)\0. BTL\1. Code\New folder\main.hex
+Processor_Text=PIC16F877
+CCSVerions=5.025
+Compiler=PCM
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[E:\1. Phenikaa University\AML\1. Code\VDK (PIC16)\0. BTL\1. Code\New folder\main]
+Type=4
+[mru-list]
+1=main.c
+[Units]
+Count=1
+1=main (main)
+
+[ProjectLog]
+Days=1
+D1=28-07-2024
+D1_L=4
+D1_L1=[82302]Project Opened.
+D1_L2=[82315]Started Editing.
+D1_L3=[82616]Stopped Editing.
+TotalEdit=1
+TotalDebug=0
+D1_E=1
+D1_D=0
+D1_L4=[82640]Project Closed.

@@ -1,4 +1,4 @@
-CCS PCM C Compiler, Version 5.025, 26966               25-Jul-24 15:28
+CCS PCM C Compiler, Version 5.025, 26966               29-Jul-24 07:30
 
                Filename:   E:\1. Phenikaa University\AML\1. Code\VDK (PIC16)\0. BTL\1. Code\V1.2\main.lst
 
@@ -629,6 +629,7 @@ CCS PCM C Compiler, Version 5.025, 26966               25-Jul-24 15:28
 .................... #FUSES PUT        // Power Up Timer 
 .................... #FUSES NOBROWNOUT // No brownout reset 
 .................... #FUSES NOLVP      // No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+.................... #FUSES HS        // High speed Osc, high power 16MHz-25MHz 
 ....................  
 .................... #use delay(crystal = 12000000) 
 *
@@ -1787,7 +1788,7 @@ CCS PCM C Compiler, Version 5.025, 26966               25-Jul-24 15:28
 .................... Mode tempMode = BUTTON_MODE; 
 ....................  
 .................... #INT_TIMER1 
-.................... void An389_Interrupt() 
+.................... void Interrupt() 
 .................... { 
 ....................     elapsedTime++; 
 *
@@ -1815,7 +1816,7 @@ CCS PCM C Compiler, Version 5.025, 26966               25-Jul-24 15:28
 054C:  CLRF   2F
 054D:  CLRF   2E
 ....................  
-....................     // setup timer1, 1ms interrupt, 12MHz external, timer1 16 bit, prescaler 1:8 
+....................     // setup timer1, 1ms interrupt, 12MHz, timer1 16 bit, prescaler 1:8 
 ....................     // 12MHz / 4 = 3MHz 
 ....................     // 3Mhz / 8 = 375KHz 
 ....................     // 1 / 375KHz = 2.6666666666666667us 
@@ -2521,7 +2522,7 @@ CCS PCM C Compiler, Version 5.025, 26966               25-Jul-24 15:28
 .................... Mode tempMode = BUTTON_MODE; 
 ....................  
 .................... #INT_TIMER1 
-.................... void An389_Interrupt() 
+.................... void Interrupt() 
 .................... { 
 ....................     elapsedTime++; 
 ....................     set_timer1(65161); 
@@ -2532,7 +2533,7 @@ CCS PCM C Compiler, Version 5.025, 26966               25-Jul-24 15:28
 .................... { 
 ....................     elapsedTime = 0; 
 ....................  
-....................     // setup timer1, 1ms interrupt, 12MHz external, timer1 16 bit, prescaler 1:8 
+....................     // setup timer1, 1ms interrupt, 12MHz, timer1 16 bit, prescaler 1:8 
 ....................     // 12MHz / 4 = 3MHz 
 ....................     // 3Mhz / 8 = 375KHz 
 ....................     // 1 / 375KHz = 2.6666666666666667us 
@@ -2919,7 +2920,7 @@ CCS PCM C Compiler, Version 5.025, 26966               25-Jul-24 15:28
 .................... Mode tempMode = BUTTON_MODE; 
 ....................  
 .................... #INT_TIMER1 
-.................... void An389_Interrupt() 
+.................... void Interrupt() 
 .................... { 
 ....................     elapsedTime++; 
 ....................     set_timer1(65161); 
@@ -2930,7 +2931,7 @@ CCS PCM C Compiler, Version 5.025, 26966               25-Jul-24 15:28
 .................... { 
 ....................     elapsedTime = 0; 
 ....................  
-....................     // setup timer1, 1ms interrupt, 12MHz external, timer1 16 bit, prescaler 1:8 
+....................     // setup timer1, 1ms interrupt, 12MHz, timer1 16 bit, prescaler 1:8 
 ....................     // 12MHz / 4 = 3MHz 
 ....................     // 3Mhz / 8 = 375KHz 
 ....................     // 1 / 375KHz = 2.6666666666666667us 

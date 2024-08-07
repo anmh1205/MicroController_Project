@@ -5,6 +5,7 @@
 #FUSES PUT        // Power Up Timer
 #FUSES NOBROWNOUT // No brownout reset
 #FUSES NOLVP      // No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O
+#FUSES HS        // High speed Osc, high power 16MHz-25MHz
 
 #use delay(crystal = 12000000)
 // #use rs232(baud = 9600, parity = N, xmit = PIN_C6, rcv = PIN_C7, bits = 8, stream = PORT1)

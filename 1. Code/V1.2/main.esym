@@ -1,7 +1,7 @@
-D G "__PCM__" 0 159 ""5.025""
-D G "__DEVICE__" 0 159 "887"
-D G "__DATE__" 0 159 ""25-Jul-24""
-D G "__TIME__" 0 159 ""15:28:33"" "Standard Header file for the PIC16F887 device ////////////////"
+D G "__PCM__" 0 0 ""5.025""
+D G "__DEVICE__" 0 0 ""
+D G "__DATE__" 0 0 ""29-Jul-24""
+D G "__TIME__" 0 0 ""07:30:23"" "Standard Header file for the PIC16F887 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 39 "int8" `54 
 f B "set_tris_a" 2 39 "void(int8 value)" `53 
@@ -849,9 +849,9 @@ d G "INT_RB4" 2 763 "0x1100B08"
 d G "INT_RB5" 2 764 "0x1200B08"
 d G "INT_RB6" 2 765 "0x1400B08"
 d G "INT_RB7" 2 766 "0x1800B08"
-D G "PCF8574A" 1 14 "" "Comment for modules using PCF8574"
-D G "A2_A1_A0" 1 15 "0B111" "Address pin states (A2 A1 A0) of PCF8574A/PCF8574."
-D G "LCD16X2" 1 16 "" "Comment this line to use 16x2 LCD"
+D G "PCF8574A" 1 15 "" "Comment for modules using PCF8574"
+D G "A2_A1_A0" 1 16 "0B111" "Address pin states (A2 A1 A0) of PCF8574A/PCF8574."
+D G "LCD16X2" 1 17 "" "Comment this line to use 16x2 LCD"
 D G "VAR_H" 3 2 ""
 D G "RIGHT" 4 1 "0x1C"
 D G "LEFT" 4 2 "0x18"
@@ -983,7 +983,7 @@ E G "BUTTON_MODE" 3 70 "0" `684
 E G "UART_MODE" 3 71 "1" `685 
 T G "mode" 3 71 "" `686 
 V G "tempMode" 3 73 "mode" `687 
-F G "An389_Interrupt" 3 77 "void()" `688 
+F G "interrupt" 3 77 "void()" `688 
 F G "startTimer" 3 84 "void()" `689 
 C L "startTimer" 3 10 6 "FUNCTION"
 F G "getTimerValue" 3 101 "int16()" `690 

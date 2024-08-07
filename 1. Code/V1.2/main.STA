@@ -14,7 +14,7 @@ Stack size: 8
 Lines Stmts  %   Files
 ----- ----- ---  -----
   158    81  20  main.c
-   23     0   0  main.h
+   24     0   0  main.h
   769     0   0  D:\Program Files (x86)\PICC\Devices\16F887.h
   119     0   0  globalVariables.h
   307   116  29  lcd_i2c.c
@@ -24,7 +24,7 @@ Lines Stmts  %   Files
    83    41  10  morseCodeReader.c
    82    44  11  morseCodeSpeaker.c
 ----- -----
- 2024   407 Total
+ 2025   407 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
@@ -39,7 +39,7 @@ Page ROM  %  RAM    Vol Diff  Functions:
 0    361  16    2    539  5.2  write_lcd_i2c
 0     24   1    3    197  4.7  set_lcd_i2c_cursor_position
 0    259  11    0             @const681
-0     13   1    0     45  1.4  An389_Interrupt
+0     13   1    0     45  1.4  interrupt
 0     15   1    0    100  2.1  startTimer
  Inline         0     13  1.0  getTimerValue
 0     12   1    0     45  1.4  stopAndReadTimer
